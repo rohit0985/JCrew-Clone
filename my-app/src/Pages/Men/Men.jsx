@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getData } from '../../Redux/AppReducer/action'
+import styles from "./Mens.module.css"
 
 
 const Men = () => {
@@ -26,7 +27,13 @@ useEffect(()=>{
 
   return (
     <div>
-      
+      <div className={styles.top_heading}>
+        <span className={styles.top_heading_span}>
+          <span className={styles.top_heading_span1}>The Holiday</span>
+          <br />
+          Collection
+        </span>
+      </div>
     </div>
   )
 }
