@@ -22,7 +22,7 @@
       "myProducts":[{},{}]
     }
   ],
-  "Products": {
+  "products": {
 "men": [
   {
     "id": 1,
