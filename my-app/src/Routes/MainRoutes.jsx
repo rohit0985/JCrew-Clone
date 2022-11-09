@@ -1,0 +1,22 @@
+import { Routes, Route} from "react-router-dom"
+import React from 'react'
+import HomePage from "../Pages/HomePage"
+import Signup from "../Pages/Signup"
+import Signin from "../Pages/Signin"
+import Men from "../Pages/Men/Men"
+import Women from "../Pages/Women/Women"
+
+
+const MainRoutes = () => {
+  return (
+    <Routes>
+  <Route path="/" element={<HomePage/>}>Home Page</Route>
+  <Route path="/sinup" element={<Signup/>}></Route>
+  <Route path="/sinin" element={<Signin/>}></Route>
+  <Route path="/men" element={<Men/>}></Route>
+  <Route path="/women" element={<Women/>}></Route>
+    </Routes>
+  )
+}
+
+export default MainRoutes
