@@ -22,8 +22,7 @@
       "myProducts":[{},{}]
     }
   ],
-  "products": {
-"men": [
+"products": [
   {
     "id": 1,
     "name": "sinny kurta",
@@ -31,6 +30,7 @@
     "sizes": ["xs","s","m","l","xl"],
     "brand": "zara",
     "category": "pant",
+    "belongsTo": "men",
     "createdAt": "10-10-2019",
     "lastDate": "15-10-2021",
     "product_details": {
@@ -57,9 +57,7 @@
         "imges":[]
       }
     ]
-  }
-],
-"women": [
+  },
   {
     "id": 1,
     "name": "sinny kurta",
@@ -67,6 +65,42 @@
     "sizes": ["xs","s","m","l","xl"],
     "brand": "zara",
     "category": "pant",
+    "createdAt": "10-10-2019",
+    "lastDate": "15-10-2021",
+    "belongsTo": "men",
+    "product_details": {
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, incidunt. Possimus, distinctio minus? Nisi neque ab beatae voluptatibus a reprehenderit nulla ad! Quam itaque in sit, ratione laudantium asperiores aut.A beatae voluptatibus a reprehenderit nulla ad! Quam itaque in sit, ratione laudantium asperiores aut.",
+      "highlightPoints": [
+        "cotton fabric",
+        "machine wash"
+      ],
+      "re-imagined": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor beatae ex deleniti ea pariatur eaque?"
+    },
+    "createdBy": {
+      "name": "Rohit kumar",
+      "email": "rohit@gmail.com"
+    },
+    "rating": "3",
+    "review": [
+      {
+        "user":  {
+          "name": "Sumit kumar",
+          "email": "sumit@gmail.com"
+        },
+        "rating": "4",
+        "comment": "recomented 100 %",
+        "imges":[]
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "sinny kurta",
+    "images": ["https://www.jcrew.com/s7-img-facade/BK941_WZ2350?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420","https://www.jcrew.com/s7-img-facade/BM115_SR0328?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420"],
+    "sizes": ["xs","s","m","l","xl"],
+    "brand": "zara",
+    "category": "pant",
+    "belongsTo": "women",
     "createdAt": "10-10-2019",
     "lastDate": "15-10-2021",
     "product_details": {
@@ -93,9 +127,7 @@
         "imges":[]
       }
     ]
-  }
-],
-"kids": [
+  },
   {
     "id": 1,
     "name": "sinny kurta",
@@ -103,42 +135,7 @@
     "sizes": ["xs","s","m","l","xl"],
     "brand": "zara",
     "category": "pant",
-    "createdAt": "10-10-2019",
-    "lastDate": "15-10-2021",
-    "product_details": {
-      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, incidunt. Possimus, distinctio minus? Nisi neque ab beatae voluptatibus a reprehenderit nulla ad! Quam itaque in sit, ratione laudantium asperiores aut.A beatae voluptatibus a reprehenderit nulla ad! Quam itaque in sit, ratione laudantium asperiores aut.",
-      "highlightPoints": [
-        "cotton fabric",
-        "machine wash"
-      ],
-      "re-imagined": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor beatae ex deleniti ea pariatur eaque?"
-    },
-    "createdBy": {
-      "name": "Rohit kumar",
-      "email": "rohit@gmail.com"
-    },
-    "rating": "3",
-    "review": [
-      {
-        "user":  {
-          "name": "Sumit kumar",
-          "email": "sumit@gmail.com"
-        },
-        "rating": "4",
-        "comment": "recomented 100 %",
-        "imges":[]
-      }
-    ]
-  }
-],
-"home": [
-  {
-    "id": 1,
-    "name": "sinny kurta",
-    "images": ["https://www.jcrew.com/s7-img-facade/BK941_WZ2350?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420","https://www.jcrew.com/s7-img-facade/BM115_SR0328?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=420&hei=420"],
-    "sizes": ["xs","s","m","l","xl"],
-    "brand": "zara",
-    "category": "pant",
+    "belongsTo": "kids",
     "createdAt": "10-10-2019",
     "lastDate": "15-10-2021",
     "product_details": {
@@ -167,5 +164,5 @@
     ]
   }
 ]
-  }
+
 }
