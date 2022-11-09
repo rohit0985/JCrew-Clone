@@ -7,7 +7,14 @@ const Men = () => {
 const dispatch = useDispatch()
 const data = useSelector((reduxStore)=> reduxStore.AppReducer.products)
 
-data && data.men && data.men.map((el)=> console.log(el) )
+console.log(data)
+
+
+data && data.map((el)=> console.log(el) )
+
+
+let men = data && data.filter((el)=> el.belongsTo === "men")
+console.log(men)
 
 
 useEffect(()=>{

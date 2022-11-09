@@ -1,7 +1,7 @@
 import * as types from "./actionTypes";
 
 const initialState = {
-  products: {},
+  products: [],
   isLoading: false,
   isError: false,
 };
@@ -25,7 +25,7 @@ export const reducer = (state = initialState, { type, payload }) => {
         ...state,
         isLoading: false,
         isError: true,
-        products: {},
+        products: [],
       };
     default:
       return state;
