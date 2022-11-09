@@ -8,4 +8,4 @@ const reducer = () => {
   )
 }
 
-export default reducer
+export {reducer}
