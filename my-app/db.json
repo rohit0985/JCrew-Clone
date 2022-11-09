@@ -6,6 +6,7 @@
       "email": "sumit@gmail.com",
       "password":"",
       "country":"",
+      "token":"",
       "userType": "customer",
       "favorits":[{},{}],
       "orderHistory":[{},{}]
@@ -16,6 +17,7 @@
       "email": "rohit@gmail.com",
       "password":"",
       "country":"",
+      "token":"",
       "userType": "admin",
       "myProducts":[{},{}]
     }

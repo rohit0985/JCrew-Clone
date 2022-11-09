@@ -1,9 +1,16 @@
 import React from 'react'
 
-const reducer = () => {
+
+const init = {
+    isLoading: false,
+isError: false,
+products: []
+}
+
+const reducer = (state, action) => {
   return (
     <div>
-      
+      return state
     </div>
   )
 }
