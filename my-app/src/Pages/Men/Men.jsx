@@ -1,29 +1,23 @@
-import React, {useEffect, useState} from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getData } from '../../Redux/AppReducer/action'
-import styles from "./Mens.module.css"
-
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import DropdownFilterButton from "../../Components/DropDownfilter/DropdownFilterButton";
+import { getData } from "../../Redux/AppReducer/action";
+import styles from "./Mens.module.css";
 
 const Men = () => {
-const dispatch = useDispatch()
-const data = useSelector((reduxStore)=> reduxStore.AppReducer.products)
+  const dispatch = useDispatch();
+  const data = useSelector((reduxStore) => reduxStore.AppReducer.products);
 
-console.log(data)
+  console.log(data);
 
+  data && data.map((el) => console.log(el));
 
-data && data.map((el)=> console.log(el) )
+  let men = data && data.filter((el) => el.belongsTo === "men");
+  console.log(men);
 
-
-let men = data && data.filter((el)=> el.belongsTo === "men")
-console.log(men)
-
-
-useEffect(()=>{
-  dispatch(getData)
-},[])
-
-
-
+  useEffect(() => {
+    dispatch(getData);
+  }, []);
 
   return (
     <div>
@@ -34,8 +28,17 @@ useEffect(()=>{
           Collection
         </span>
       </div>
-    </div>
-  )
-}
 
-export default Men
+      <div className={styles.dropdownbuttons}> buttons here </div>
+
+      <div className={styles.products_container}>
+        <div className={styles.filtering_div}>
+          <DropdownFilterButton />
+        </div>
+        <div className={styles.allproducts_div}></div>
+      </div>
+    </div>
+  );
+};
+
+export default Men;
