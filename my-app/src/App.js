@@ -12,6 +12,7 @@ function App() {
       <NavBar/>
       <MainRoutes/>
       <Footer/>
+      <Men/>
     </div>
   );
 }
