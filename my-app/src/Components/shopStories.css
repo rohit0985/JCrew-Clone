@@ -1,0 +1,49 @@
+.shop-stories-head {
+  width: auto;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Times New Roman", Times, serif serif;
+  font-weight: 300;
+}
+
+.shopstories-container {
+  width: 90%;
+  margin: auto;
+  height: auto;
+  margin-bottom: 100px;
+}
+.shopstories-cardcontainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  overflow: scroll;
+}
+.shopstories-cardcontainer::-webkit-scrollbar {
+  width: 0px;
+}
+
+.shopstories-cardcontainer > .shop-stories-card {
+  height: 450px;
+}
+.shop-stories-card > img {
+  height: 100%;
+}
+
+.shopstories-cardcontainer > .shop-stories-card > p {
+  font-size: 15px;
+  font-weight: 600;
+}
+@media all and (min-width: 451px) and (max-width: 750px) {
+  .shopstories-container {
+    margin-top: -54px;
+    margin-bottom: 100px;
+  }
+  .shopstories-header {
+    font-size: 22px;
+  }
+  .shopstories-cardContainer {
+    display: flex;
+    overflow: scroll;
+  }
+}

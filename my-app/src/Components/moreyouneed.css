@@ -1,0 +1,35 @@
+.moreyouneed-container {
+  width: 90%;
+  height: auto;
+  margin: auto;
+  margin-top: 100px;
+}
+.moreyouneed-head {
+  width: auto;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Times New Roman", Times, serif serif;
+  font-weight: 300;
+}
+.moreyouneed-cardcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.moreyouneed-card {
+  height: 215px;
+}
+
+.moreyouneed-card > img {
+  width: 100%;
+  height: 215px;
+}
+
+.moreyouneed-card > p {
+  text-align: center;
+  text-decoration: underline;
+  font-weight: 600;
+}

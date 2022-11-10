@@ -4,44 +4,49 @@
   box-sizing: border-box;
 }
 
-.header {
-  width: auto;
+.recomended-container {
+  min-width: 90%;
+  height: auto;
+  margin: auto;
+  margin-top: 48px;
+  margin-bottom: 100px;
+}
+
+.recomended-header {
   font-size: 36px;
   text-align: center;
   margin-bottom: 20px;
   font-family: "Times New Roman", Times, serif serif;
   font-weight: 300;
 }
-
-.container {
+.recomended-cardContainer {
   width: 90%;
-  height: auto;
   margin: auto;
-  margin-top: 100px;
-}
-
-.cardContainer {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
+  overflow-x: scroll;
 }
-.card {
+.recomended-cardContainer::-webkit-scrollbar {
+  width: 0px;
+}
+.recomended-card {
+  margin: auto;
   height: 215px;
-  overflow: hidden;
+  position: relative;
 }
-.card > img {
-  width: 100%;
+.recomended-card > img {
   height: 215px;
 }
 
 .intro {
   height: 65px;
-  width: 215px;
+  width: 100%;
   font-size: 12px;
   box-sizing: border-box;
   position: absolute;
-  margin-top: -69px;
+  bottom: 0px;
+  left: 0px;
   background-color: white;
   color: black;
   visibility: hidden;
@@ -60,12 +65,26 @@
   font-weight: bold;
 }
 
-.card:hover {
+.recomended-card:hover {
   cursor: pointer;
 }
 
-.card:hover .intro {
+.recomended-card:hover .intro {
   background: white;
   opacity: 0.8;
   visibility: visible;
+}
+
+@media all and (min-width: 451px) and (max-width: 750px) {
+  .recomended-container {
+    margin-top: -54px;
+    margin-bottom: 100px;
+  }
+  .recomended-header {
+    position: relative;
+    font-size: 22px;
+  }
+  .recomended-cardContainer {
+    display: flex;
+  }
 }
