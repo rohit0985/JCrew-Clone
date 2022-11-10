@@ -20,6 +20,7 @@ const reducer = (state = initialState, action) => {
       isError : false,
     };
 
+
     case types.SIGNIN_SUCCESS : 
     return{
       ...state,
@@ -43,3 +44,5 @@ const reducer = (state = initialState, action) => {
 };
 
 export {reducer};
+
+
