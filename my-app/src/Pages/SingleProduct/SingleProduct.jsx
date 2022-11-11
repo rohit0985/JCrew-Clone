@@ -117,7 +117,6 @@ const SingleProduct = () => {
 </div>
 
 
-
 <div className={styles.mid}>
   <img src={image} alt="#" />
   <BsSuitHeart size={25} className={styles.heart}/>
