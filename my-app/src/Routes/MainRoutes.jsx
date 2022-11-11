@@ -5,6 +5,7 @@ import Signup from "../Pages/Signup"
 import Signin from "../Pages/Signin"
 import Men from "../Pages/Men/Men"
 import Women from "../Pages/Women/Women"
+import SingleProduct from "../Pages/SingleProduct/SingleProduct"
 
 
 const MainRoutes = () => {
@@ -15,6 +16,7 @@ const MainRoutes = () => {
   <Route path="/signin" element={<Signin/>}></Route>
   <Route path="/men" element={<Men/>}></Route>
   <Route path="/women" element={<Women/>}></Route>
+  <Route path="/single" element={<SingleProduct/>}></Route>
     </Routes>
   )
 }

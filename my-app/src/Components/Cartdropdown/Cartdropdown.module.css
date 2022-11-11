@@ -1,0 +1,45 @@
+.container{
+    width: 300px;
+    border: 1px solid gray;
+    max-height: 100vh;
+    overflow-y: scroll;
+}
+.container::-webkit-scrollbar {
+    width: 3px;
+    background-color: white;
+}
+.container::-webkit-scrollbar-thumb {
+    background-color: rgb(215, 214, 214);
+    height: 5px;
+    border-radius: 10px;
+}
+.container .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    position: sticky;
+    top: 0px;
+}
+.container .cardContainer{
+   
+    display: flex;
+    flex-direction: column;
+}
+.container .totalButton{
+    padding: 10px;
+}
+.totalButton p{
+    font-weight: 500;
+}
+.totalButton button{
+    width: 100%;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    background-color: black;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 1px;
+}
