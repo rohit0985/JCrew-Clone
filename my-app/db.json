@@ -38,25 +38,16 @@
         "Snap closure with hidden zip.",
         "Patch pockets with flaps.",
         "Fully lined.",
-        "Machine wash.",
-        "Import.",
         "Online only.",
         "Item BJ068."
-      ],
-      "reImagined":
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor beatae ex deleniti ea pariatur eaque?"
-    },
+      ]
+      },
     "colors": [
       {
         "colorName": "Varsity Navy",
         "images": [
           "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
-          "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d5?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-          "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d1?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-          "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d2?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-          "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d3?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-          "https://www.jcrew.com/s7-img-facade/BK936_WZ2103?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-          "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d4?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160"
+          "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d5?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160"
         ],
         "availableSize": [
           "X-Small",
@@ -66,37 +57,6 @@
           "X-Large",
           "XX-Large"
         ]
-      },
-      {
-        "colorName": "Bright blue",
-        "images": [
-          "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d2?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-          "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d3?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-          "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d4?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-          "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d5?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-          "https://www.jcrew.com/s7-img-facade/BK936_WZ2103?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-          "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
-          "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d1?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160"
-        ],
-        "availableSize": ["X-Small", "Small", "Medium"]
-      }
-    ],
-    "createdBy": {
-      "name": "Rohit kumar",
-      "email": "rohit@gmail.com"
-    },
-    "createdAt": "10-10-2019",
-    "lastDate": "15-10-2021",
-    "rating": "3",
-    "review": [
-      {
-        "user": {
-          "name": "Sumit kumar",
-          "email": "sumit@gmail.com"
-        },
-        "rating": "4",
-        "comment": "recomented 100 %",
-        "imges": []
       }
     ]
   }
