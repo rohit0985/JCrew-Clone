@@ -1,0 +1,50 @@
+.main_div {
+  width: "100%";
+  /* border: 1px solid yellow; */
+  transition: all 0.5s ease-in-out;
+}
+
+.filterCategory_name {
+  width: 98%;
+  /* border: 1px solid gray; */
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.span1 {
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 3.2rem;
+}
+.span2 {
+  margin-right: 10px;
+  color: gray;
+  font-size: 28px;
+}
+
+.toshow_Content {
+  width: 98%;
+  height: 25px;
+  display: block;
+}
+.tohide_Content {
+  width: 98%;
+  height: 25px;
+  display: none;
+}
+.filterCategories {
+  width: 95%;
+  height: 100%;
+  /* border: 1px solid blue; */
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+.filterCategories_label {
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 10px;
+  line-height: 3rem;
+}
