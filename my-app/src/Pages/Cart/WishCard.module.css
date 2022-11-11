@@ -5,30 +5,7 @@
     display: flex;
     width: 100%;
 }
-.leftContainer .quantity{
-    width: 150px;
-}
-.quantity .btn{
-    margin-top: 10px;
-    border: 1px solid gray;
-    width: 100px;
-    height: 30px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    padding: 3px;
-}
-.quantity .btn>div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 25px;
-    height: 25px;
-}
-.quantity .btn>div:hover{
-border: 1px solid rgba(128, 128, 128,.3);
-}
+
 .cardWrapper .rightContainer{
     width: 150px;
     padding-top: 10px;
@@ -76,6 +53,15 @@ width: 100%;
 .right .btns{
     display: flex;
    gap: 10px;
+   align-items: center;
+}
+.tobag{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-color: rgb(207, 205, 205);
 }
 .right .btns a{
     color: black;
