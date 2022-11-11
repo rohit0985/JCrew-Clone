@@ -13,7 +13,7 @@ const Cart = () => {
 
 <div className={styles.top}>
     <h3>SHOPPING BAG (3)</h3>
-    <p>Have an account? <span><a href="#">Sign in</a></span> </p>
+    <p>Have an account?<span><a href="#">Sign in</a></span> </p>
 </div>
 
 
