@@ -4,7 +4,7 @@ import "./shopStories.css";
 const ShopStories = () => {
   return (
     <div className="shopstories-container">
-      <h1 className="shop-stories-head">Shops, stories & more</h1>
+      <h1 className="shopstories-header">Shops, stories & more</h1>
       <div className="shopstories-cardcontainer">
         <div className="shop-stories-card">
           <img

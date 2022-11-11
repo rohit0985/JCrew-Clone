@@ -1,11 +1,11 @@
 import React from "react";
-// import "./moreyouneed.css";
+import "./moreyouneed.css";
 
 const MoreYouNeed = () => {
   return (
     <div>
       <div className="moreyouneed-container">
-        <h1 className="moreyouneed-head">More you need to see</h1>
+        <h1 className="moreyouneed-header">More you need to see</h1>
         <div className="moreyouneed-cardcontainer">
           <div className="moreyouneed-card">
             <img
