@@ -16,8 +16,8 @@ const SingleProductCard = () => {
         <p className={styles.title_tag}>Rugby shirt with corduroy collar</p>
         <div className={styles.price_div}>INR 13,599</div>
         <div className={styles.color_div}>
-          <div className={styles.color_div1}> red</div>
-          <div className={styles.color_div1}> red</div>
+          <div className={styles.color_div1}> </div>
+          <div className={styles.color_div1}> </div>
         </div>
       </div>
     </div>

@@ -1,9 +1,10 @@
 .main_div {
   width: "100%";
-  /* border: 1px solid yellow; */
   transition: all 0.5s ease-in-out;
 }
-
+.main_div :hover{
+  color: black;
+}
 .filterCategory_name {
   width: 98%;
   /* border: 1px solid gray; */
@@ -26,7 +27,7 @@
 
 .toshow_Content {
   width: 98%;
-  height: 25px;
+  height: auto;
   display: block;
 }
 .tohide_Content {
