@@ -4,6 +4,9 @@
     width: 80%;
     margin: auto;
 }
+.wrapper a:hover{
+    color: rgb(57, 57, 235);
+}
 .mainLeft{
     display: flex;
     flex-direction: column;
@@ -114,10 +117,12 @@ font-weight: bold;
     flex: 1;
     outline: none;
     border: 1px solid gray;
-    padding: 3px 10px;
+    padding: 0px 10px;
 }
 .rightWrapper .promo .apply{
     width: 80px;
     height: 100%;
     background-color: rgb(207, 205, 205);
+    outline: none;
+    border: 0;
 }

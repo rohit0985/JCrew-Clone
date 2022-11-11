@@ -1,6 +1,7 @@
 .cardWrapper{
     display: flex;
 }
+
 .cardWrapper .leftContainer{
     display: flex;
     width: 100%;
@@ -9,6 +10,7 @@
 .cardWrapper .rightContainer{
     width: 150px;
     padding-top: 10px;
+  font-weight: 500;
 }
 .subLeft{
     display: flex;   
@@ -62,8 +64,13 @@ width: 100%;
     justify-content: center;
     padding: 5px;
     background-color: rgb(207, 205, 205);
+    outline: none;
+    border: 0px;
 }
 .right .btns a{
     color: black;
     text-decoration: underline;
 }
+.right .btns a:hover{
+    color: rgb(59, 59, 206);
+    }
