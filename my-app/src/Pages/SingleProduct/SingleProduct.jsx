@@ -6,6 +6,7 @@ import { AiFillFacebook } from "react-icons/ai";
 import { SlSocialTumblr } from "react-icons/sl";
 import { AiFillStar } from "react-icons/ai";
 import SimilarCard from "./SimilarCard";
+import CheckOut from "../CheckOut/CheckOut";
 
 import Cartdropdown from "../../Components/Cartdropdown/Cartdropdown";
 import Cart from "../Cart/Cart";
@@ -106,6 +107,7 @@ const SingleProduct = () => {
 
   return (
   <div>
+  <CheckOut/>
   <Cart/>
 <Cartdropdown/>
 
