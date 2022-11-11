@@ -1,0 +1,48 @@
+.wrapper{
+    border: 1px solid red;
+    height: 100vh;
+    display: flex;
+}
+.leftWrapper{
+    border: 2px solid green;
+
+}
+.leftWrapper .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.leftWrapper .header{
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.leftWrapper .header>div{
+    display: flex;
+    align-items: center;
+}
+.leftWrapper .header .item{
+    width: 60%;
+}
+.leftWrapper .header .qty{
+width: 20%;
+}
+.leftWrapper .header .price{
+width: 20%;
+}
+
+.leftWrapper .content{
+    border: 2px solid red;
+    height: 400px;
+}
+
+
+.rightWrapper{
+   
+    width: 300px;
+    border: 2px solid blue;
+}

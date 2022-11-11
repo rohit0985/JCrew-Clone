@@ -1,0 +1,44 @@
+
+.card{
+    display: flex;
+  border-bottom: 1px solid rgba(128, 128, 128,.3);
+  padding: 10px;
+  gap: 10px;
+}
+.card .left{
+    width: 200px;
+}
+.card .left img{
+    width: 100%;
+}
+.card p{
+    margin: 0;
+}
+.card .right{
+    text-align: start;
+    line-height: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.right .details{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.right .details>p:nth-child(2){
+    font-weight: 500;
+}
+.right .measures{
+    display: flex;
+    flex-direction: column;
+    color: #666666;
+}
+.right .btns{
+    display: flex;
+   gap: 10px;
+}
+.right .btns a{
+    color: black;
+}

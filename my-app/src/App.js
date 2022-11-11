@@ -7,9 +7,9 @@ import MainRoutes from './Routes/MainRoutes';
 function App() {
   return (
     <div className="App">
-      <NavBar/>
+      {/* <NavBar/> */}
       <MainRoutes/>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }
