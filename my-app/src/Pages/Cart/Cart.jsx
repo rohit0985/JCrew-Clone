@@ -24,6 +24,9 @@ const Cart = () => {
 
 <div className={styles.content}>
 <Card/>
+<Card/>
+<Card/>
+<Card/>
 </div>
 
 </div>

@@ -1,18 +1,47 @@
 .cardWrapper{
     display: flex;
-    border: 3px solid black;
+    border: 1px solid black;
 }
 .cardWrapper .leftContainer{
-    border: 1px solid violet;
     display: flex;
 }
-
+.leftContainer .quantity{
+    width: 150px;
+}
+.quantity .btn{
+    margin-top: 10px;
+    border: 1px solid gray;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+}
+.quantity .btn>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+}
+.quantity .btn>div:hover{
+border: 1px solid rgba(128, 128, 128,.3);
+}
+.cardWrapper .rightContainer{
+    width: 150px;
+    padding-top: 10px;
+}
+.subLeft{
+    display: flex;   
+}
 .card{
     display: flex;
   border-bottom: 1px solid rgba(128, 128, 128,.3);
   padding: 10px;
   gap: 10px;
-  border: 1px solid red;
+width: 100%;
 }
 .card .left{
     width: 200px;
