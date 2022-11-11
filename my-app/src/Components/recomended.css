@@ -8,7 +8,6 @@
   min-width: 90%;
   height: auto;
   margin: auto;
-  margin-top: 48px;
   margin-bottom: 100px;
 }
 
@@ -76,15 +75,14 @@
 }
 
 @media all and (min-width: 451px) and (max-width: 750px) {
-  .recomended-container {
-    margin-top: -54px;
-    margin-bottom: 100px;
-  }
   .recomended-header {
-    position: relative;
+    margin-top: -170px;
     font-size: 22px;
   }
-  .recomended-cardContainer {
-    display: flex;
+}
+
+@media all and (min-width: 100px) and (max-width: 450px) {
+  .recomended-header {
+    font-size: 22px;
   }
 }
