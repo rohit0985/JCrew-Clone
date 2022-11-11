@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import DropdownFilterButton from "../../Components/DropDownfilter/DropdownFilterButton";
+import SingleProductCard from "../../Components/SingleProductCard";
 import { getData } from "../../Redux/AppReducer/action";
 import styles from "./Mens.module.css";
 
@@ -34,9 +35,17 @@ const Men = () => {
       <div className={styles.products_container}>
         <div className={styles.filtering_div}>
           <DropdownFilterButton />
+          <hr />
+          <DropdownFilterButton />
+          <hr />
         </div>
-        <div className={styles.allproducts_div}></div>
+        <div className={styles.allproducts_div}>
+         { new Array(100).fill("").map((el)=>(
+          <SingleProductCard/>
+         ))}
+        </div>
       </div>
+
     </div>
   );
 };
