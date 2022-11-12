@@ -46,11 +46,24 @@ margin: 30px 0 50px 0;
 }
 .atmCard .middle>div{
     height: 40px;
-   
     display: flex; 
     align-items: center;
     width: 50%;
+    border: 1px solid gray;
    
+}
+.atmCard .middle>div>input{
+    width: 50%;
+    flex:1;
+    height: 97%;
+    border: 0;
+    outline: none;
+}
+.atmCard .middle>div>input:nth-child(1){
+    text-align: end;
+}
+.atmCard .middle>div>input:nth-child(2){
+text-align: start;
 }
 .atmCard .middle{
     display: flex;
