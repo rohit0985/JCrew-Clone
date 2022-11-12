@@ -5,9 +5,6 @@ import MainRoutes from './Routes/MainRoutes';
 import Navbar from './Components/NavBar';
 
 
-
-
-
 function App() {
   return (
     <div className="App">
