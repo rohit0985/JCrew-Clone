@@ -1,0 +1,64 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.moreyouneed-container {
+  min-width: 90%;
+  height: auto;
+  margin: auto;
+  margin-top: 48px;
+  margin-bottom: 100px;
+}
+
+.moreyouneed-header {
+  margin: auto;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Times New Roman", Times, serif serif;
+  font-weight: 300;
+}
+.moreyouneed-cardcontainer {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  overflow-x: scroll;
+}
+.moreyouneed-cardcontainer::-webkit-scrollbar {
+  display: none;
+}
+.moreyouneed-cardcontainer > .moreyouneed-card {
+  margin: auto;
+  height: 240px;
+}
+.moreyouneed-cardcontainer > .moreyouneed-card > img {
+  height: 210px;
+}
+.moreyouneed-cardcontainer > .moreyouneed-card > p {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 2;
+  text-decoration: underline solid black 1.5px;
+  text-underline-offset: 7px;
+}
+
+@media all and (min-width: 451px) and (max-width: 750px) {
+  .moreyouneed-container {
+    margin-top: -54px;
+  }
+  .moreyouneed-header {
+    font-size: 22px;
+  }
+}
+
+@media all and (min-width: 100px) and (max-width: 450px) {
+  .moreyouneed-header {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,88 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.recomended-container {
+  min-width: 90%;
+  height: auto;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.recomended-header {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Times New Roman", Times, serif serif;
+  font-weight: 300;
+}
+.recomended-cardContainer {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  overflow-x: scroll;
+}
+.recomended-cardContainer::-webkit-scrollbar {
+  width: 0px;
+}
+.recomended-card {
+  margin: auto;
+  height: 215px;
+  position: relative;
+}
+.recomended-card > img {
+  height: 215px;
+}
+
+.intro {
+  height: 65px;
+  width: 100%;
+  font-size: 12px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background-color: white;
+  color: black;
+  visibility: hidden;
+}
+.intro > p {
+  font-size: 0.9em;
+  width: 80%;
+  margin: 5px;
+}
+.intro > p:nth-child(1) {
+  font-size: 11px;
+  font-weight: 600;
+}
+.intro > p:nth-child(2) {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.recomended-card:hover {
+  cursor: pointer;
+}
+
+.recomended-card:hover .intro {
+  background: white;
+  opacity: 0.8;
+  visibility: visible;
+}
+
+@media all and (min-width: 451px) and (max-width: 750px) {
+  .recomended-header {
+    margin-top: -170px;
+    font-size: 22px;
+  }
+}
+
+@media all and (min-width: 100px) and (max-width: 450px) {
+  .recomended-header {
+    font-size: 22px;
+  }
+}

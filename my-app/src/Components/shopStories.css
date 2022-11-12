@@ -1,0 +1,63 @@
+.shopstories-container {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.shopstories-header {
+  width: auto;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Times New Roman", Times, serif serif;
+  font-weight: 300;
+}
+.shopstories-cardcontainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  overflow: scroll;
+}
+.shopstories-cardcontainer::-webkit-scrollbar {
+  display: none;
+}
+
+.shopstories-cardcontainer > .shop-stories-card {
+  height: 450px;
+}
+.shop-stories-card > img {
+  height: 94%;
+}
+
+.shopstories-cardcontainer > .shop-stories-card > p {
+  font-size: 15px;
+  font-weight: 600;
+}
+@media all and (min-width: 451px) and (max-width: 750px) {
+  .shopstories-container {
+    margin-top: -54px;
+    margin-bottom: 100px;
+  }
+  .shopstories-header {
+    font-size: 22px;
+  }
+  .shopstories-cardContainer {
+    overflow: scroll;
+  }
+  .shopstories-cardcontainer > .shop-stories-card {
+    height: 350px;
+  }
+  .shop-stories-card > img {
+    height: 85%;
+  }
+  .shopstories-cardcontainer > .shop-stories-card > p {
+    font-size: 14px;
+    font-weight: 700;
+  }
+}
+
+@media all and (min-width: 100px) and (max-width: 450px) {
+  .shopstories-header {
+    font-size: 22px;
+  }
+}
