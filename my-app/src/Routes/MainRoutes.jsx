@@ -23,6 +23,7 @@ const MainRoutes = () => {
   <Route path="/cart" element={<Cart/>}></Route>
   <Route path="/checkout" element={<CheckOut/>}></Route>
 
+
     </Routes>
   )
 }
