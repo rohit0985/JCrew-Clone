@@ -27,10 +27,12 @@ const CheckOut = () => {
 </div>
 <div className={styles.middle}>
    <div>
-   <InputField placeholder='Expiry Date'/>
+   <input maxLength={2} placeholder='MM'/>
+   /
+   <input maxLength={2} placeholder='YY'/>
    </div>
   <div>
-  <InputField placeholder='CVV'/>
+  <InputField maxLength={4} style={{textAlign:"start"}} placeholder='CVV'/>
   </div>
 </div>
 <div className={styles.bottom}>
