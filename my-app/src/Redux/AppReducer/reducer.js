@@ -6,6 +6,8 @@ const initialState = {
   isError: false,
 };
 
+
+
 export const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case types.GET_PRODUCTS_REQUEST:
@@ -31,3 +33,4 @@ export const reducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
+
