@@ -6,8 +6,11 @@ const DropdownFilterButton = ({ children }) => {
   const [isClose, setIsClose] = useState(false);
 
   return (
-    <div className={styles.main_div} >
-      <div className={styles.filterCategory_name} onClick={() => setIsClose(!isClose)}>
+    <div className={styles.main_div}>
+      <div
+        className={styles.filterCategory_name}
+        onClick={() => setIsClose(!isClose)}
+      >
         <span className={styles.span1}>category</span>
         <span className={styles.span2}>{isClose ? "+" : "-"}</span>
       </div>
@@ -19,7 +22,28 @@ const DropdownFilterButton = ({ children }) => {
           <input type="checkbox" />
           <label className={styles.filterCategories_label}>Shirt</label>
         </div>
+        <div className={styles.filterCategories}>
+          <input type="checkbox" />
+          <label className={styles.filterCategories_label}>Shirt</label>
+        </div>
+        <div className={styles.filterCategories}>
+          <input type="checkbox" />
+          <label className={styles.filterCategories_label}>Shirt</label>
+        </div>
+        <div className={styles.filterCategories}>
+          <input type="checkbox" />
+          <label className={styles.filterCategories_label}>Shirt</label>
+        </div>
+        <div className={styles.filterCategories}>
+          <input type="checkbox" />
+          <label className={styles.filterCategories_label}>Shirt</label>
+        </div>
+        <div className={styles.filterCategories}>
+          <input type="checkbox" />
+          <label className={styles.filterCategories_label}>Shirt</label>
+        </div>
       </div>
+
     </div>
   );
 };
