@@ -1,0 +1,84 @@
+.cardWrapper{
+    display: flex;
+}
+.cardWrapper .leftContainer{
+    display: flex;
+    width: 100%;
+}
+.leftContainer .quantity{
+    width: 150px;
+}
+.quantity .btn{
+    margin-top: 10px;
+    border: 1px solid gray;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+}
+.quantity .btn>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+}
+.quantity .btn>div:hover{
+border: 1px solid rgba(128, 128, 128,.3);
+}
+.cardWrapper .rightContainer{
+    width: 150px;
+    padding-top: 10px;
+    font-weight: 500;
+}
+.subLeft{
+    display: flex;   
+}
+.card{
+    display: flex;
+  border-bottom: 1px solid rgba(128, 128, 128,.3);
+  padding: 10px;
+  gap: 10px;
+width: 100%;
+
+}
+.card .left{
+    width: 200px;
+}
+.card .left img{
+    width: 100%;
+}
+.card p{
+    margin: 0;
+}
+.card .right{
+    text-align: start;
+    line-height: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.right .details{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.right .details>p:first-child{
+    font-weight: 500;
+}
+.right .measures{
+    display: flex;
+    flex-direction: column;
+}
+.right .btns{
+    display: flex;
+   gap: 10px;
+}
+.right .btns a{
+    color: black;
+    text-decoration: underline;
+}

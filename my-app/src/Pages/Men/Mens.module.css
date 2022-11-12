@@ -1,0 +1,75 @@
+.top_heading {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-family: freight-big-pro;
+}
+
+.top_heading_span {
+  font-size: 5rem;
+  line-height: 72px;
+  letter-spacing: 0.3px;
+  font-weight: 100;
+}
+.top_heading_span1 {
+  font-size: 3.2rem;
+  line-height: 72px;
+  letter-spacing: 0.3px;
+  font-weight: 100;
+}
+/* dropdown buttons for filtering and sorting */
+.dropdownbuttons{
+  width: 95vw;
+  height: 50px;
+  /* border: 1px solid black; */
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  position: sticky;
+}
+/* Products and filtering section */
+
+.products_container {
+  /* border: 1px solid black; */
+  margin: auto;
+  max-width: 95vw;
+  height: auto;
+  display: flex;
+  position: relative;
+}
+.filtering_div {
+  width: 25vw;
+  height: auto;
+  position: sticky;
+  top: 0px;
+  height: 300px;
+  /* border: 1px solid blue; */
+  padding: 10px;
+}
+.allproducts_div {
+  width: 75vw;
+  height: auto;
+  padding: 10px;
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .top_heading_span {
+    font-size: 3.5rem;
+    line-height: 68px;
+    letter-spacing: 0.3px;
+    font-weight: 100;
+  }
+  .top_heading_span1 {
+    font-size: 2.2rem;
+    line-height: 68px;
+    letter-spacing: 0.3px;
+    font-weight: 100;
+  }
+}
