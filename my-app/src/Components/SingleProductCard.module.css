@@ -1,9 +1,13 @@
 .single_Product_Container {
   border: 1px solid black;
   /* width: 450px; */
+  transition: transform 0.3s;
   height: auto;
   padding: 10px;
   margin: auto;
+}
+.single_Product_Container:hover{
+  transform: scale(1.02);
 }
 .prod_image {
   width: 100%;
@@ -37,7 +41,13 @@
     gap: 5px;
 }
 .color_div1 {
-  border: 1px solid red;
+  background-color: red;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.color_div2 {
+  background-color: gray;
   width: 25px;
   height: 25px;
   border-radius: 50%;
