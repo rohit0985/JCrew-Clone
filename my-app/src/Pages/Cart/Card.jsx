@@ -1,7 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import { addCart, deleteCart, updateCart } from "../../Redux/CartReducer/action";
 import styles from "./Card.module.css";
+import { getCart } from "../../Redux/CartReducer/action";
 
-
+import { useDispatch, useSelector } from "react-redux";
 
 
 
@@ -11,18 +13,44 @@ import styles from "./Card.module.css";
 
 
 const Card = ({prod}) => {
-
   const [quantity, setQuantity] = useState(1)
+
+  const dispatch = useDispatch()
+
+  const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
+
+// console.log(cartData)
+
+
+
 
   function decreaseQnty(el){
     setQuantity(quantity-1)
-   
+
   }
 
-  function increaseQnty(el){
+
+  const increaseQnty = (el,q) =>{
     setQuantity(quantity+1)
+
+   
+
+ let payload = {"cart" : []}
+    dispatch(updateCart(`http://localhost:8080/users/1`,payload))
+
+  }
+
+
+
+
+  const deleteFromCart = (id) =>{
+    dispatch(deleteCart(`http://localhost:8080/users/1`))
     
   }
+
+  useEffect(()=>{
+    dispatch(getCart(`http://localhost:8080/users/1`))
+  },[quantity])
 
 
   return (
@@ -43,11 +71,11 @@ const Card = ({prod}) => {
                 <p>Item 65</p>
               </div>
               <div className={styles.measures}>
-                <p>Color: {prod.colors[0].colorName}</p>
-                <p>Size: {prod.colors[0].availableSize[0]}</p>
+                <p>Color: {prod.colors[0]?.colorName}</p>
+                <p>Size: {prod.colors[0]?.availableSize[0]}</p>
               </div>
               <div className={styles.btns}>
-                <a href="#">Remove</a>
+                <a onClick={()=>deleteFromCart(prod.id)} href="#">Remove</a>
                 <a href="#">Save for Later</a>
                 <a href="#">Edit</a>
               </div>
@@ -55,9 +83,9 @@ const Card = ({prod}) => {
           </div>
         <div className={styles.quantity}>
          <div className={styles.btn}>
-         <button disabled={quantity==1} onClick={()=>decreaseQnty(prod)} >-</button>
+         <button disabled={quantity==1} onClick={()=>decreaseQnty(prod, prod.cartQuantity+1)}>-</button>
          <button>{quantity}</button>
-         <button disabled={quantity==9} onClick={()=>increaseQnty(prod)}  >+</button>
+         <button disabled={quantity==9} onClick={()=>increaseQnty(prod)} >+</button>
          </div>
         </div>
       </div>

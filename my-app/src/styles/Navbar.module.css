@@ -18,6 +18,7 @@ h4 {
     display: flex;
     align-items: center;
     gap: 55px;
+    
 }
 .nav_logo svg {
     height: 23.89px;

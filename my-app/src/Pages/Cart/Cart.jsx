@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import Card from './Card'
 import styles from "./Cart.module.css"
 import WishCard from './WishCard'
+import {useDispatch, useSelector} from 'react-redux'
+import { getCart } from '../../Redux/CartReducer/action'
 
 let cartList = [{
+  "id":1,
   "name": "Ludlow Classic-fit double-breasted tuxedo jacket in English corduroy",
   "price": "68838.0",
   "brand": "zara",
@@ -40,6 +43,7 @@ let cartList = [{
   ]
 },
 {
+  "id":2,
   "name": "Ludlow Classic-fit double-breasted tuxedo jacket in English corduroy",
   "price": "68838.0",
   "brand": "zara",
@@ -149,6 +153,20 @@ let shopLaterList = [{
 }]
 
 const Cart = () => {
+
+const dispatch = useDispatch()
+const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
+
+console.log(cartData)
+
+
+useEffect(()=>{
+  dispatch(getCart(`http://localhost:8080/users/1`))
+},[])
+
+
+
+
   return (
     <div className={styles.wrapper}>
 
