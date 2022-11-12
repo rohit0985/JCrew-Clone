@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import { login } from "../Redux/AuthReducer/action";
+import { signIn } from "../Redux/AuthReducer/action";
 import {
   Modal,
   ModalOverlay,
@@ -26,7 +26,7 @@ import {
 } from "@chakra-ui/react";
 
 const Signin = () => {
-  const isLoading = useSelector((state) => state.AuthReducer.isLoading);
+  //const isLoading = useSelector((state) => state.AuthReducer.isLoading);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -38,7 +38,7 @@ const Signin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email && password) {
-      dispatch(login({ email, password })).then((res) => {
+      dispatch(signIn({ email, password })).then((res) => {
         navigate(comingFrom, { replace: true });
       });
     }
@@ -77,12 +77,18 @@ const Signin = () => {
                 <Input
                   focusBorderColor="black"
                   borderRadius="0px"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email Address*"
                 />{" "}
                 <InputGroup size="md">
                   <Input
                     pr="4.5rem"
                     borderRadius="0px"
+                    //type = "password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     focusBorderColor="black"
                     type={show ? "text" : "password"}
                     placeholder="Password*"
