@@ -6,91 +6,48 @@ import { AiFillFacebook } from "react-icons/ai";
 import { SlSocialTumblr } from "react-icons/sl";
 import { AiFillStar } from "react-icons/ai";
 import SimilarCard from "./SimilarCard";
-import CheckOut from "../CheckOut/CheckOut";
-
-import Cartdropdown from "../../Components/Cartdropdown/Cartdropdown";
-import Cart from "../Cart/Cart";
 
 
 
 
 
-const product = {
-  id: 1,
-  name: "Ludlow Classic-fit double-breasted tuxedo jacket in English corduroy",
-  price: "68838.0",
-  brand: "zara",
-  category: "pant",
-  belongsTo: "men",
-  productDetails: {
-    desc: "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you frost-free on the chilliest days. Built to endure everything from flurries to blizzards with eco-friendly, high-performance materials, our warmest layers are designed to look sharp in all conditions, whether you're hiking a mountain or trekking closer to home. The Nordic puffer vest is made with a recycled-nylon shell and filled with PrimaLoft Rise, a lightweight insulation made entirely from plastic bottles.",
-    highlightPoints: [
+
+const product =  {
+  "id": 1,
+  "name": "Ludlow Classic-fit double-breasted tuxedo jacket in English corduroy",
+  "price": "68838.0",
+  "brand": "zara",
+  "category": "pant",
+  "belongsTo": "men",
+  "productDetails": {
+    "desc": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you frost-free on the chilliest days. Built to endure everything from flurries to blizzards with eco-friendly, high-performance materials, our warmest layers are designed to look sharp in all conditions, whether you're hiking a mountain or trekking closer to home. The Nordic puffer vest is made with a recycled-nylon shell and filled with PrimaLoft Rise, a lightweight insulation made entirely from plastic bottles.",
+    "highlightPoints": [
       "100% polyamide.",
       "Standing collar.",
       "Snap closure with hidden zip.",
       "Patch pockets with flaps.",
       "Fully lined.",
-      "Machine wash.",
-      "Import.",
       "Online only.",
-      "Item BJ068.",
-    ],
-    reImagined:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor beatae ex deleniti ea pariatur eaque?",
-  },
-  colors: [
+      "Item BJ068."
+    ]
+    },
+  "colors": [
     {
-      colorName: "Varsity Navy",
-      images: [
+      "colorName": "Varsity Navy",
+      "images": [
         "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d5?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d1?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d2?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d3?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d4?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
+        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d5?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160"
       ],
-      availableSize: [
+      "availableSize": [
         "X-Small",
         "Small",
         "Medium",
         "Large",
         "X-Large",
-        "XX-Large",
-      ],
-    },
-    {
-      colorName: "Bright blue",
-      images: [
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d2?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d3?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d4?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d5?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d1?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160",
-      ],
-      availableSize: ["X-Small", "Small", "Medium"],
-    },
-  ],
-  createdBy: {
-    name: "Rohit kumar",
-    email: "rohit@gmail.com",
-  },
-  createdAt: "10-10-2019",
-  lastDate: "15-10-2021",
-  rating: "3",
-  review: [
-    {
-      user: {
-        name: "Sumit kumar",
-        email: "sumit@gmail.com",
-      },
-      rating: "4",
-      comment: "recomented 100 %",
-      imges: [],
-    },
-  ],
+        "XX-Large"
+      ]
+    }
+  ]
 };
 
 const SingleProduct = () => {
@@ -107,10 +64,6 @@ const SingleProduct = () => {
 
   return (
   <div>
-  <CheckOut/>
-  <Cart/>
-<Cartdropdown/>
-
       <div className={styles.mainContainer}>
       <div className={styles.container}>
 
@@ -131,7 +84,7 @@ const SingleProduct = () => {
 
   <div className={styles.ratingReview}>
     <div className="ratingCount">
-      {new Array(Number(product.rating)).fill("").map((_, i) => (<AiFillStar key={i} />))}
+      {new Array(Number(3)).fill("").map((_,i) => (<AiFillStar key={i} />))}
     </div>
 
     <div className="reviewCount">
@@ -146,7 +99,7 @@ const SingleProduct = () => {
 
     <div className={styles.colorContainer}>
       {
-        product && product.colors.map((el, i) => <div className={styles.colorOuter} onMouseOver={() => setColorname(el.colorName)} onClick={() => handleColor(el)}>
+        product && product.colors.map((el, i) => <div key={i} className={styles.colorOuter} onMouseOver={() => setColorname(el.colorName)} onClick={() => handleColor(el)}>
 
           <div className={styles.colorInner}>
             <img src={el.images[el.images.length - 1]} />
@@ -211,7 +164,7 @@ const SingleProduct = () => {
     <p>{product.productDetails.desc}</p>
     <ul>
       {
-        product.productDetails.highlightPoints.map((el, i) => <li>{el}</li>)
+        product.productDetails.highlightPoints.map((el, i) => <li key={i}>{el}</li>)
       }
     </ul>
   </div>
