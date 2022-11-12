@@ -52,7 +52,7 @@
   width: 75vw;
   height: auto;
   padding: 10px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 10px;
