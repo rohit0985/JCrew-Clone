@@ -6,14 +6,17 @@ const initialState = {
   token : "",
   isLoading: false,
   isError: false,
-  products: [],
+  user: [],
+  country : "",
+  
+  //products: [],
 };
 
 const reducer = (state = initialState, action) => {
   const{type,payload} = action;
 
   switch(type){
-    case types.SIGNUP_REQUEST : 
+    case types.SIGNIN_REQUEST : 
     return{
       ...state,
       isLoading : true,

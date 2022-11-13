@@ -42,6 +42,9 @@ const Signin = () => {
         navigate(comingFrom, { replace: true });
       });
     }
+    else{
+      alert("Wrong Email or Password")
+    }
   };
 
   const { isOpen, onOpen, onClose } = useDisclosure();
