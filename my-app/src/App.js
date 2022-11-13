@@ -1,6 +1,6 @@
 import "./App.css";
 
-// import NavBar from "./Components/NavBar";
+import NavBar from "./Components/NavBar";
 // import Footer from "./Components/Footer";
 // import MainRoutes from "./Routes/MainRoutes";
 // import Recomended from "./Components/Recomended";
@@ -25,24 +25,24 @@ import AdminPannelForm from "./Components/Admin Pannel/AdminPannelForm";
 function App() {
   return (
     <div className="App">
-      {/* <NavBar />
-      <MainRoutes /> */}
-      {/* <Footer />
-      <ProductBanner />
+      <NavBar />
+      {/* <MainRoutes />
+      <Footer /> */}
+      {/* <ProductBanner />
       <Recomended />
       <ShopStories />
       <MoreYouNeed /> */}
-      {/* <Checkout /> */}
+      {/* <Checkout />  */}
       {/* <CheckoutCardProduct /> */}
       <AdminPannelForm />
 
       {/* <Navbar />
       <MainRoutes />
-      <Footer /> */}
-      {/* <Men />
+      <Footer /> 
+       <Men />
       <Navbar />
        <MainRoutes/>
-      <Footer/> */}
+      <Footer/>  */}
     </div>
   );
 }
