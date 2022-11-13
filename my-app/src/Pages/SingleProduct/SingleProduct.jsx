@@ -9,10 +9,6 @@ import SimilarCard from "./SimilarCard";
 import { useParams } from "react-router-dom";
 
 
-
-
-
-
 const product =  {
   "id": 1,
   "name": "Ludlow Classic-fit double-breasted tuxedo jacket in English corduroy",
@@ -55,13 +51,18 @@ const SingleProduct = () => {
   const [color, setColor] = useState(product.colors[0]);
   const [colorname, setColorname] = useState(color.colorName);
   const [image, setImage] = useState(color.images[0]);
+
   
   const handleImage = () => { };
+
 
   const handleColor = (el) => {
     setColor(el);
     setImage(el.images[0]);
   };
+
+
+
 
   return (
   <div>

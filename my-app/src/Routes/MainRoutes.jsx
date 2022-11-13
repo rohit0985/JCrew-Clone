@@ -10,7 +10,6 @@ import SingleProduct from "../Pages/SingleProduct/SingleProduct"
 import Cart from "../Pages/Cart/Cart"
 import CheckOut from "../Pages/CheckOut/CheckOut"
 
-
 import { ChakraProvider } from "@chakra-ui/react";
 import PrivateRoute from "../Components/PrivateRoute";
 
