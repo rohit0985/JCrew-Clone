@@ -3,7 +3,7 @@ import styles from "./DropdownFilterButton.module.css";
 import { useState } from "react";
 
 const DropdownFilterButton = ({ name, categoryArr }) => {
-  const [isClose, setIsClose] = useState(false);
+  const [isClose, setIsClose] = useState(true);
 
   return (
     <div className={styles.main_div}>

@@ -7,6 +7,7 @@ import { SlSocialTumblr } from "react-icons/sl";
 import { AiFillStar } from "react-icons/ai";
 import SimilarCard from "./SimilarCard";
 
+
 import { addCdata, getCdata } from "../../Redux/CartReducer/action"
 import { getData } from "../../Redux/AppReducer/action";
 import { useDispatch, useSelector } from 'react-redux'
@@ -15,48 +16,10 @@ import { useSearchParams } from "react-router-dom";
 
 
 
-
-// const product =  {
-//   "id": 1,
-//   "name": "Ludlow Classic-fit double-breasted tuxedo jacket in English corduroy",
-//   "price": "68838.0",
-//   "brand": "zara",
-//   "category": "pant",
-//   "belongsTo": "men",
-//   "productDetails": {
-//     "desc": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you frost-free on the chilliest days. Built to endure everything from flurries to blizzards with eco-friendly, high-performance materials, our warmest layers are designed to look sharp in all conditions, whether you're hiking a mountain or trekking closer to home. The Nordic puffer vest is made with a recycled-nylon shell and filled with PrimaLoft Rise, a lightweight insulation made entirely from plastic bottles.",
-//     "highlightPoints": [
-//       "100% polyamide.",
-//       "Standing collar.",
-//       "Snap closure with hidden zip.",
-//       "Patch pockets with flaps.",
-//       "Fully lined.",
-//       "Online only.",
-//       "Item BJ068."
-//     ]
-//     },
-//   "colors": [
-//     {
-//       "colorName": "Varsity Navy",
-//       "images": [
-//         "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
-//         "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d5?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160"
-//       ],
-//       "availableSize": [
-//         "X-Small",
-//         "Small",
-//         "Medium",
-//         "Large",
-//         "X-Large",
-//         "XX-Large"
-//       ]
-//     }
-//   ]
-// };
-
 const SingleProduct = () => {
   const [color, setColor] = useState("");
   const [colorname, setColorname] = useState(color.colorName);
+
   const [image, setImage] = useState();
   const [quantity, setQuantity ] = useState(1)
   const [size, setSize] = useState('')
@@ -79,49 +42,18 @@ const SingleProduct = () => {
 
  
 
-  let prodc = {
-    "id": 2,
-    "name": "484 Slim-fit tech pant",
-    "offer": "(50% Off)",
-    "is-lowercase": "",
-    "price": "13,230.00",
-    "brand": "Zara",
-    "category": "Pants",
-    "belongsTo": "men",
-    "productDetails": {
-        "desc": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you frost-free on the chilliest days. Built to endure everything from flurries to blizzards with eco-friendly, high-performance materials, our warmest layers are designed to look sharp in all conditions, whether you're hiking a mountain or trekking closer to home. The Nordic puffer vest is made with a recycled-nylon shell and filled with PrimaLoft Rise, a lightweight insulation made entirely from plastic bottles.",
-        "highlightPoints": [
-            "100% polyamide.",
-            "Standing collar.",
-            "Snap closure with hidden zip.",
-            "Patch pockets with flaps.",
-            "Fully lined.",
-            "Online only.",
-            "Item BJ068."
-        ]
-    },
-    "Product_colors": [
-        {
-            "colorName": "Gray",
-            "images": [
-                "https://www.jcrew.com/s7-img-facade/AW005_NA0965?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
-                "https://www.jcrew.com/s7-img-facade/AW005_NA0965?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540"
-            ],
-            "availableSize": [
-                "X-Small",
-                "Small",
-                "Medium",
-                "Large",
-                "X-Large",
-                "XX-Large"
-            ]
-        }
-    ]
-}
+
 
 const handleImage = (el)=>{
   setImage(el)
 }
+
+  const [image, setImage] = useState(color.images[0]);
+
+  
+  const handleImage = () => { };
+
+
   const handleColor = (el) => {
     setColor(el);
     setImage(el.images[0]);
@@ -150,6 +82,9 @@ const addToCart = () =>{
   dispatch(addCdata(`http://localhost:8080/cart`,payload))
 
 }
+
+
+
 
   return (
 
