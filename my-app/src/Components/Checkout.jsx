@@ -4,7 +4,7 @@ import CheckoutCardProduct from "./CheckoutCardProduct";
 import { useLocation } from "react-router-dom";
 import CheckOut from "../Pages/CheckOut/CheckOut";
 import {useDispatch, useSelector} from 'react-redux'
-import { getCdata } from "../Redux/CartReducer/action";
+import { deleteAllCdata, deleteCdata, getCdata } from "../Redux/CartReducer/action";
 
 const Checkout = () => {
 const [pay, setPay] = useState(false)
@@ -36,18 +36,19 @@ setAdds((prev)=> {
 })
 }
 
-const handleSubmit = (e)=>{
-  e.preventDefault()
-  console.log(adds)
-}
-
-
-
-
-
 
 let sum = cartData && cartData.reduce((acc, el)=> (acc + Number(el.price) * Number(el.cartQuantity)),0).toFixed(2)
 let delivery = (Number(delExt) * Number(sum)).toFixed(2)
+let bill = Number(sum) + Number(delivery)
+console.log(bill)
+
+
+const thanksNote = ()=>{
+  let newArr = cartData.map((el,i)=> el.id)
+  newArr.forEach((el,i)=> dispatch(deleteCdata(`http://localhost:8080/cart/${el}`)))
+  dispatch(getCdata(`http://localhost:8080/cart`))
+}
+
 
 const gotoPay = () =>{
   setPay(true)
@@ -97,7 +98,7 @@ useEffect(()=>{
            }
           </div>
           {
-            pay ? <CheckOut/> : 
+            pay ? <CheckOut bill = {bill} name={adds.firstname} thanksNote={thanksNote}/> : 
             <div className="address-form">
             <h1>Delivery Address</h1>
             <div className="inputboxes">
@@ -159,7 +160,7 @@ useEffect(()=>{
           </div>
         </div>
         <div className="rightcontainer">
-          <CheckoutCardProduct delExt={delExt} />
+          <CheckoutCardProduct delExt={delExt}  />
         </div>
       </div>
     </div>
