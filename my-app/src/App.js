@@ -2,7 +2,7 @@ import "./App.css";
 
 // import NavBar from "./Components/NavBar";
 // import Footer from "./Components/Footer";
-// import MainRoutes from "./Routes/MainRoutes";
+import MainRoutes from "./Routes/MainRoutes";
 // import Recomended from "./Components/Recomended";
 // import ShopStories from "./Components/ShopStories";
 // import MoreYouNeed from "./Components/MoreYouNeed";
@@ -24,11 +24,10 @@ function App() {
       <MoreYouNeed /> */}
       {/* <Checkout /> */}
       {/* <CheckoutCardProduct /> */}
-      {/* <AdminPannelForm /> */}
 
-      {/* <Navbar />
+      {/* <Navbar /> */}
       <MainRoutes />
-      <Footer /> */}
+      {/* <Footer /> */}
       {/* <Men />
       <Navbar />
        <MainRoutes/>

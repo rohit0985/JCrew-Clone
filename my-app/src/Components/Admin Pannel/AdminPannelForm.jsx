@@ -28,18 +28,16 @@ const AdminPannelForm = () => {
 
   const handlePost = (event) => {
     const { name, value } = event.target;
-    if (name === "highlightPoints") {
-      // let x = productAdd.productDetails.highlightPoints;
-      // x.push(value);
-      // console.log(x);
-      setProductAdd({
-        ...productAdd,
-        [productAdd.productDetails.highlightPoints]: value,
-      });
-    } else {
-      setProductAdd({ ...productAdd, [name]: value });
-    }
+    setTimeout(() => {
+      if (name === "highlightPoints") {
+        let x = productAdd.productDetails.highlightPoints;
+        x.push(value);
+        setProductAdd({ ...productAdd, [name]: x });
+      }
+    }, 2000);
+    setProductAdd({ ...productAdd, [name]: value });
   };
+
   const handleAdd = () => {
     console.log(productAdd);
   };
