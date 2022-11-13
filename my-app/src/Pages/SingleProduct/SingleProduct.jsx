@@ -13,10 +13,15 @@ import { getData } from "../../Redux/AppReducer/action";
 import { useDispatch, useSelector } from 'react-redux'
 import { InputGroup } from "@chakra-ui/react";
 import { useSearchParams } from "react-router-dom";
+import {useParams} from "react-router-dom"
 
 
 
 const SingleProduct = () => {
+
+  const {id} = useParams()
+console.log(id)
+
   const [color, setColor] = useState("");
   const [colorname, setColorname] = useState(color.colorName);
 
@@ -35,7 +40,7 @@ const SingleProduct = () => {
 
   useEffect(()=>{
     // dispatch(getCdata(`http://localhost:8080/cart`))
-   dispatch(getData(`http://localhost:8080/products/7`))
+   dispatch(getData(`http://localhost:8080/products/${id}`))
    
   },[])
 
