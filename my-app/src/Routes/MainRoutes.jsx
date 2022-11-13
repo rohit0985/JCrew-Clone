@@ -38,7 +38,7 @@ const MainRoutes = () => {
       ></Route>
       <Route path="/men" element={<Men />}></Route>
       <Route path="/women" element={<Women />}></Route>
-      <Route path="/single" element={<SingleProduct />}></Route>
+      <Route path="/single/:id" element={<SingleProduct/>}></Route>
       <Route
         path="/cart"
         element={

@@ -6,6 +6,7 @@ import { AiFillFacebook } from "react-icons/ai";
 import { SlSocialTumblr } from "react-icons/sl";
 import { AiFillStar } from "react-icons/ai";
 import SimilarCard from "./SimilarCard";
+import { useParams } from "react-router-dom";
 
 
 
@@ -54,7 +55,7 @@ const SingleProduct = () => {
   const [color, setColor] = useState(product.colors[0]);
   const [colorname, setColorname] = useState(color.colorName);
   const [image, setImage] = useState(color.images[0]);
-
+  
   const handleImage = () => { };
 
   const handleColor = (el) => {
