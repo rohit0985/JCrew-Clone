@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
+import { signIn } from "../Redux/AuthReducer/action";
 import {
   Modal,
   ModalOverlay,
@@ -25,7 +26,7 @@ import {
 } from "@chakra-ui/react";
 
 const Signin = () => {
-  const isLoading = useSelector((state) => state.AuthReducer.isLoading);
+  //const isLoading = useSelector((state) => state.AuthReducer.isLoading);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -36,9 +37,15 @@ const Signin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (email && password) {
+      dispatch(signIn({ email, password })).then((res) => {
+        navigate(comingFrom, { replace: true });
+      });
+    }
+    else{
+      alert("Wrong Email or Password")
+    }
   };
-
-
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [size, setSize] = React.useState("md");
@@ -67,63 +74,72 @@ const Signin = () => {
         <ModalContent>
           <ModalHeader style={{ textAlign: "center" }}>Sign In</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
-            <Stack spacing={3}>
-              <Input
-                focusBorderColor="black"
-                borderRadius="0px"
-                placeholder="Email Address*"
-              />{" "}
-              <InputGroup size="md">
+          <form onSubmit={handleSubmit}>
+            <ModalBody>
+              <Stack spacing={3}>
                 <Input
-                  pr="4.5rem"
-                  borderRadius="0px"
                   focusBorderColor="black"
-                  type={show ? "text" : "password"}
-                  placeholder="Password*"
-                />
-                <InputRightElement width="4.5rem">
-                  <Button h="1.75rem" size="sm" onClick={handleClick}>
-                    {show ? "Hide" : "Show"}
-                  </Button>
-                </InputRightElement>
-              </InputGroup>
-              <Flex>
-                <Checkbox defaultChecked>Remember me</Checkbox>
-                <Spacer />
-                <Link href="https://chakra-ui.com" color="blue">
-                  Forgot Password?
-                </Link>
-              </Flex>
-              <Button
-                color="white"
-                size="md"
-                height="40px"
-                width="338px"
-                bgColor="black"
-                borderRadius="0px"
-              >
-                SIGN IN NOW
-              </Button>
-              <Box color="#767676" noOfLines={2} fontSize="sm">
-                This site is protected by reCAPTCHA and the Google{" "}
-                <Link textDecoration="underline">Privacy Policy</Link> and{" "}
-                <Link textDecoration="underline">Terms of Service</Link> apply.
-              </Box>
-            </Stack>
-            <Stack mt="3rem">
-              {/* <hr/'> */}
-              <hr />
-            </Stack>
-            <Stack style={{ textAlign: "center" }} mt="1.5rem" mb="5rem">
-              <Heading as="h5" size="sm">
-                Don’t have an account?{" "}
-                <Link href="/signup" color="blue">
-                  Sign up now
-                </Link>
-              </Heading>
-            </Stack>
-          </ModalBody>
+                  borderRadius="0px"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email Address*"
+                />{" "}
+                <InputGroup size="md">
+                  <Input
+                    pr="4.5rem"
+                    borderRadius="0px"
+                    //type = "password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    focusBorderColor="black"
+                    type={show ? "text" : "password"}
+                    placeholder="Password*"
+                  />
+                  <InputRightElement width="4.5rem">
+                    <Button h="1.75rem" size="sm" onClick={handleClick}>
+                      {show ? "Hide" : "Show"}
+                    </Button>
+                  </InputRightElement>
+                </InputGroup>
+                <Flex>
+                  <Checkbox defaultChecked>Remember me</Checkbox>
+                  <Spacer />
+                  <Link href="https://chakra-ui.com" color="blue">
+                    Forgot Password?
+                  </Link>
+                </Flex>
+                <Button
+                  color="white"
+                  size="md"
+                  height="40px"
+                  width="338px"
+                  bgColor="black"
+                  borderRadius="0px"
+                >
+                  SIGN IN NOW
+                </Button>
+                <Box color="#767676" noOfLines={2} fontSize="sm">
+                  This site is protected by reCAPTCHA and the Google{" "}
+                  <Link textDecoration="underline">Privacy Policy</Link> and{" "}
+                  <Link textDecoration="underline">Terms of Service</Link>{" "}
+                  apply.
+                </Box>
+              </Stack>
+              <Stack mt="3rem">
+                {/* <hr/'> */}
+                <hr />
+              </Stack>
+              <Stack style={{ textAlign: "center" }} mt="1.5rem" mb="5rem">
+                <Heading as="h5" size="sm">
+                  Don’t have an account?{" "}
+                  <Link href="/signup" color="blue">
+                    Sign up now
+                  </Link>
+                </Heading>
+              </Stack>
+            </ModalBody>
+          </form>
           <ModalFooter>
             {/* <Button onClick={onClose}>Close</Button> */}
           </ModalFooter>

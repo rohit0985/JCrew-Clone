@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Modal,
   ModalOverlay,
@@ -23,9 +23,18 @@ import {
 } from "@chakra-ui/react";
 
 const Signup = () => {
+
+  const [email,setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [country, setCountry] = useState("");
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [size, setSize] = React.useState("md");
   const [show, setShow] = React.useState(false);
+
+  const handleSubmit = (e) => {
+    console.log(email,password, country)
+  }
 
   const handleSizeClick = (newSize) => {
     setSize(newSize);
@@ -54,13 +63,13 @@ const Signup = () => {
             <Stack spacing={3}>
               <Input
                 focusBorderColor="black"
-                borderRadius="0px"
+                borderRadius="0px" value = {email} onChange = {(e) => setEmail(e.target.value)}
                 placeholder="Email Address*"
               />{" "}
               <InputGroup size="md">
                 <Input
                   pr="4.5rem"
-                  borderRadius="0px"
+                  borderRadius="0px" value = {password} onChange = {(e) => setPassword(e.target.value)}
                   focusBorderColor="black"
                   type={show ? "text" : "password"}
                   placeholder="Password*"
@@ -72,7 +81,7 @@ const Signup = () => {
                   </Button>
                 </InputRightElement>
               </InputGroup>
-              <Select placeholder="Country*" borderRadius="0px">
+              <Select placeholder="Country*" borderRadius="0px"  value = {country} onChange = {(e) => setCountry(e.target.value)}>
                 <option value="option1">Afghanistan</option>
                 <option value="option2">Australia</option>
                 <option value="option3">Austria</option>
@@ -120,6 +129,7 @@ const Signup = () => {
                 width="338px"
                 bgColor="black"
                 borderRadius="0px"
+                onClick = {handleSubmit}
               >
                 CREATE AN ACCOUNT
               </Button>
