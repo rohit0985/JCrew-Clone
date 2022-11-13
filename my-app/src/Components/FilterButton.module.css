@@ -1,0 +1,9 @@
+.hide{
+    display: none;
+}
+.show {
+    display: block;
+    border: 1px solid gray;
+    background-color: lightgrey;
+    width: 160px;
+}
