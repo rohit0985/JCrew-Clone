@@ -10,6 +10,7 @@ import SingleProduct from "../Pages/SingleProduct/SingleProduct"
 import Cart from "../Pages/Cart/Cart"
 import CheckoutForm from "../Pages/CheckoutForm/CheckoutForm"
 import CheckOut from "../Pages/CheckOut/CheckOut"
+import ThankYouPage from "../Pages/ThankYouPage"
 
 import { ChakraProvider } from "@chakra-ui/react";
 import PrivateRoute from "../Components/PrivateRoute";
@@ -39,6 +40,7 @@ const MainRoutes = () => {
       <Route path="/men" element={<ChakraProvider><Men /></ChakraProvider>}></Route>
       <Route path="/women" element={<ChakraProvider><Women /></ChakraProvider>}></Route>
       <Route path="/single/:id" element={<SingleProduct/>}></Route>
+      <Route path="/thankyou" element={<ThankYouPage/>}></Route>
       <Route
         path="/cart"
         element={
