@@ -11,6 +11,7 @@
 }
 .prod_image {
   width: 100%;
+  z-index: -999;
 }
 .time_div {
   height: 18px;

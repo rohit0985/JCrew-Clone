@@ -1,12 +1,17 @@
+.have_a_que{
+  text-align: center;
+  font-size: 13px;
+  margin: 30px 0px;
+}
 .top_heading {
   height: 150px;
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
   color: black;
   font-family: freight-big-pro;
 }
-
 .top_heading_span {
   font-size: 5rem;
   line-height: 72px;
@@ -24,10 +29,28 @@
   width: 95vw;
   height: 50px;
   /* border: 1px solid black; */
+  display: flex;
   margin: auto;
   margin-top: 5px;
   margin-bottom: 5px;
   position: sticky;
+  margin-top: 20px;
+}
+.filter_button{
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.filter_button1{
+  width: 380px;
+  height: 35px;
+  border: 1px solid black;
+}
+.filter_button2{
+  width: 100px;
+  height: 35px;
+  margin-left: 80px;
 }
 /* Products and filtering section */
 

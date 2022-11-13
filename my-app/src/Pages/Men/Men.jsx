@@ -1,16 +1,19 @@
+import { ChevronDownIcon, TriangleDownIcon, TriangleUpIcon } from "@chakra-ui/icons";
+import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import DropdownFilterButton from "../../Components/DropDownfilter/DropdownFilterButton";
+import FilterButton from "../../Components/FilterButton";
 import SingleProductCard from "../../Components/SingleProductCard";
 import { getData } from "../../Redux/AppReducer/action";
 import styles from "./Mens.module.css";
 
 const Men = () => {
-
+  const [filterOpen, setFilterOpen] = useState(false);
   const dispatch = useDispatch();
   const data = useSelector((reduxStore) => reduxStore.AppReducer.products);
 
-  data && data.map((el) => console.log(el));
+  // data && data.map((el) => console.log(el));
 
   let men = data && data.filter((el) => el.belongsTo === "men");
 
@@ -37,6 +40,16 @@ const Men = () => {
   ];
   return (
     <div>
+      <hr />
+      <div className={styles.have_a_que}>
+        Have a question? We can help.{" "}
+        <img
+          style={{ width: "10px" }}
+          src="https://www.jcrew.com/s7-img-facade/TR"
+          alt=""
+        />
+      </div>
+      <hr />
       <div className={styles.top_heading}>
         <span className={styles.top_heading_span}>
           <span className={styles.top_heading_span1}>The Holiday</span>
@@ -45,7 +58,18 @@ const Men = () => {
         </span>
       </div>
 
-      <div className={styles.dropdownbuttons}> buttons here </div>
+      <div className={styles.dropdownbuttons}>
+        <div
+          onClick={() => setFilterOpen(!filterOpen)}
+          className={`${styles.filter_button} ${styles.filter_button1}`}
+        >
+          <h5>Show Filters</h5>
+          {filterOpen ? <TriangleDownIcon /> : <TriangleUpIcon />}
+        </div>
+        <div className={`${styles.filter_button} ${styles.filter_button2}`}>
+          <FilterButton/>
+        </div>
+      </div>
 
       <div className={styles.products_container}>
         <div className={styles.filtering_div}>
@@ -61,9 +85,10 @@ const Men = () => {
           <hr />
         </div>
         <div className={styles.allproducts_div}>
-          {/* {mensData.map((data) => (
-            <SingleProductCard key={data.name} data={data} />
-          ))} */}
+          {men &&
+            men.map((data) => (
+              <SingleProductCard key={data.name} data={data} />
+            ))}
         </div>
       </div>
     </div>
