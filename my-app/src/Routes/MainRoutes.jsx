@@ -1,5 +1,5 @@
 
-import { Routes, Route} from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import React from 'react'
 import HomePage from "../Components/HomePage"
 import Signup from "../Pages/Signup"
@@ -39,17 +39,17 @@ const MainRoutes = () => {
       <Route
         path="/cart"
         element={
-          <PrivateRoute>
+          // <PrivateRoute>
             <Cart />
-          </PrivateRoute>
+          // </PrivateRoute>
         }
       ></Route>
       <Route
         path="/checkout"
         element={
-          <PrivateRoute>
+          // <PrivateRoute>
             <CheckOut />
-          </PrivateRoute>
+          // </PrivateRoute>
         }
       ></Route>
     </Routes>
