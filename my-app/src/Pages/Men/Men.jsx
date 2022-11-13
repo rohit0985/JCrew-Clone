@@ -2,6 +2,7 @@ import { ChevronDownIcon, TriangleDownIcon, TriangleUpIcon } from "@chakra-ui/ic
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams, useSearchParams } from "react-router-dom";
 import DropdownFilterButton from "../../Components/DropDownfilter/DropdownFilterButton";
 import FilterButton from "../../Components/FilterButton";
 import SingleProductCard from "../../Components/SingleProductCard";
@@ -9,6 +10,7 @@ import { getData } from "../../Redux/AppReducer/action";
 import styles from "./Mens.module.css";
 
 const Men = () => {
+ 
   const [filterOpen, setFilterOpen] = useState(false);
   const dispatch = useDispatch();
   const data = useSelector((reduxStore) => reduxStore.AppReducer.products);

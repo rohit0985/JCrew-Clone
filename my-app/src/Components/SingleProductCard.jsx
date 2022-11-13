@@ -6,7 +6,7 @@ const SingleProductCard = ({ data }) => {
   // console.log('data: ', data?.Product_colors[0]?.images[0]);
   return (
     <div>
-      <Link >
+      <Link to={`/single/${data.id}`}>
         <div className={styles.single_Product_Container}>
           <img
             className={styles.prod_image}

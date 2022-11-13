@@ -1,7 +1,38 @@
 import React from 'react'
 import styles from "./WishCard.module.css"
+import { useLocation} from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux";
+import { updateCdata, deleteCdata, getCdata, addCdata } from "../../Redux/CartReducer/action"
+import { addLSdata, getLSdata,deleteLSdata} from "../../Redux/ShopLaterReducer/action"
+import { useEffect } from 'react';
+
+
+
 
 const WishCard = ({prod}) => {
+
+const location = useLocation()
+
+  const dispatch = useDispatch()
+  const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
+  
+  const deleteFromShopLater = (id) =>{
+    dispatch(deleteLSdata(`http://localhost:8080/shopLater/${id}`))
+    dispatch(getLSdata(`http://localhost:8080/shopLater`))
+  }
+
+  const deleteAndSave = (prod, id) =>{
+    dispatch(deleteLSdata(`http://localhost:8080/shopLater/${id}`))
+    dispatch(addCdata(`http://localhost:8080/shopLater`, prod))
+    dispatch(getCdata(`http://localhost:8080/cart`))
+    dispatch(getLSdata(`http://localhost:8080/shopLater`))
+  }
+
+  useEffect(()=>{
+    dispatch(getCdata(`http://localhost:8080/cart`))
+    dispatch(getLSdata(`http://localhost:8080/shopLater`))
+  },[location])
+
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.leftContainer}>
@@ -24,9 +55,9 @@ const WishCard = ({prod}) => {
                 <p>Size: {prod.colors[0].availableSize[0]}</p>
               </div>
               <div className={styles.btns}>
-                <a href="#">Remove</a>
-                <a href="#">Edit</a>
-                <button className={styles.tobag} href="#">ADD TO BAG</button>
+                <p onClick={()=>deleteFromShopLater(prod.id)}>Remove</p>
+                <p >Edit</p>
+                <button onClick={()=>deleteAndSave(prod,prod.id)} className={styles.tobag}>ADD TO BAG</button>
               </div>
             </div>
           </div>

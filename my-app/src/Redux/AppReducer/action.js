@@ -12,15 +12,3 @@ export const getData = (dispatch) => {
       return dispatch({ type: types.GET_PRODUCTS_FAILURE, payload: err });
     });
 };
-
-export const postData = (params) => (dispatch) => {
-  dispatch({ type: types.POST_PRODUCTS_REQUEST });
-  return axios
-    .post(`http://localhost:8080/products/`, params)
-    .then((res) => {
-      return dispatch({ type: types.POST_PRODUCTS_SUCCESS, payload: res.data });
-    })
-    .catch((err) => {
-      return dispatch({ type: types.POST_PRODUCTS_FAILURE, payload: err });
-    });
-};

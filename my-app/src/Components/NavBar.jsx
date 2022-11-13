@@ -3,6 +3,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import styles from "../styles/Navbar.module.css";
 import { HeartIcon, MainLogo } from "./SvgIcons";
 import { User } from "./Icons";
+import Signin from "../Pages/Signin";
+import Signup from "../Pages/Signup";
 
 export default function Navbar() {
     
@@ -64,8 +66,11 @@ export default function Navbar() {
                         style={{ height: 36, width: 180 }}  ></input>
                   </Link>
                 </div>
-                <div>
-                   <h4>sign in</h4>
+                <div className={styles.nav_logIN}>
+                   <Signin />
+                </div>
+                <div className={styles.nav_logIN}>
+                   <Signup />
                 </div>
                 <div className={styles.nav_icons}>
                     <HeartIcon />

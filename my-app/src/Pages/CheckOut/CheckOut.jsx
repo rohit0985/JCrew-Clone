@@ -1,10 +1,14 @@
 import React from 'react'
 import styles from './CheckOut.module.css'
 import styled from "styled-components"
+import CheckoutCardProduct from "../../Components/CheckoutCardProduct"
+
 
 const CheckOut = () => {
   return (
+    <div className={styles.main}>
     <div className={styles.container}>
+    
      
     <div className={styles.deliveredAdd}></div>
 
@@ -51,6 +55,10 @@ const CheckOut = () => {
 
 
 
+    </div>
+   <div >
+   <CheckoutCardProduct/>
+   </div>
     </div>
   )
 }
