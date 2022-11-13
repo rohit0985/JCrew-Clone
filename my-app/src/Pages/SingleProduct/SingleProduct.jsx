@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Children, useEffect, useState } from "react";
 import styles from "./SingleProduct.module.css"
 import NoReview from "./NoReview";
 import { BsSuitHeart, BsPinterest, BsTwitter } from "react-icons/bs";
@@ -61,32 +61,23 @@ const SingleProduct = () => {
   const [quantity, setQuantity ] = useState(1)
   const [size, setSize] = useState('')
   const dispatch = useDispatch()
+  
   const prod = useSelector((state)=> state.AppReducer.products)
   const loading = useSelector((state)=> state.AppReducer.isLoading)
   const error = useSelector((state)=> state.AppReducer.isError)
- console.log(prod)
+
+
 
 
 
   useEffect(()=>{
     // dispatch(getCdata(`http://localhost:8080/cart`))
-   dispatch(getData(`http://localhost:8080/products/5`))
+   dispatch(getData(`http://localhost:8080/products/7`))
    
   },[])
 
 
-  // let payload = {
-  //   "id": 100,
-  //   "name": prod.name,
-  //   "price": prod.price,
-  //   "brand": prod.brand,
-  //   "category": prod.category,
-  //   "belongsTo": prod.belongsTo,
-  //   "cartQuantity": quantity,
-  //   "colors": prod.colors[0].colorName,
-  //   "image": prod.colors[0].images[0],
-  //   "size": size
-  // }
+ 
 
   let prodc = {
     "id": 2,
@@ -138,32 +129,49 @@ const handleImage = (el)=>{
   const handleSize =(el="Medium")=>{
     setSize(el)
   }
+
+
+
+
 const addToCart = () =>{
-//   console.log(payload ,"from add to cart button")
-// if(payload){
-//   dispatch(addCdata(`http://localhost:8080/cart`,payload))
-// }
+  let payload = {
+    "id": prod.id,
+    "name": prod.name,
+    "price": Number(prod.price.replace(",","")),
+    "brand": prod.brand,
+    "category": prod.category,
+    "belongsTo": prod.belongsTo,
+    "cartQuantity": Number(quantity),
+    "colors": color.colorName,
+    "image": color.images[0],
+    "size": size
+  }
+
+  dispatch(addCdata(`http://localhost:8080/cart`,payload))
+
 }
 
   return (
-    <div>
+
     <div className={styles.mainContainer}>
-    <div className={styles.container}>
+    {
+      prod && 
+      <div className={styles.container}>
 
 <div className={styles.left}>
-{/* {prod && prod?.Product_colors[0]?.images?.map((el, i) => (<img src={el} alt="#" key={i} onMouseOver={() =>handleImage(el)} />))} */}
+{prod && prod?.Product_colors[0]?.images?.map((el, i) => (<img src={el} alt="#" key={i} onMouseOver={() =>handleImage(el)} />))}
 </div>
 
 
 <div className={styles.mid}>
-{/* <img src={image? image : prod?.Product_colors[0]?.images[0]} alt="#" /> */}
+<img src={image? image : prod?.Product_colors[0]?.images[0]} alt="#" />
 <BsSuitHeart size={25} className={styles.heart}/>
 </div>
 
 <div className={styles.right}>
 
-{/* <p className={styles.category}>{prod?.category}</p> */}
-{/* <p className={styles.name}>{prod?.name}</p> */}
+<p className={styles.category}>{prod?.category}</p>
+<p className={styles.name}>{prod?.name}</p>
 
 <div className={styles.ratingReview}>
   <div className="ratingCount">
@@ -175,20 +183,20 @@ const addToCart = () =>{
   </div>
 </div>
 
-{/* <p className={styles.price}>INR {prod?.price}</p> */}
+<p className={styles.price}>INR {prod?.price}</p>
 
 <div className={styles.colors}>
-  {/* <p className={styles.color}><span>Color:</span> {color ? color.colorName : prod?.Product_colors[0]?.colorName}</p> */}
+  <p className={styles.color}><span>Color:</span> {color ? color.colorName : prod?.Product_colors[0]?.colorName}</p>
 
   <div className={styles.colorContainer}>
     {
-      {/* prod.Product_colors && prod?.Product_colors?.map((el, i) => <div key={i} className={styles.colorOuter} onMouseOver={() => setColorname(el.colorName)} onClick={() => handleColor(el)}>
+       prod.Product_colors && prod?.Product_colors?.map((el, i) => <div key={i} className={styles.colorOuter} onMouseOver={() => setColorname(el.colorName)} onClick={() => handleColor(el)}>
 
         <div className={styles.colorInner}>
           <img src={el.images[el.images.length - 1]} />
         </div>
       </div>
-      ) */}
+      ) 
     }
   </div>
 </div>
@@ -209,7 +217,7 @@ const addToCart = () =>{
 
   <div className={styles.sizes}>
     {
-      {/* prod && prod?.Product_colors[0]?.availableSize?.map((el, i) => <div onClick={()=>handleSize(el)} className={styles.sizeAvailable} key={i}>{el}</div>) */}
+      prod && prod?.Product_colors[0]?.availableSize?.map((el, i) => <div onClick={()=>handleSize(el)} className={styles.sizeAvailable} key={i}>{el}</div>)
     }
   </div>
 </div>
@@ -244,10 +252,10 @@ const addToCart = () =>{
 
 <div className={styles.description}>
   <h4>Product Details</h4>
-  {/* <p>{prod?.productDetails?.desc}</p> */}
+  <p>{prod?.productDetails?.desc}</p>
   <ul>
     {
-      {/* prod?.productDetails?.highlightPoints?.map((el, i) => <li key={i}>{el}</li>) */}
+      prod?.productDetails?.highlightPoints?.map((el, i) => <li key={i}>{el}</li>)
     }
   </ul>
 </div>
@@ -268,20 +276,20 @@ const addToCart = () =>{
 </div>
 </div>
 </div>
+    }
+  
 
 <NoReview/>
 
 <div className={styles.similarProducts}>
-{
+{/* {
   new Array(5).fill("").map((el,i)=> <SimilarCard key={i}/>)
-}
+} */}
 </div>
 
 <hr />
 
   </div>
-
-</div>
 );
 };
 

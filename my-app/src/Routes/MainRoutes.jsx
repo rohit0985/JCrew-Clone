@@ -8,6 +8,7 @@ import Men from "../Pages/Men/Men"
 import Women from "../Pages/Women/Women"
 import SingleProduct from "../Pages/SingleProduct/SingleProduct"
 import Cart from "../Pages/Cart/Cart"
+import CheckoutForm from "../Pages/CheckoutForm/CheckoutForm"
 import CheckOut from "../Pages/CheckOut/CheckOut"
 
 import { ChakraProvider } from "@chakra-ui/react";
@@ -25,6 +26,7 @@ const MainRoutes = () => {
           </ChakraProvider>
         }
       ></Route>
+      <Route path="/checkoutform" element={<CheckoutForm/>}></Route>
       <Route
         path="/signin"
         element={

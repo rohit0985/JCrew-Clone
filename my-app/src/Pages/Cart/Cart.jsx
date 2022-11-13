@@ -23,6 +23,8 @@ const applyPromo = ()=>{
  }
 }
 
+console.log(cartData)
+
 useEffect(()=>{
   dispatch(getCdata(`http://localhost:8080/cart`))
   dispatch(getLSdata(`http://localhost:8080/shopLater`))
@@ -72,11 +74,11 @@ useEffect(()=>{
 
 
 
-<div className={styles.content}>
+{/* <div className={styles.content}>
 {
   shopLaterData && shopLaterData.map((el, i)=> <WishCard prod={el} key={i}/>)
 }
-</div>
+</div> */}
 
 </div>
 </div>

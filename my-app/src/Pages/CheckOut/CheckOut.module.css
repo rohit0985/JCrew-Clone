@@ -1,7 +1,14 @@
+.main{
+    width: 60%;
+    margin: auto;
+    display:  flex;
+    justify-content: center;
+}
+
 .container{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     text-align: start;
-    width: 400px;
+    width: 80%;
     padding: 20px 80px 30px 80px;
 }
 .payment h2{

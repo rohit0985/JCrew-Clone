@@ -7,7 +7,7 @@ const getData =(url)=> (dispatch) => {
     return axios
       .get(url)
       .then((res) => {
-       console.log(res.data)
+      //  console.log(res.data)
         return dispatch({ type: types.GET_PRODUCTS_SUCCESS, payload: res.data});
       })
       .catch((err) => {

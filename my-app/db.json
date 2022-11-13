@@ -20,10 +20,23 @@
       "myProducts": []
     }
   ],
-  "cart": [],
+  "favorits": [],
+  "cart": [
+    {
+      "id": 7,
+      "name": "Court sneakers in leather",
+      "price": 40696,
+      "brand": "Vibrane",
+      "category": "Shoes",
+      "belongsTo": "men",
+      "cartQuantity": 5,
+      "colors": "White",
+      "image": "https://www.jcrew.com/s7-img-facade/AQ226_WT0002?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=600&hei=600",
+      "size": "Small"
+    }
+  ],
   "shopLater": [],
   "orderHistory": [],
-  "favorits": [],
   "products": [
     {
       "id": 1,

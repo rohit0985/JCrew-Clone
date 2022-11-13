@@ -27,10 +27,10 @@ const Card = ({prod}) => {
   }
 
   const deleteAndSave = (prod, id) =>{
-    dispatch(deleteCdata(`http://localhost:8080/cart/${id}`))
-    dispatch(addLSdata(`http://localhost:8080/shopLater`, prod))
-    dispatch(getCdata(`http://localhost:8080/cart`))
-    dispatch(getLSdata(`http://localhost:8080/shopLater`))
+    // dispatch(deleteCdata(`http://localhost:8080/cart/${id}`))
+    // dispatch(addLSdata(`http://localhost:8080/shopLater`, prod))
+    // dispatch(getCdata(`http://localhost:8080/cart`))
+    // dispatch(getLSdata(`http://localhost:8080/shopLater`))
 
   }
 
@@ -45,7 +45,7 @@ const Card = ({prod}) => {
       <div className={styles.card}>
             <div className={styles.left}>
               <img
-                src={prod.colors[0].images[0]}
+                src={prod.image}
                 alt="#"
               />
             </div>
@@ -57,8 +57,8 @@ const Card = ({prod}) => {
                 <p>Item 65</p>
               </div>
               <div className={styles.measures}>
-                <p>Color: {prod.colors[0]?.colorName}</p>
-                <p>Size: {prod.colors[0]?.availableSize[0]}</p>
+                <p>Color: {prod.colors}</p>
+                <p>Size: {prod.size}</p>
               </div>
               <div className={styles.btns}>
                 <p onClick={()=>deleteFromCart(prod.id)}>Remove</p>
