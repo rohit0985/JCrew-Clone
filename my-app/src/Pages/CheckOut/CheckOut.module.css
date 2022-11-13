@@ -1,15 +1,10 @@
-.main{
-    width: 60%;
-    margin: auto;
-    display:  flex;
-    justify-content: center;
-}
 
 .container{
-    /* border: 1px solid red; */
+    border: 1px solid rgb(207, 204, 204);
     text-align: start;
-    width: 80%;
-    padding: 20px 80px 30px 80px;
+    width: 100%;
+    padding: 0 20px;
+    
 }
 .payment h2{
 margin-top: 0;

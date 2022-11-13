@@ -5,11 +5,16 @@ import WishCard from './WishCard'
 import {useDispatch, useSelector} from 'react-redux'
 import { getCdata } from '../../Redux/CartReducer/action'
 import { getLSdata } from '../../Redux/ShopLaterReducer/action'
+import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const Cart = () => {
 const [promo, setPromo]= useState("")
 const [text, setText] = useState("")
+const [discount, setDiscount] = useState(false)
+const navigate = useNavigate()
+
 const dispatch = useDispatch()
 const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
 const shopLaterData = useSelector((reduxStore)=> reduxStore.ShopLaterReducer.products)
@@ -20,6 +25,9 @@ let sum = cartData?.reduce((acc, el)=> (acc + Number(el.price) * Number(el.cartQ
 const applyPromo = ()=>{
  if(text){
   setPromo(text)
+ }
+ if(promo === text){
+  setDiscount(true)
  }
 }
 
@@ -102,7 +110,9 @@ useEffect(()=>{
   <p>Shipping calculated in Checkout</p>
 </div>
 
-<button className={styles.checkout}>CHECKOUT</button>
+<Link to={{pathname: "/checkout", state: {val:"hello"} }}>
+ <button  className={styles.checkout}>CHECKOUT</button></Link>
+
 
 <h3>Checkout with ESW</h3>
 <p>By clicking ‘Check Out Now’, you will be redirected to the ESW checkout page where payment will be taken and your order fulfilled by ESW, J.Crew's preferred partner for international sales.</p>

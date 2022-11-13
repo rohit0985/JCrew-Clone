@@ -13,6 +13,7 @@ import CheckOut from "../Pages/CheckOut/CheckOut"
 
 import { ChakraProvider } from "@chakra-ui/react";
 import PrivateRoute from "../Components/PrivateRoute";
+import Checkout from "../Components/Checkout"
 
 const MainRoutes = () => {
   return (
@@ -26,7 +27,7 @@ const MainRoutes = () => {
           </ChakraProvider>
         }
       ></Route>
-      <Route path="/checkoutform" element={<CheckoutForm/>}></Route>
+      <Route path="/checkout" element={<Checkout/>}></Route>
       <Route
         path="/signin"
         element={

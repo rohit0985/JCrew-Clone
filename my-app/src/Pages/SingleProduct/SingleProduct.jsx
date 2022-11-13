@@ -13,7 +13,8 @@ import { getData } from "../../Redux/AppReducer/action";
 import { useDispatch, useSelector } from 'react-redux'
 import { InputGroup } from "@chakra-ui/react";
 import { useSearchParams } from "react-router-dom";
-import {useParams} from "react-router-dom"
+import {useParams, Link} from "react-router-dom"
+
 
 
 
@@ -78,6 +79,9 @@ const addToCart = () =>{
   }
 
   dispatch(addCdata(`http://localhost:8080/cart`,payload))
+  dispatch(getCdata(`http://localhost:8080/cart`,))
+
+  alert("Product has been added to the cart")
 
 }
 
@@ -107,7 +111,7 @@ const addToCart = () =>{
 <p className={styles.name}>{prod?.name}</p>
 
 <div className={styles.ratingReview}>
-  <div className="ratingCount">
+  <div style={{display:'flex', gap:'3px'}} className="ratingCount">
     {new Array(Number(3)).fill("").map((_,i) => (<AiFillStar key={i} />))}
   </div>
 
