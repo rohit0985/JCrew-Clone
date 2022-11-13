@@ -61,9 +61,9 @@ const Men = () => {
           <hr />
         </div>
         <div className={styles.allproducts_div}>
-          {mensData.map((data) => (
+          {/* {mensData.map((data) => (
             <SingleProductCard key={data.name} data={data} />
-          ))}
+          ))} */}
         </div>
       </div>
     </div>
