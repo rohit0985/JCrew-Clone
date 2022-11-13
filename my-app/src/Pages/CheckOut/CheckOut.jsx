@@ -4,9 +4,9 @@ import styled from "styled-components"
 import CheckoutCardProduct from "../../Components/CheckoutCardProduct"
 
 
+
 const CheckOut = () => {
   return (
-    <div className={styles.main}>
     <div className={styles.container}>
     
      
@@ -55,10 +55,6 @@ const CheckOut = () => {
 
 
 
-    </div>
-   <div >
-   <CheckoutCardProduct/>
-   </div>
     </div>
   )
 }

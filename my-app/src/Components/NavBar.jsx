@@ -1,15 +1,37 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, Route, Routes } from "react-router-dom";
 import styles from "../styles/Navbar.module.css";
 import { HeartIcon, MainLogo } from "./SvgIcons";
 import { User } from "./Icons";
 import Signin from "../Pages/Signin";
 import Signup from "../Pages/Signup";
+import {useNavigate}  from 'react-router-dom'
+import Cartdropdown from "./Cartdropdown/Cartdropdown"
+import { getCdata } from "../Redux/CartReducer/action";
 
 export default function Navbar() {
-    
+
+    const [show, setShow] = useState(false)
+    const navigate = useNavigate()
+
+    const dispatch = useDispatch()
+    const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
+
+const handleShow = ()=>{
+    setShow(!show)
+}
+const cancleShow = ()=>{
+setShow(false)
+}
+
+
+useEffect(()=>{
+    dispatch(getCdata(`http://localhost:8080/cart`))
+},[])
+
     return (
-        <div className={styles.nav_parent}>
+        <div style={{position:"relative"}} className={styles.nav_parent}>
             <div className={styles.nav_logo}>
                 <MainLogo />
                 <div className={styles.nav_linkWrap}>
@@ -77,18 +99,22 @@ export default function Navbar() {
                 </div>
                 <div
                     className={styles.nav_icons}
+                    onMouseOver={handleShow}
                     onClick={() => {
-                        ("/cart");
+                        navigate("/cart");
                     }}>
                 
                    
                     <img
                         src="https://www.jcrew.com/next-static/images/jcrew/svg/icon_bag_d.svg"
-                        alt=""/>
+                        alt=""/> <span>{cartData && cartData.length}</span>
                     
                   
                     
                 </div>
+            </div>
+            <div style={{position:"absolute", top:'60px', right:'0px'}}>
+               {show ? <Cartdropdown cancleShow = {cancleShow}/> : null} 
             </div>
         </div>
         

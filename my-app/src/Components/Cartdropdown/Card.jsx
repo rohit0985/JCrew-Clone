@@ -1,25 +1,34 @@
 import React from 'react'
 import styles from "./Card.module.css"
+import { useNavigate } from 'react-router-dom'
 
-const Card = () => {
+const Card = ({prod, handleRemove, cancleShow}) => {
+const navigate = useNavigate()
+
+
+function edit(id){
+  navigate(`/single/${id}`)
+  cancleShow()
+}
+
   return (
     <div className={styles.card}>
    
     <div className={styles.left}>
-    <img src="https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d5?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160" alt="#" />
+    <img  src={prod.image} alt="#" />
     </div>
      <div className={styles.right}>
       <div className={styles.details}>
-      <p>Ludlow Classic-fit double-breasted tuxedo jacket in English corduroy</p>
-      <p>INR 68838.0</p>
+      <p>{prod.name}</p>
+      <p>INR {prod.price}</p>
       </div>
       <div className={styles.measures}>
-       <p>Color: Blue</p>
-      <p>Size: Medium</p>
+       <p>Color: {prod.colors}</p>
+      <p>Size: {prod.size}</p>
       </div>
       <div className={styles.btns}>
-        <a href="#">Edit</a>
-        <a href="#">Remove</a>
+        <a onClick={()=>edit(prod.id)} href="#">Edit</a>
+        <a onClick={()=>handleRemove(prod.id)} href="#">Remove</a>
       </div>
      </div>
    

@@ -1,21 +1,37 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./checkoutcartproduct.css";
+import {useDispatch, useSelector} from 'react-redux'
+import { getCdata } from "../Redux/CartReducer/action";
+import { useNavigate } from "react-router-dom";
 
-const CheckoutCardProduct = () => {
+
+
+const CheckoutCardProduct = ({delExt}) => {
+const navigate = useNavigate()
+  const dispatch = useDispatch()
+const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
+
+let sum = cartData && cartData.reduce((acc, el)=> (acc + Number(el.price) * Number(el.cartQuantity)),0).toFixed(2)
+let delivery = (Number(delExt) * Number(sum)).toFixed(2)
+
+useEffect(()=>{
+  dispatch(getCdata(`http://localhost:8080/cart`))
+},[])
+
   return (
     <div className="CheckoutCardProduct-container">
       <button className="back-cart">BACK TO CART</button>
 
 {
-  new Array(5).fill("").map((el, i)=>
+  cartData && cartData.map((el, i)=>
   
   <div className="CheckoutCardProduct-products">
-        <p>Ludlow Classic-fit cocktail jacket in mixed tartan English wool</p>
+        <p>{el.name}</p>
         <div className="CheckoutCardProduct-products-flex">
           <div className="CheckoutCardProduct-img">
             <img
-              src="https://www.jcrew.com/s7-img-facade/BK941_WZ2350?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&wid=408&hei=408"
-              alt=""
+              src={el.image}
+              alt="#"
             />
           </div>
           <div className="CheckoutCardProduct-intro-flex">
@@ -26,14 +42,14 @@ const CheckoutCardProduct = () => {
               <p>Price:</p>
             </div>
             <div>
-              <p>2</p>
-              <p>TARTAN MIX</p>
-              <p>36/R</p>
-              <p>INR 73,979.00</p>
+              <p>{el.cartQuantity}</p>
+              <p>{el.colors}</p>
+              <p>{el.size}</p>
+              <p>{el.price}</p>
             </div>
           </div>
         </div>
-        <button className="viewmore-btn">VIEW MORE</button>
+        <button onClick={()=>navigate(`/single/${el.id}`)} className="viewmore-btn">VIEW MORE</button>
       </div>
 
   )
@@ -45,15 +61,15 @@ const CheckoutCardProduct = () => {
       <div className="totalamount">
         <div>
           <p>Items</p>
-          <p>INR 130,816.00</p>
+          <p>INR {sum}</p>
         </div>
         <div>
           <p>Delivery</p>
-          <p>INR 1,710.00</p>
+          <p>INR {delivery}</p>
         </div>
         <div>
-          <p>Items</p>
-          <p>INR 132,526.00</p>
+          <p>TOTAL</p>
+          <p>INR {Number(sum) + Number(delivery)}</p>
         </div>
       </div>
     </div>
