@@ -44,16 +44,6 @@ const SingleProduct = () => {
 
 
 
-const handleImage = (el)=>{
-  setImage(el)
-}
-
-  const [image, setImage] = useState(color.images[0]);
-
-  
-  const handleImage = () => { };
-
-
   const handleColor = (el) => {
     setColor(el);
     setImage(el.images[0]);
@@ -62,7 +52,10 @@ const handleImage = (el)=>{
     setSize(el)
   }
 
-
+  
+const handleImage = (el)=>{
+  setImage(el)
+}
 
 
 const addToCart = () =>{
