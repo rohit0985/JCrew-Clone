@@ -2,7 +2,7 @@ import * as types from "./actionTypes"
 import axios from 'axios'
 
 
-export const getData = (dispatch) => {
+const getData = (dispatch) => {
     dispatch({ type: types.GET_PRODUCTS_REQUEST});
     return axios
       .get(`http://localhost:8080/products`)
@@ -14,3 +14,5 @@ export const getData = (dispatch) => {
         return dispatch({ type: types.GET_PRODUCTS_FAILURE, payload: err });
       });
   };
+
+  export  {getData}

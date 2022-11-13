@@ -3,168 +3,30 @@ import Card from './Card'
 import styles from "./Cart.module.css"
 import WishCard from './WishCard'
 import {useDispatch, useSelector} from 'react-redux'
-import { getCart } from '../../Redux/CartReducer/action'
+import { getCdata } from '../../Redux/CartReducer/action'
+import { getLSdata } from '../../Redux/ShopLaterReducer/action'
 
-let cartList = [{
-  "id":1,
-  "name": "Ludlow Classic-fit double-breasted tuxedo jacket in English corduroy",
-  "price": "68838.0",
-  "brand": "zara",
-  "category": "pant",
-  "belongsTo": "men",
-  "productDetails": {
-    "desc": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you frost-free on the chilliest days. Built to endure everything from flurries to blizzards with eco-friendly, high-performance materials, our warmest layers are designed to look sharp in all conditions, whether you're hiking a mountain or trekking closer to home. The Nordic puffer vest is made with a recycled-nylon shell and filled with PrimaLoft Rise, a lightweight insulation made entirely from plastic bottles.",
-    "highlightPoints": [
-      "100% polyamide.",
-      "Standing collar.",
-      "Snap closure with hidden zip.",
-      "Patch pockets with flaps.",
-      "Fully lined.",
-      "Online only.",
-      "Item BJ068."
-    ]
-    },
-  "colors": [
-    {
-      "colorName": "Varsity Navy",
-      "images": [
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d5?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160"
-      ],
-      "availableSize": [
-        "X-Small",
-        "Small",
-        "Medium",
-        "Large",
-        "X-Large",
-        "XX-Large"
-      ]
-    }
-  ]
-},
-{
-  "id":2,
-  "name": "Ludlow Classic-fit double-breasted tuxedo jacket in English corduroy",
-  "price": "68838.0",
-  "brand": "zara",
-  "category": "pant",
-  "belongsTo": "men",
-  "productDetails": {
-    "desc": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you frost-free on the chilliest days. Built to endure everything from flurries to blizzards with eco-friendly, high-performance materials, our warmest layers are designed to look sharp in all conditions, whether you're hiking a mountain or trekking closer to home. The Nordic puffer vest is made with a recycled-nylon shell and filled with PrimaLoft Rise, a lightweight insulation made entirely from plastic bottles.",
-    "highlightPoints": [
-      "100% polyamide.",
-      "Standing collar.",
-      "Snap closure with hidden zip.",
-      "Patch pockets with flaps.",
-      "Fully lined.",
-      "Online only.",
-      "Item BJ068."
-    ]
-    },
-  "colors": [
-    {
-      "colorName": "Varsity Navy",
-      "images": [
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d5?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160"
-      ],
-      "availableSize": [
-        "X-Small",
-        "Small",
-        "Medium",
-        "Large",
-        "X-Large",
-        "XX-Large"
-      ]
-    }
-  ]
-}]
-let shopLaterList = [{
-  "name": "Ludlow Classic-fit double-breasted tuxedo jacket in English corduroy",
-  "price": "68838.0",
-  "brand": "zara",
-  "category": "pant",
-  "belongsTo": "men",
-  "productDetails": {
-    "desc": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you frost-free on the chilliest days. Built to endure everything from flurries to blizzards with eco-friendly, high-performance materials, our warmest layers are designed to look sharp in all conditions, whether you're hiking a mountain or trekking closer to home. The Nordic puffer vest is made with a recycled-nylon shell and filled with PrimaLoft Rise, a lightweight insulation made entirely from plastic bottles.",
-    "highlightPoints": [
-      "100% polyamide.",
-      "Standing collar.",
-      "Snap closure with hidden zip.",
-      "Patch pockets with flaps.",
-      "Fully lined.",
-      "Online only.",
-      "Item BJ068."
-    ]
-    },
-  "colors": [
-    {
-      "colorName": "Varsity Navy",
-      "images": [
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d5?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160"
-      ],
-      "availableSize": [
-        "X-Small",
-        "Small",
-        "Medium",
-        "Large",
-        "X-Large",
-        "XX-Large"
-      ]
-    }
-  ]
-},
-{
-  "name": "Ludlow Classic-fit double-breasted tuxedo jacket in English corduroy",
-  "price": "68838.0",
-  "brand": "zara",
-  "category": "pant",
-  "belongsTo": "men",
-  "productDetails": {
-    "desc": "Inspired by vintage mountain gear, the J.Crew Nordic Collection is engineered to keep you frost-free on the chilliest days. Built to endure everything from flurries to blizzards with eco-friendly, high-performance materials, our warmest layers are designed to look sharp in all conditions, whether you're hiking a mountain or trekking closer to home. The Nordic puffer vest is made with a recycled-nylon shell and filled with PrimaLoft Rise, a lightweight insulation made entirely from plastic bottles.",
-    "highlightPoints": [
-      "100% polyamide.",
-      "Standing collar.",
-      "Snap closure with hidden zip.",
-      "Patch pockets with flaps.",
-      "Fully lined.",
-      "Online only.",
-      "Item BJ068."
-    ]
-    },
-  "colors": [
-    {
-      "colorName": "Varsity Navy",
-      "images": [
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
-        "https://www.jcrew.com/s7-img-facade/BK936_WZ2103_d5?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=160&hei=160"
-      ],
-      "availableSize": [
-        "X-Small",
-        "Small",
-        "Medium",
-        "Large",
-        "X-Large",
-        "XX-Large"
-      ]
-    }
-  ]
-}]
 
 const Cart = () => {
-
+const [promo, setPromo]= useState("")
+const [text, setText] = useState("")
 const dispatch = useDispatch()
 const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
+const shopLaterData = useSelector((reduxStore)=> reduxStore.ShopLaterReducer.products)
 
-console.log(cartData)
+let actPromo = "masai10"
+let sum = cartData?.reduce((acc, el)=> (acc + Number(el.price) * Number(el.cartQuantity)),0)
 
+const applyPromo = ()=>{
+ if(text){
+  setPromo(text)
+ }
+}
 
 useEffect(()=>{
-  dispatch(getCart(`http://localhost:8080/users/1`))
+  dispatch(getCdata(`http://localhost:8080/cart`))
+  dispatch(getLSdata(`http://localhost:8080/shopLater`))
 },[])
-
-
 
 
   return (
@@ -174,7 +36,7 @@ useEffect(()=>{
 <div className={styles.leftWrapper}>
 
 <div className={styles.top}>
-    <h3>SHOPPING BAG (3)</h3>
+    <h3>SHOPPING BAG ({cartData.length})</h3>
     <p>Have an account?<span><a href="#">Sign in</a></span> </p>
 </div>
 
@@ -189,7 +51,7 @@ useEffect(()=>{
 
 <div className={styles.content}>
 {
-  cartList && cartList.map((prod,i)=> <Card prod={prod} key={i}/>)
+  cartData && cartData.map((prod,i)=> <Card prod={prod} key={i}/>)
 }
 </div>
 
@@ -199,7 +61,7 @@ useEffect(()=>{
 <div className={styles.leftWrapper}>
 
 <div className={styles.top}>
-    <h3>SAVED FOR LATER (2)</h3>
+    <h3>SAVED FOR LATER ({shopLaterData.length})</h3>
 </div>
 
 
@@ -212,7 +74,7 @@ useEffect(()=>{
 
 <div className={styles.content}>
 {
-  shopLaterList && shopLaterList.map((prod, i)=> <WishCard prod={prod} key={i}/>)
+  shopLaterData && shopLaterData.map((el, i)=> <WishCard prod={el} key={i}/>)
 }
 </div>
 
@@ -227,13 +89,13 @@ useEffect(()=>{
 
      <div className={styles.subtotal}>
   <p>Item Subtotal</p>
-  <p>4567</p>
+  <p>INR {sum}</p>
 </div>
 
 <div className={styles.estitotal}>
   <div>
 <p>Estimated Total</p>
-<p>INR 56864</p>
+<p>INR {promo===actPromo ? sum * .9 : sum}</p>
   </div>
   <p>Shipping calculated in Checkout</p>
 </div>
@@ -246,10 +108,10 @@ useEffect(()=>{
 <hr />
 
 <div className={styles.promo}>
-  <label>Add a promo</label>
+  <label>Add a promo </label>
   <div>
-    <input type="text"  placeholder='Promo'/>
-    <button className={styles.apply}>APPLY</button>
+    <input type="text" onChange={(e)=>setText(e.target.value)}  placeholder='Promo'/>
+    <button  onClick={applyPromo} className={styles.apply}>APPLY</button>
   </div>
 </div>
 

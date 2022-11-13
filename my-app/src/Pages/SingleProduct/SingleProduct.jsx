@@ -7,7 +7,8 @@ import { SlSocialTumblr } from "react-icons/sl";
 import { AiFillStar } from "react-icons/ai";
 import SimilarCard from "./SimilarCard";
 
-
+import { addCdata, getCdata } from "../../Redux/CartReducer/action"
+import { useDispatch, useSelector } from 'react-redux'
 
 
 
@@ -55,12 +56,54 @@ const SingleProduct = () => {
   const [colorname, setColorname] = useState(color.colorName);
   const [image, setImage] = useState(color.images[0]);
 
-  const handleImage = () => { };
+  const [quantity, setQuantity ] = useState(1)
+  const [size, setSize] = useState('')
+
+  const dispatch = useDispatch()
+  const cartData = useSelector((state)=> state.CartReducer.products)
+
+console.log(cartData)
+console.log(quantity)
+
+
+  let payload = {
+    "id": 100,
+    "name": product.name,
+    "price": product.price,
+    "brand": product.brand,
+    "category": product.category,
+    "belongsTo": product.belongsTo,
+    "cartQuantity": quantity,
+    "colors": product.colors[0].colorName,
+    "image": product.colors[0].images[0],
+    "size": size
+  }
+
+
+// console.log(payload)
+
 
   const handleColor = (el) => {
     setColor(el);
     setImage(el.images[0]);
   };
+
+  const handleSize =(el="Medium")=>{
+    setSize(el)
+  }
+
+const addToCart = () =>{
+  console.log(payload ,"from add to cart button")
+if(payload){
+  dispatch(addCdata(`http://localhost:8080/cart`,payload))
+}
+}
+
+
+useEffect(()=>{
+  dispatch(getCdata(`http://localhost:8080/cart`))
+},[])
+
 
   return (
   <div>
@@ -114,7 +157,7 @@ const SingleProduct = () => {
     <div className={styles.top}>
       <div className={styles.size}>
         <p className={styles.SelectedSize}>
-          <span>Size: </span>Select a size
+          <span>Size: </span>{size ? size : "Select a Size"}
         </p>
       </div>
       <div className={styles.chart}>
@@ -126,7 +169,7 @@ const SingleProduct = () => {
 
     <div className={styles.sizes}>
       {
-        color && color.availableSize.map((el, i) => <div className={styles.sizeAvailable} key={i}>{el}</div>)
+        color && color.availableSize.map((el, i) => <div onClick={()=>handleSize(el)} className={styles.sizeAvailable} key={i}>{el}</div>)
       }
     </div>
   </div>
@@ -135,7 +178,7 @@ const SingleProduct = () => {
     <label>
       <span>Quantity: </span>
     </label>
-    <select>
+    <select onChange={(e)=>setQuantity(e.target.value)}>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -151,7 +194,7 @@ const SingleProduct = () => {
   <div className={styles.btn}>
     <i>Prices include duties and taxes.</i>
     <div>
-      <button className={styles.atb}>ADD TO BAG</button>
+      <button onClick={addToCart} className={styles.atb}>ADD TO BAG</button>
       <button className={styles.atc}><BsSuitHeart size={20}/></button>
     </div>
   </div>
@@ -190,7 +233,7 @@ const SingleProduct = () => {
 
 <div className={styles.similarProducts}>
   {
-    new Array(5).fill("").map((el)=> <SimilarCard/>)
+    new Array(5).fill("").map((el,i)=> <SimilarCard key={i}/>)
   }
 </div>
 
