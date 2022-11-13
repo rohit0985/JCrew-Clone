@@ -35,8 +35,8 @@ const MainRoutes = () => {
           </ChakraProvider>
         }
       ></Route>
-      <Route path="/men" element={<Men />}></Route>
-      <Route path="/women" element={<Women />}></Route>
+      <Route path="/men" element={<ChakraProvider><Men /></ChakraProvider>}></Route>
+      <Route path="/women" element={<ChakraProvider><Women /></ChakraProvider>}></Route>
       <Route path="/single/:id" element={<SingleProduct/>}></Route>
       <Route
         path="/cart"
