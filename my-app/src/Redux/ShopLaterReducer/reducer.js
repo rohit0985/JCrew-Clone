@@ -6,21 +6,23 @@ const initialState = {
   isError: false,
 };
 
+
+
 export const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case types.GET_CART_REQUEST:
+    case types.GET_SHOPLATER_REQUEST:
       return {
         ...state,
         isLoading: true,
       };
-    case types.GET_CART_SUCCESS:
+    case types.GET_SHOPLATER_SUCCESS:
       return {
         ...state,
         isLoading: false,
         products: payload,
         isError: false,
       };
-    case types.GET_CART_FAILURE:
+    case types.GET_SHOPLATER_FAILURE:
       return {
         ...state,
         isLoading: false,

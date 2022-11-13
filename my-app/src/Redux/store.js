@@ -3,8 +3,9 @@ import thunk from "redux-thunk"
 import {reducer as AppReducer} from './AppReducer/reducer'
 import {reducer as AuthReducer} from './AuthReducer/reducer'
 import {reducer as CartReducer} from './CartReducer/reducer'
+import {reducer as ShopLaterReducer} from './ShopLaterReducer/reducer'
 
-const rootReducer = combineReducers({AppReducer, AuthReducer, CartReducer})
+const rootReducer = combineReducers({AppReducer, AuthReducer, CartReducer,ShopLaterReducer})
 
 const ComposeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 

@@ -1,5 +1,5 @@
 
-import { Routes, Route} from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import React from 'react'
 import HomePage from "../Components/HomePage"
 import Signup from "../Pages/Signup"
@@ -8,6 +8,7 @@ import Men from "../Pages/Men/Men"
 import Women from "../Pages/Women/Women"
 import SingleProduct from "../Pages/SingleProduct/SingleProduct"
 import Cart from "../Pages/Cart/Cart"
+import CheckoutForm from "../Pages/CheckoutForm/CheckoutForm"
 import CheckOut from "../Pages/CheckOut/CheckOut"
 
 import { ChakraProvider } from "@chakra-ui/react";
@@ -16,9 +17,7 @@ import PrivateRoute from "../Components/PrivateRoute";
 const MainRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />}>
-        Home Page
-      </Route>
+      <Route path="/" element={<HomePage />}>Home Page</Route>
       <Route
         path="/signup"
         element={
@@ -27,6 +26,7 @@ const MainRoutes = () => {
           </ChakraProvider>
         }
       ></Route>
+      <Route path="/checkoutform" element={<CheckoutForm/>}></Route>
       <Route
         path="/signin"
         element={
@@ -41,17 +41,17 @@ const MainRoutes = () => {
       <Route
         path="/cart"
         element={
-          <PrivateRoute>
+          // <PrivateRoute>
             <Cart />
-          </PrivateRoute>
+          // </PrivateRoute>
         }
       ></Route>
       <Route
         path="/checkout"
         element={
-          <PrivateRoute>
+          // <PrivateRoute>
             <CheckOut />
-          </PrivateRoute>
+          // </PrivateRoute>
         }
       ></Route>
     </Routes>

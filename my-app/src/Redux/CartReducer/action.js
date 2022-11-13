@@ -2,15 +2,13 @@
 import * as types from "./actionTypes"
 import axios from 'axios'
 
-// let url = `http://localhost:8080/users/1`
-
-export const getCart=(url) => (dispatch) => {
+export const getCdata=(url) => (dispatch) => {
     dispatch({ type: types.GET_CART_REQUEST});
     return axios
       .get(url)
       .then((res) => {
        
-        return dispatch({ type: types.GET_CART_SUCCESS, payload: res.data.cart});
+        return dispatch({ type: types.GET_CART_SUCCESS, payload: res.data});
       })
       .catch((err) => {
         return dispatch({ type: types.GET_CART_FAILURE, payload: err });
@@ -19,21 +17,18 @@ export const getCart=(url) => (dispatch) => {
 
 
 
-export const addCart=(url,payload)=> (dispatch) => {
-    console.log('hello')
-    dispatch({ type: types.POST_CART_REQUEST});
+export const addCdata=(url,payload)=> (dispatch) => {
     return axios
       .post(url,payload)
       .then((res) => {
-       
-        return dispatch({ type: types.POST_CART_SUCCESS});
+        console.log(res)
       })
       .catch((err) => {
-        return dispatch({ type: types.POST_CART_FAILURE });
+        console.log(err)
       });
   };
 
-export const updateCart=(url,payload)=>(dispatch)=>{
+export const updateCdata=(url,payload)=>(dispatch)=>{
   console.log('hello')
     dispatch({ type: types.PATCH_CART_REQUEST});
     return axios
@@ -47,7 +42,7 @@ export const updateCart=(url,payload)=>(dispatch)=>{
       });
   };
 
-export const deleteCart=(url) => (dispatch) => {
+export const deleteCdata=(url) => (dispatch) => {
    console.log('deleted')
     dispatch({ type: types.DELETE_CART_REQUEST});
     return axios
@@ -56,9 +51,24 @@ export const deleteCart=(url) => (dispatch) => {
        
         return dispatch({ type: types.DELETE_CART_SUCCESS});
       })
+      
       .catch((err) => {
         return dispatch({ type: types.DELETE_CART_FAILURE});
       });
   };
+
+export const deleteAllCdata=(url,payload)=>(dispatch)=>{
+    
+      dispatch({ type: types.PUT_CART_REQUEST});
+      return axios
+        .put(url,payload)
+        .then((res) => {
+         
+          return dispatch({ type: types.PUT_CART_SUCCESS});
+        })
+        .catch((err) => {
+          return dispatch({ type: types.PUT_CART_FAILURE});
+        });
+    };
 
   
