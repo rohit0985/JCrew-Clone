@@ -2,17 +2,15 @@ import React from 'react'
 import styles from './CheckOut.module.css'
 import styled from "styled-components"
 import CheckoutCardProduct from "../../Components/CheckoutCardProduct"
+import { Link } from 'react-router-dom'
 
 
-const CheckOut = () => {
+
+const CheckOut = ({bill, name, thanksNote}) => {
+
   return (
-    <div className={styles.main}>
-    <div className={styles.container}>
-    
-     
+    <div className={styles.container}>  
     <div className={styles.deliveredAdd}></div>
-
-
     <div className={styles.payment}>
 <h2>Payment</h2>
 
@@ -47,7 +45,7 @@ const CheckOut = () => {
 
 <p className={styles.terms}>By clicking Pay Now, you agree to eShopWorld's <a href="#">Terms and Conditions</a>.</p>
 
-<button className={styles.payBtn}>PAY NOW</button>
+<Link to={"/thankyou"} state={{bill: bill, name: name}} ><button onClick={thanksNote} className={styles.payBtn}>PAY NOW</button></Link>
 
 
     </div>
@@ -55,10 +53,6 @@ const CheckOut = () => {
 
 
 
-    </div>
-   <div >
-   <CheckoutCardProduct/>
-   </div>
     </div>
   )
 }

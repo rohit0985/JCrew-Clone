@@ -12,8 +12,14 @@ import { getData } from "../../Redux/AppReducer/action";
 import { useDispatch, useSelector } from "react-redux";
 import { InputGroup } from "@chakra-ui/react";
 import { useSearchParams } from "react-router-dom";
+import {useParams, Link} from "react-router-dom"
+
 
 const SingleProduct = () => {
+
+  const {id} = useParams()
+console.log(id)
+
   const [color, setColor] = useState("");
   const [colorname, setColorname] = useState(color.colorName);
 
@@ -28,6 +34,7 @@ const SingleProduct = () => {
 
   useEffect(() => {
     // dispatch(getCdata(`http://localhost:8080/cart`))
+
     dispatch(getData(`http://localhost:8080/products/7`));
   }, []);
 
@@ -35,13 +42,55 @@ const SingleProduct = () => {
     setImage(el);
   };
 
+   dispatch(getData(`http://localhost:8080/products/${id}`))
+   
+  },[])
+
+
+ 
+
   const handleColor = (el) => {
     setColor(el);
     setImage(el.images[0]);
   };
+
   const handleSize = (el = "Medium") => {
     setSize(el);
   };
+
+  const handleSize =(el="Medium")=>{
+    setSize(el)
+  }
+
+  
+const handleImage = (el)=>{
+  setImage(el)
+}
+
+
+const addToCart = () =>{
+  let payload = {
+    "id": prod.id,
+    "name": prod.name,
+    "price": Number(prod.price.replace(",","")),
+    "brand": prod.brand,
+    "category": prod.category,
+    "belongsTo": prod.belongsTo,
+    "cartQuantity": Number(quantity),
+    "colors": color.colorName,
+    "image": color.images[0],
+    "size": size
+  }
+
+  dispatch(addCdata(`http://localhost:8080/cart`,payload))
+  dispatch(getCdata(`http://localhost:8080/cart`,))
+
+  alert("Product has been added to the cart")
+
+}
+
+
+
 
   const addToCart = () => {
     let payload = {
@@ -62,6 +111,7 @@ const SingleProduct = () => {
 
   return (
     <div className={styles.mainContainer}>
+
       {prod && (
         <div className={styles.container}>
           <div className={styles.left}>
@@ -214,6 +264,41 @@ const SingleProduct = () => {
           </div>
         </div>
       )}
+
+    {
+      prod && 
+      <div className={styles.container}>
+
+<div className={styles.left}>
+{prod && prod?.Product_colors[0]?.images?.map((el, i) => (<img src={el} alt="#" key={i} onMouseOver={() =>handleImage(el)} />))}
+</div>
+
+
+<div className={styles.mid}>
+<img src={image? image : prod?.Product_colors[0]?.images[0]} alt="#" />
+<BsSuitHeart size={25} className={styles.heart}/>
+</div>
+
+<div className={styles.right}>
+
+<p className={styles.category}>{prod?.category}</p>
+<p className={styles.name}>{prod?.name}</p>
+
+<div className={styles.ratingReview}>
+  <div style={{display:'flex', gap:'3px'}} className="ratingCount">
+    {new Array(Number(3)).fill("").map((_,i) => (<AiFillStar key={i} />))}
+  </div>
+
+  <div className="reviewCount">
+    <a href="@"><span>{1} review</span></a>
+  </div>
+</div>
+
+<p className={styles.price}>INR {prod?.price}</p>
+
+<div className={styles.colors}>
+  <p className={styles.color}><span>Color:</span> {color ? color.colorName : prod?.Product_colors[0]?.colorName}</p>
+
 
       <NoReview />
 

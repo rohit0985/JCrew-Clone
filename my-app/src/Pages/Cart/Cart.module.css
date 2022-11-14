@@ -111,6 +111,7 @@ font-weight: bold;
     height: 40px;
     display: flex;
     gap: 10px;
+    align-items: center;
 }
 .rightWrapper .promo>div>input{
     height: 100%;

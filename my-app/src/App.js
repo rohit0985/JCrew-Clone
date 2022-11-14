@@ -1,13 +1,18 @@
 import "./App.css";
 
+
+
+
 import Footer from "./Components/Footer";
 import MainRoutes from "./Routes/MainRoutes";
 import Navbar from "./Components/NavBar";
 
+
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      
+      <ChakraProvider><Navbar /></ChakraProvider>
       <MainRoutes />
       <Footer />
     </div>
