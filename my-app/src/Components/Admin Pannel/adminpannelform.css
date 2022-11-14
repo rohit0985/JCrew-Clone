@@ -26,7 +26,8 @@
   gap: 20px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="number"] {
   font-size: 16px;
   font-weight: 500;
   border: 1.5px solid #cac3c3;
@@ -58,6 +59,7 @@ input[type="text"] {
 }
 
 input[type="text"]:focus + label,
+input[type="number"]:focus + label,
 input[type="text"]:valid + label {
   font-size: 12px;
   color: black;

@@ -1,4 +1,5 @@
 
+
 import { Routes, Route } from "react-router-dom"
 import React from 'react'
 import HomePage from "../Components/HomePage"
@@ -19,7 +20,9 @@ import Checkout from "../Components/Checkout"
 const MainRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />}>Home Page</Route>
+      <Route path="/" element={<HomePage />}>
+        Home Page
+      </Route>
       <Route
         path="/signup"
         element={
@@ -37,24 +40,32 @@ const MainRoutes = () => {
           </ChakraProvider>
         }
       ></Route>
+
+      <Route path="/men" element={<MenLanding />}></Route>
+      <Route path="mens/newarrivals" element={<Men />}></Route>
+      <Route path="/women" element={<Women />}></Route>
+      <Route path="/single" element={<SingleProduct />}></Route>
+
+
       <Route path="/men" element={<ChakraProvider><Men /></ChakraProvider>}></Route>
       <Route path="/women" element={<ChakraProvider><Women /></ChakraProvider>}></Route>
       <Route path="/single/:id" element={<SingleProduct/>}></Route>
       <Route path="/thankyou" element={<ThankYouPage/>}></Route>
+
       <Route
         path="/cart"
         element={
-          // <PrivateRoute>
+          <PrivateRoute>
             <Cart />
-          // </PrivateRoute>
+          </PrivateRoute>
         }
       ></Route>
       <Route
         path="/checkout"
         element={
-          // <PrivateRoute>
+          <PrivateRoute>
             <CheckOut />
-          // </PrivateRoute>
+          </PrivateRoute>
         }
       ></Route>
     </Routes>
