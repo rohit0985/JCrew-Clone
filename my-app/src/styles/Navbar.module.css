@@ -49,7 +49,7 @@ h4 {
     color: rgb(220,55,55);
 }
 .nav_linkWrap a:nth-child(9):hover {
-    border-color: rgb(220,55,55);
+    border-color: gb(220,55,55);
 }
 .nav_end {
     display: flex;

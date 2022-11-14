@@ -48,10 +48,7 @@ const handleImage = (el)=>{
   setImage(el)
 }
 
-  const [image, setImage] = useState(color.images[0]);
-
   
-  const handleImage = () => { };
 
 
   const handleColor = (el) => {

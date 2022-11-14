@@ -18,9 +18,10 @@ const Men = () => {
   // data && data.map((el) => console.log(el));
 
   let men = data && data.filter((el) => el.belongsTo === "men");
+  console.log('men: ', men);
 
   useEffect(() => {
-    dispatch(getData);
+    dispatch(getData("http://localhost:8080/products"));
   }, []);
 
   const category = [
