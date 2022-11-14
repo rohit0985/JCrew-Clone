@@ -9,10 +9,15 @@ import SimilarCard from "./SimilarCard";
 
 import { addCdata, getCdata } from "../../Redux/CartReducer/action";
 import { getData } from "../../Redux/AppReducer/action";
-import { useDispatch, useSelector } from "react-redux";
-import { InputGroup } from "@chakra-ui/react";
-import { useSearchParams } from "react-router-dom";
+
+import { useDispatch, useSelector } from 'react-redux'
 import {useParams, Link} from "react-router-dom"
+
+
+
+
+
+
 
 
 const SingleProduct = () => {
@@ -20,17 +25,20 @@ const SingleProduct = () => {
   const {id} = useParams()
 console.log(id)
 
+
   const [color, setColor] = useState("");
   const [colorname, setColorname] = useState(color.colorName);
 
   const [image, setImage] = useState();
-  const [quantity, setQuantity] = useState(1);
-  const [size, setSize] = useState("");
-  const dispatch = useDispatch();
+
+  const [quantity, setQuantity ] = useState(1)
+  const [size, setSize] = useState('')
+  const dispatch = useDispatch()
+  
 
   const prod = useSelector((state) => state.AppReducer.products);
   const loading = useSelector((state) => state.AppReducer.isLoading);
-  const error = useSelector((state) => state.AppReducer.isError);
+ 
 
   useEffect(() => {
     // dispatch(getCdata(`http://localhost:8080/cart`))
@@ -270,7 +278,7 @@ const addToCart = () =>{
       <div className={styles.container}>
 
 <div className={styles.left}>
-{prod && prod?.Product_colors[0]?.images?.map((el, i) => (<img src={el} alt="#" key={i} onMouseOver={() =>handleImage(el)} />))}
+{prod && prod?.Product_colors[0]?.images.map((el,i) => (<img src={el} alt="#" key={i} onMouseOver={() =>handleImage(el)} />))}
 </div>
 
 
@@ -298,6 +306,33 @@ const addToCart = () =>{
 
 <div className={styles.colors}>
   <p className={styles.color}><span>Color:</span> {color ? color.colorName : prod?.Product_colors[0]?.colorName}</p>
+
+
+  <div className={styles.colorContainer}>
+    {
+       prod?.Product_colors && prod?.Product_colors?.map((el, i) => <div key={i} className={styles.colorOuter} onMouseOver={() => setColorname(el.colorName)} onClick={() => handleColor(el)}>
+
+        <div className={styles.colorInner}>
+          <img src={el.images[el.images.length - 1]} />
+        </div>
+      </div>
+      ) 
+    }
+  </div>
+</div>
+
+<div className={styles.size}>
+  <div className={styles.top}>
+    <div className={styles.size}>
+      <p className={styles.SelectedSize}>
+        <span>Size: </span>{size ? size : "Select a Size"}
+      </p>
+    </div>
+    <div className={styles.chart}>
+      <a href="#">Size chart</a>
+    </div>
+  </div>
+
 
 
       <NoReview />
