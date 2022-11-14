@@ -9,6 +9,8 @@ import Signup from "../Pages/Signup";
 import {useNavigate}  from 'react-router-dom'
 import Cartdropdown from "./Cartdropdown/Cartdropdown"
 import { getCdata } from "../Redux/CartReducer/action";
+import logo from "../Components/StyleBasket_logo.jpg"
+
 
 export default function Navbar() {
 
@@ -33,9 +35,16 @@ useEffect(()=>{
     return (
         <div style={{position:"relative"}} className={styles.nav_parent}>
             <div className={styles.nav_logo}>
-                <MainLogo />
+            <Link to="/">
+            {/* <MainLogo /> */}
+           <div style={{overflow:'hidden', height: '60px', width:'60px', marginLeft:'30px'}} >
+           <img src={logo} style={{padding:"2px"}} alt="#" />
+           </div>
+           
+                    </Link>
+               
                 <div className={styles.nav_linkWrap}>
-                <Link to="/">
+                <Link to="/gift">
                         <h4>Gifts</h4>
                     </Link>
                     <Link to="/">
@@ -44,7 +53,7 @@ useEffect(()=>{
                     <Link to="/women">
                         <h4>Women</h4>
                     </Link>
-                    <Link to="/mens">
+                    <Link to="/men">
                         <h4>Men</h4>
                     </Link>
                     <Link to="/kids">

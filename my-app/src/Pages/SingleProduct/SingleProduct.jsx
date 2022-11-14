@@ -11,9 +11,8 @@ import SimilarCard from "./SimilarCard";
 import { addCdata, getCdata } from "../../Redux/CartReducer/action"
 import { getData } from "../../Redux/AppReducer/action";
 import { useDispatch, useSelector } from 'react-redux'
-import { InputGroup } from "@chakra-ui/react";
-import { useSearchParams } from "react-router-dom";
 import {useParams, Link} from "react-router-dom"
+
 
 
 
@@ -22,6 +21,7 @@ const SingleProduct = () => {
 
   const {id} = useParams()
 console.log(id)
+
 
   const [color, setColor] = useState("");
   const [colorname, setColorname] = useState(color.colorName);
@@ -32,8 +32,7 @@ console.log(id)
   const dispatch = useDispatch()
   
   const prod = useSelector((state)=> state.AppReducer.products)
-  const loading = useSelector((state)=> state.AppReducer.isLoading)
-  const error = useSelector((state)=> state.AppReducer.isError)
+  
 
 
 
@@ -96,7 +95,7 @@ const addToCart = () =>{
       <div className={styles.container}>
 
 <div className={styles.left}>
-{prod && prod?.Product_colors[0]?.images?.map((el, i) => (<img src={el} alt="#" key={i} onMouseOver={() =>handleImage(el)} />))}
+{prod && prod?.Product_colors[0]?.images.map((el,i) => (<img src={el} alt="#" key={i} onMouseOver={() =>handleImage(el)} />))}
 </div>
 
 
@@ -127,7 +126,7 @@ const addToCart = () =>{
 
   <div className={styles.colorContainer}>
     {
-       prod.Product_colors && prod?.Product_colors?.map((el, i) => <div key={i} className={styles.colorOuter} onMouseOver={() => setColorname(el.colorName)} onClick={() => handleColor(el)}>
+       prod?.Product_colors && prod?.Product_colors?.map((el, i) => <div key={i} className={styles.colorOuter} onMouseOver={() => setColorname(el.colorName)} onClick={() => handleColor(el)}>
 
         <div className={styles.colorInner}>
           <img src={el.images[el.images.length - 1]} />

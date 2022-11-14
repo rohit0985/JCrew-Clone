@@ -134,7 +134,7 @@ input[type="text"]:valid + label {
 
 span {
   font-size: 16px;
-  color: red;
+  color: black;
 }
 
 @media all and (min-width: 451px) and (max-width: 750px) {
