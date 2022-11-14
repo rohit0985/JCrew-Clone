@@ -1,21 +1,20 @@
 import "./App.css";
 
-import Navbar from "./Components/NavBar";
+
+
+
 import Footer from "./Components/Footer";
 import MainRoutes from "./Routes/MainRoutes";
-import { ChakraProvider } from "@chakra-ui/react";
-
+import Navbar from "./Components/NavBar";
 
 
 function App() {
   return (
     <div className="App">
-
+      
       <ChakraProvider><Navbar /></ChakraProvider>
-
       <MainRoutes />
       <Footer />
-
     </div>
   );
 }
