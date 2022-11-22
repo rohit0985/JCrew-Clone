@@ -36,8 +36,8 @@ const applyPromo = ()=>{
 
 
 useEffect(()=>{
-  dispatch(getCdata(`http://localhost:8080/cart`))
-  dispatch(getLSdata(`http://localhost:8080/shopLater`))
+  dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
+  dispatch(getLSdata(`https://nice-tan-elk-tutu.cyclic.app/shopLater`))
 },[])
 
 

@@ -22,7 +22,7 @@ const Men = () => {
   let men = data && data.filter((el) => el.belongsTo === "men");
 
   useEffect(() => {
-    dispatch(getData("http://localhost:8080/products"));
+    dispatch(getData("https://nice-tan-elk-tutu.cyclic.app/products"));
   }, []);
 
   const category = [

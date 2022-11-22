@@ -31,8 +31,9 @@ const MenLanding = () => {
   // console.log(recomendedData.Product_colors.images);
 
   useEffect(() => {
-    dispatch(getData);
+    dispatch(getData("https://nice-tan-elk-tutu.cyclic.app/products"));
   });
+  
   return (
     <div>
       <div>

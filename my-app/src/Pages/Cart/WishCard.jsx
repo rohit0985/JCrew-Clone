@@ -17,20 +17,20 @@ const location = useLocation()
   const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
   
   const deleteFromShopLater = (id) =>{
-    dispatch(deleteLSdata(`http://localhost:8080/shopLater/${id}`))
-    dispatch(getLSdata(`http://localhost:8080/shopLater`))
+    dispatch(deleteLSdata(`https://nice-tan-elk-tutu.cyclic.app/shopLater/${id}`))
+    dispatch(getLSdata(`https://nice-tan-elk-tutu.cyclic.app/shopLater`))
   }
 
   const deleteAndSave = (prod, id) =>{
-    dispatch(deleteLSdata(`http://localhost:8080/shopLater/${id}`))
-    dispatch(addCdata(`http://localhost:8080/shopLater`, prod))
-    dispatch(getCdata(`http://localhost:8080/cart`))
-    dispatch(getLSdata(`http://localhost:8080/shopLater`))
+    dispatch(deleteLSdata(`https://nice-tan-elk-tutu.cyclic.app/shopLater/${id}`))
+    dispatch(addCdata(`https://nice-tan-elk-tutu.cyclic.app/shopLater`, prod))
+    dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
+    dispatch(getLSdata(`https://nice-tan-elk-tutu.cyclic.app/shopLater`))
   }
 
   useEffect(()=>{
-    dispatch(getCdata(`http://localhost:8080/cart`))
-    dispatch(getLSdata(`http://localhost:8080/shopLater`))
+    dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
+    dispatch(getLSdata(`https://nice-tan-elk-tutu.cyclic.app/shopLater`))
   },[location])
 
   return (

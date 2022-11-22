@@ -45,7 +45,7 @@ const SingleProduct = () => {
 
 useEffect(()=>{
   // let data = prodList.find((el)=> el.id == id)
-  axios.get(`http://localhost:8080/products/${id}`)
+  axios.get(`https://nice-tan-elk-tutu.cyclic.app/products/${id}`)
   .then((res)=> setProd(res.data))
   
 },[])
@@ -89,8 +89,8 @@ const addToCart = () => {
   }
 
 
- isPresent ? dispatch(updateCdata(`http://localhost:8080/cart/${id}`,payload)) : dispatch(addCdata(`http://localhost:8080/cart`, payload))
-  dispatch(getCdata(`http://localhost:8080/cart`,))
+ isPresent ? dispatch(updateCdata(`https://nice-tan-elk-tutu.cyclic.app/cart/${id}`,payload)) : dispatch(addCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`, payload))
+  dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
 
   alert("Product has been added to the cart")
 

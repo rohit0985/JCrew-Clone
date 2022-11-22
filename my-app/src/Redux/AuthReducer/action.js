@@ -26,7 +26,7 @@ const signUp = (payload) => (dispatch) => {
   return axios({
     method: "POST",
     url: "/user",
-    baseURL: "http://localhost:8080",
+    baseURL: "https://nice-tan-elk-tutu.cyclic.app/",
     data: payload,
   })
     .then((res) => dispatch({ type: types.SIGNUP_SUCCESS, payload: res.data }))
@@ -42,7 +42,7 @@ const signIn = (payload) => (dispatch) => {
   return axios({
     method: "POST",
     url: "/user",
-    baseURL: "http://localhost:8080",
+    baseURL: "https://nice-tan-elk-tutu.cyclic.app/",
     data: payload,
   })
     .then((res) => dispatch({ type: types.SIGNIN_SUCCESS, payload: res.data }))

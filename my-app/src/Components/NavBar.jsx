@@ -31,7 +31,7 @@ export default function Navbar() {
 
 
     useEffect(() => {
-        dispatch(getCdata(`http://localhost:8080/cart`))
+        dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
     }, [])
 
     return (
