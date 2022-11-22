@@ -20,7 +20,7 @@ useEffect(()=>{
 
   return (
     <div className="CheckoutCardProduct-container">
-      <button className="back-cart">BACK TO CART</button>
+      <button className="back-cart" onClick={()=>navigate(`/cart`)}>BACK TO CART</button>
 
 {
   cartData && cartData.map((el, i)=>

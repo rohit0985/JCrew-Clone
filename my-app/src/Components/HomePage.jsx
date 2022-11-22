@@ -25,7 +25,7 @@ document.title = "J.Crew: Clothes, Shoes & Accessories";
         </div>
                
         <div className={styles.MainPage_SubTop}>
-        <div className={styles.biman_1}>
+        <div className={styles.biman_1} onClick={()=>navigate("/women")}>
             <div style={{
             marginTop:"-250px"
              }}>
@@ -34,7 +34,7 @@ document.title = "J.Crew: Clothes, Shoes & Accessories";
         <h4 style={{ textDecoration: "underline" }}>Shop Swimfor every body</h4>
         </div>
         </div>
-        <div className={styles.biman_2}>
+        <div className={styles.biman_2} onClick={()=>navigate("/women")}>
                 <div style={{
                 marginTop:"50px"
                 }}>
@@ -46,7 +46,7 @@ document.title = "J.Crew: Clothes, Shoes & Accessories";
                 
                 </div>
                 </div>
-                <div className={styles.biman_3}>
+                <div className={styles.biman_3} onClick={()=>navigate("/men")}>
                     <div style={{
                         marginTop:"-300px"
                        }}>
@@ -60,7 +60,7 @@ document.title = "J.Crew: Clothes, Shoes & Accessories";
                            
                 </div>
                 </div>
-                <div className={styles.biman_4}>
+                <div className={styles.biman_4} onClick={()=>navigate("/women")}>
                     <div style={{
                     marginTop:"100px"
                     }}>
@@ -113,7 +113,7 @@ document.title = "J.Crew: Clothes, Shoes & Accessories";
                 </div>
 
                 <div className={styles.mainMidImg}>
-                    <div className={styles.mainMidImgWrap}>
+                    <div className={styles.mainMidImgWrap} onClick={()=>navigate("/women")}>
                         <img src="https://www.jcrew.com/brand_creative/homepage2022/06-June/2022jun_0524_hp_w_img7.jpg"
                         alt=""/>
                         <h2 className={styles.mainMidH1}>1 swimsuits, 2 ways</h2>
@@ -122,7 +122,7 @@ document.title = "J.Crew: Clothes, Shoes & Accessories";
                        <div className={styles.mainSpan}>Copy these outfits</div>
                             
                     </div>
-                    <div className={styles.mainMidImgWrap}>
+                    <div className={styles.mainMidImgWrap} onClick={()=>navigate("/women")}>
                         <img src="https://www.jcrew.com/brand_creative/homepage2022/06-June/2022jun_0524_hp_w_img8.jpg"
                         alt=""/>
 
@@ -133,7 +133,7 @@ document.title = "J.Crew: Clothes, Shoes & Accessories";
                             
                        
                     </div>
-                    <div className={styles.mainMidImgWrap}>
+                    <div className={styles.mainMidImgWrap} onClick={()=>navigate("/women")}>
                         <img src="https://www.jcrew.com/brand_creative/homepage2022/06-June/2022jun_0524_hp_w_img9.jpg"
                         alt=""/>
                         <h2 className={styles.mainMidH1}>The new arrivals edit </h2>
@@ -153,7 +153,8 @@ document.title = "J.Crew: Clothes, Shoes & Accessories";
                     fontWeight: "400",
                     }}>More Stories</span>
                 
-                <div className={styles.mainMidBottom}> <div>
+                <div className={styles.mainMidBottom}> 
+                <div onClick={()=>navigate("/men")}>
                    
                         <img src="https://www.jcrew.com/brand_creative/homepage2022/06-June2/2022jun_0601_hp_w_img10.jpg"
                         alt=""/>
@@ -162,7 +163,7 @@ document.title = "J.Crew: Clothes, Shoes & Accessories";
                         <span className={styles.innerSpan}> Celebrate Pride season</span>
                            
                     </div>
-                    <div>
+                    <div onClick={()=>navigate("/women")}>
                         <img src="https://www.jcrew.com/brand_creative/homepage2022/06-June/2022jun_0524_hp_w_img11.jpg"
                         alt=""/>
                         
@@ -171,7 +172,7 @@ document.title = "J.Crew: Clothes, Shoes & Accessories";
                         <span className={styles.innerSpan}>Shop the roundup</span>
                             
                     </div>
-                    <div>
+                    <div onClick={()=>navigate("/men")}>
                         <img src="https://www.jcrew.com/brand_creative/homepage2022/06-June/2022jun_0524_hp_w_img12-.jpg"
                         alt=""/>
                         
@@ -180,7 +181,7 @@ document.title = "J.Crew: Clothes, Shoes & Accessories";
                         <span className={styles.innerSpan}>See why we're obsessed</span>
                             
                     </div>
-                    <div>
+                    <div onClick={()=>navigate("/women")}>
                         <img src="https://www.jcrew.com/brand_creative/homepage2022/06-June/2022jun_0524_hp_w_img10.jpg"
                         alt=""/>
                         
@@ -194,7 +195,7 @@ document.title = "J.Crew: Clothes, Shoes & Accessories";
             <div className={styles.mainAboveFooter}>
                 <h2 style={{ fontSize: 36, fontWeight: 400 }}>More you need to see</h2>
                     
-                <div className={styles.aboveFooterImgWrap}>
+                <div className={styles.aboveFooterImgWrap} onClick={()=>navigate("/women")}>
                     <div className={styles.aboveFooterInner}>
                     <img src="https://www.jcrew.com/s7-img-facade/BI574_PT1317_m?wid=416"
                     alt=""/>

@@ -71,12 +71,18 @@ transition: .2s;
 
 .right .ratingReview {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
     margin: 0;
     margin-bottom: 10px;
+   
 }
-
+ .ratingStars{
+    display: flex;
+    flex-direction: row; 
+   
+}
 .right .ratingReview a {
     text-decoration: none;
     color: #666666;

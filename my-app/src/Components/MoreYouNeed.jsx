@@ -58,7 +58,7 @@ const MoreYouNeed = () => {
               src="https://www.jcrew.com/s7-img-facade/AB651_RD5371_m?wid=416"
               alt=""
             />
-            <Link to="/women">
+            <Link to="/mens">
               <p>New Parkas, Topcoats & More</p>
             </Link>
           </div>

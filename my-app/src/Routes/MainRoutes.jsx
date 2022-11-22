@@ -12,6 +12,7 @@ import Cart from "../Pages/Cart/Cart"
 import CheckoutForm from "../Pages/CheckoutForm/CheckoutForm"
 import CheckOut from "../Pages/CheckOut/CheckOut"
 import ThankYouPage from "../Pages/ThankYouPage"
+import MenLanding from "../Pages/Men/MenLanding"
 
 import { ChakraProvider } from "@chakra-ui/react";
 import PrivateRoute from "../Components/PrivateRoute";
@@ -20,55 +21,25 @@ import Checkout from "../Components/Checkout"
 const MainRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />}>
-        Home Page
-      </Route>
-      <Route
-        path="/signup"
-        element={
-          <ChakraProvider>
-            <Signup />
-          </ChakraProvider>
-        }
-      ></Route>
+      <Route path="/" element={<HomePage />}>Home Page</Route>
+      <Route path="/signup" element={ <ChakraProvider><Signup /></ChakraProvider>}></Route>
       <Route path="/checkout" element={<Checkout/>}></Route>
-      <Route
-        path="/signin"
-        element={
-          <ChakraProvider>
-            <Signin />
-          </ChakraProvider>
-        }
-      ></Route>
+      <Route path="/signin" element={<ChakraProvider><Signin /></ChakraProvider>}></Route>
 
-      <Route path="/men" element={<MenLanding />}></Route>
-      <Route path="mens/newarrivals" element={<Men />}></Route>
-      <Route path="/women" element={<Women />}></Route>
+      <Route path="/mens" element={<MenLanding/>}></Route>
+      <Route path="/men" element={<Men/>}></Route>
+      {/* <Route path="mens/newarrivals" element={<Men />}></Route> */}
+    
+      {/* <Route path="/women" element={<Women />}></Route> */}
       <Route path="/single" element={<SingleProduct />}></Route>
 
 
-      <Route path="/men" element={<ChakraProvider><Men /></ChakraProvider>}></Route>
-      <Route path="/women" element={<ChakraProvider><Women /></ChakraProvider>}></Route>
+      {/* <Route path="/men/newarrivals" element={<ChakraProvider><Men/></ChakraProvider>}></Route> */}
+      <Route path="/women" element={<ChakraProvider><Women/></ChakraProvider>}></Route>
       <Route path="/single/:id" element={<SingleProduct/>}></Route>
       <Route path="/thankyou" element={<ThankYouPage/>}></Route>
-
-      <Route
-        path="/cart"
-        element={
-          <PrivateRoute>
-            <Cart />
-          </PrivateRoute>
-        }
-      ></Route>
-      <Route
-        path="/checkout"
-        element={
-          <PrivateRoute>
-            <CheckOut />
-          </PrivateRoute>
-        }
-      ></Route>
-    </Routes>
+      <Route path="/cart" element={<Cart />}>
+      </Route><Route path="/checkout" element={<PrivateRoute><CheckOut /></PrivateRoute>}></Route></Routes>
   );
 };
 
