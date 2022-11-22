@@ -1,7 +1,7 @@
 import React, { Children, useEffect, useState } from "react";
 import styles from "./SingleProduct.module.css";
 import NoReview from "./NoReview";
-import { BsSuitHeart, BsPinterest, BsTwitter } from "react-icons/bs";
+import { BsSuitHeart, BsPinterest, BsTwitter, BsTypeH1 } from "react-icons/bs";
 import { AiFillFacebook } from "react-icons/ai";
 import { SlSocialTumblr } from "react-icons/sl";
 import { AiFillStar } from "react-icons/ai";
@@ -12,6 +12,7 @@ import { getData } from "../../Redux/AppReducer/action";
 
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams, Link } from "react-router-dom"
+import axios from "axios";
 
 
 
@@ -23,6 +24,7 @@ const SingleProduct = () => {
 
   const { id } = useParams()
   // console.log(id)
+  const [prod, setProd] = useState("")
 
   const [color, setColor] = useState("");
   const [colorname, setColorname] = useState(color.colorName);
@@ -34,7 +36,7 @@ const SingleProduct = () => {
   const dispatch = useDispatch()
 
 
-  const prod = useSelector((state) => state.AppReducer.products);
+  const prodList = useSelector((state) => state.AppReducer.products);
   const cartList = useSelector((state) => state.CartReducer.products);
   const loading = useSelector((state) => state.AppReducer.isLoading);
 
@@ -42,10 +44,11 @@ const SingleProduct = () => {
 
 
 useEffect(()=>{
-  dispatch(getData(`http://localhost:8080/products/${id}`))
+  // let data = prodList.find((el)=> el.id == id)
+  axios.get(`http://localhost:8080/products/${id}`)
+  .then((res)=> setProd(res.data))
+  
 },[])
-
-
 
 
 const handleColor = (el) => {
@@ -84,8 +87,6 @@ const addToCart = () => {
       break;
     }
   }
-
-console.log(isPresent)
 
 
  isPresent ? dispatch(updateCdata(`http://localhost:8080/cart/${id}`,payload)) : dispatch(addCdata(`http://localhost:8080/cart`, payload))

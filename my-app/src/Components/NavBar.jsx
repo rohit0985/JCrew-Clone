@@ -19,10 +19,12 @@ export default function Navbar() {
 
     const dispatch = useDispatch()
     const cartData = useSelector((reduxStore) => reduxStore.CartReducer.products)
+    
 
     const handleShow = () => {
         setShow(!show)
     }
+    
     const cancleShow = () => {
         setShow(false)
     }
@@ -108,7 +110,7 @@ export default function Navbar() {
                 </div>
                 <div
                     className={styles.nav_icons}
-                    onMouseOver={handleShow}
+                    onMouseEnter={handleShow}
                     onClick={() => {
                         navigate("/cart");
                     }}>
