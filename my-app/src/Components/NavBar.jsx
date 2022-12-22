@@ -12,23 +12,12 @@ import {AiOutlineClose} from "react-icons/ai"
 import {GiHamburgerMenu} from "react-icons/gi"
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  console.log('open: ', open);
+  const [open, setOpen] = useState(false)
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
 
-    const [show, setShow] = useState(false)
-    const navigate = useNavigate()
-
-    const dispatch = useDispatch()
-    const cartData = useSelector((reduxStore) => reduxStore.CartReducer.products)
-    
-
-
-    useEffect(() => {
-        dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
-    }, [])
-
+  const dispatch = useDispatch();
+  const cartData = useSelector((reduxStore) => reduxStore.CartReducer.products);
 
   const handleShow = () => {
     setShow(!show);
@@ -37,10 +26,12 @@ export default function Navbar() {
     setShow(false);
   };
 
- 
+  useEffect(() => {
+    dispatch(getCdata(`http://localhost:8080/cart`));
+  }, []);
 
   return (
-    <div className={styles.nav_parent}>
+    <div style={{ position: "relative" }} className={styles.nav_parent}>
       <div className={styles.nav_logo}>
         {open ?<GiHamburgerMenu className={styles.ham} onClick={()=>setOpen(!open)}/> : <AiOutlineClose className={styles.ham} onClick={()=>setOpen(!open)}/>}
         <MainLogo />
