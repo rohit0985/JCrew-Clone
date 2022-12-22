@@ -35,6 +35,20 @@ export default function Navbar() {
       <div className={styles.nav_logo}>
         {open ?<GiHamburgerMenu className={styles.ham} onClick={()=>setOpen(!open)}/> : <AiOutlineClose className={styles.ham} onClick={()=>setOpen(!open)}/>}
         <MainLogo />
+        <div className={styles.nav_linkWrap_big}>
+          <Link to="/">
+            <h4 onClick={()=>setOpen(!open)}>New</h4>
+          </Link>
+          <Link to="/women">
+            <h4 onClick={()=>setOpen(!open)}>Women</h4>
+          </Link>
+          <Link to="/men">
+            <h4 onClick={()=>setOpen(!open)}>Men</h4>
+          </Link>
+          <Link to="/kids">
+            <h4 onClick={()=>setOpen(!open)}>Kids</h4>
+          </Link>
+        </div>
         <div className={open ? styles.navlink_active : styles.nav_linkWrap}>
           <Link to="/">
             <h4 onClick={()=>setOpen(!open)}>New</h4>
