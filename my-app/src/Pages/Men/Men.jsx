@@ -1,4 +1,8 @@
-import { ChevronDownIcon, TriangleDownIcon, TriangleUpIcon } from "@chakra-ui/icons";
+import {
+  ChevronDownIcon,
+  TriangleDownIcon,
+  TriangleUpIcon,
+} from "@chakra-ui/icons";
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,12 +16,14 @@ import { useNavigate } from "react-router-dom";
 
 
 const Men = () => {
+
  const navigate = useNavigate()
   const [filterOpen, setFilterOpen] = useState(false);
   const dispatch = useDispatch();
   const data = useSelector((reduxStore) => reduxStore.AppReducer.products);
 
   // data && data.map((el) => console.log(el));
+
 
   let men = data && data.filter((el) => el.belongsTo === "men");
 
@@ -71,7 +77,7 @@ const Men = () => {
           {filterOpen ? <TriangleDownIcon /> : <TriangleUpIcon />}
         </div>
         <div className={`${styles.filter_button} ${styles.filter_button2}`}>
-          <FilterButton/>
+          <FilterButton />
         </div>
       </div>
 
