@@ -20,11 +20,11 @@ gap: 5px;
 }
 .small .selectedImage{
     border: 1px solid gray;
-    border-radius: 3px;
+    border-radius: 10px;
+    padding: 3px;
 }
 .small .smallImage{
-    border: 1px solid green;
-    border-radius: 3px; 
+    border-radius: 10px; 
 }
 
 .big{
@@ -36,5 +36,96 @@ gap: 5px;
     width: 100%;
 }
 .right{
+    width: 35%;
     border: 1px solid purple;  
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.right .name{
+font-size: 20px;
+    font-weight: 500;
+}
+.ratingReview{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+}
+.rating{
+    display: flex;
+    gap: 2px;
+}
+.right .reviewCount{
+    font-size: 13px;
+    color: gray;
+    opacity: .8;
+}
+.right .price{
+  
+    font-weight: 500;
+
+}
+.right .color{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.right span{
+color: gray;
+opacity: .8;
+margin-right: 10px;
+}
+.right .color  .colorImg{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid black;
+    padding: 2px;
+}
+
+
+.right .size{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.right .sizeWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.right .sizeInfo{
+    display: flex;
+    flex-direction: column;
+}
+.right .sizeInfo>div{
+    display: flex;
+  
+}
+.right .chooseSize{
+    border: 1px solid rgb(215, 213, 213);
+    width: 70px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 5px;
+    font-size: 13px;
+    transition: .3s;
+}
+.right .choosedSize{
+    border: 1px solid rgb(36, 35, 35);
+    width: 70px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 5px;
+    font-size: 13px;
+    transition: .3s;
+
+}
+.right .chooseSize:active{
+    font-size: 10px;
 }
