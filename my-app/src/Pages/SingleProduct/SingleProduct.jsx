@@ -132,7 +132,6 @@ const SingleProduct = () => {
             </div>
           </div>
 
-
           <hr />
 
 <div className={styles.description}>
