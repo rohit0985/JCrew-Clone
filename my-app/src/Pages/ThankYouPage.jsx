@@ -2,10 +2,16 @@ import React from 'react'
 import styles from "./ThankYouPage.module.css"
 import { useLocation } from 'react-router-dom'
 import styled from "styled-components"
+import { useNavigate } from 'react-router-dom'
 
 const ThankYouPage = () => {
+  const navigate = useNavigate()
     const location = useLocation()
     
+setTimeout(()=>{
+  navigate("/")
+},3000)
+
   return (
     <ThankYouWrapper>
      <ThankYouNote>

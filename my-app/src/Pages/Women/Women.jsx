@@ -18,7 +18,7 @@ const Women = () => {
   let women = data && data.filter((el) => el.belongsTo === "Women");
 
   useEffect(() => {
-    dispatch(getData("http://localhost:8080/products"));
+    dispatch(getData("https://nice-tan-elk-tutu.cyclic.app/products"));
   }, []);
 
   const category = [
@@ -87,7 +87,7 @@ const Women = () => {
         </div>
         <div className={styles.allproducts_div}>
           {women &&
-            women.map((data) => (
+            women?.map((data) => (
               <SingleProductCard key={data.id} data={data} />
             ))}
         </div>

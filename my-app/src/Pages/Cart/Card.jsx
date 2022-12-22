@@ -12,18 +12,18 @@ const Card = ({prod}) => {
   const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
 
   const increaseQnty = (id) =>{
-    dispatch(updateCdata(`http://localhost:8080/cart/${id}`,{cartQuantity : Number(prod.cartQuantity) + 1}))
-    dispatch(getCdata(`http://localhost:8080/cart`))
+    dispatch(updateCdata(`https://nice-tan-elk-tutu.cyclic.app/cart/${id}`,{cartQuantity : Number(prod.cartQuantity) + 1}))
+    dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
   }
 
   function decreaseQnty(id){
-    dispatch(updateCdata(`http://localhost:8080/cart/${id}`,{cartQuantity : Number(prod.cartQuantity) - 1}))
-    dispatch(getCdata(`http://localhost:8080/cart`))
+    dispatch(updateCdata(`https://nice-tan-elk-tutu.cyclic.app/cart/${id}`,{cartQuantity : Number(prod.cartQuantity) - 1}))
+    dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
    }
 
   const deleteFromCart = (id) =>{
-    dispatch(deleteCdata(`http://localhost:8080/cart/${id}`))
-    dispatch(getCdata(`http://localhost:8080/cart`))
+    dispatch(deleteCdata(`https://nice-tan-elk-tutu.cyclic.app/cart/${id}`))
+    dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
   }
 
   const deleteAndSave = (prod, id) =>{
@@ -35,7 +35,7 @@ const Card = ({prod}) => {
   }
 
   useEffect(()=>{
-    dispatch(getCdata(`http://localhost:8080/cart`))
+    dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
   },[])
 
 

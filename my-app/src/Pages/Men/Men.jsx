@@ -12,19 +12,24 @@ import FilterButton from "../../Components/FilterButton";
 import SingleProductCard from "../../Components/SingleProductCard";
 import { getData } from "../../Redux/AppReducer/action";
 import styles from "./Mens.module.css";
+import { useNavigate } from "react-router-dom";
+
 
 const Men = () => {
-  useEffect(() => {
-    dispatch(getData("http://localhost:8080/products"));
-  }, []);
 
+ const navigate = useNavigate()
   const [filterOpen, setFilterOpen] = useState(false);
   const dispatch = useDispatch();
   const data = useSelector((reduxStore) => reduxStore.AppReducer.products);
 
   // data && data.map((el) => console.log(el));
 
-  let men = data && data?.filter((el) => el.belongsTo === "men");
+
+  let men = data && data.filter((el) => el.belongsTo === "men");
+
+  useEffect(() => {
+    dispatch(getData("https://nice-tan-elk-tutu.cyclic.app/products"));
+  }, []);
 
   const category = [
     "Sweaters",
@@ -91,7 +96,9 @@ const Men = () => {
         </div>
         <div className={styles.allproducts_div}>
           {men &&
-            men.map((data) => <SingleProductCard key={data.id} data={data} />)}
+            men.map((data) => (
+              <SingleProductCard key={data.id} data={data} onClick={()=>navigate(`/single/${data.id}`)} />
+            ))}
         </div>
       </div>
     </div>

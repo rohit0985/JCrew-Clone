@@ -1,0 +1,285 @@
+.mainContainer{
+    width: 80%;
+    margin: 0 auto;
+}
+.container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+  
+    font-size: 14px;
+    font-weight: 450;
+}
+
+.left {
+    width: 70px;
+    /* border: 1px solid gray; */
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.left img {
+    width: 100%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.left img:hover {
+   
+    scale: 1.1;
+}
+
+.mid {
+    width: 55%;
+    position: relative;
+}
+
+.mid img {
+    width: 100%;
+}
+.mid .heart{
+position: absolute;
+top: 20px;
+right: 20px;
+color: gray;
+transition: .2s;
+}
+.mid .heart:hover{
+    color: black;
+    cursor: pointer;
+}
+.right {
+    width: 35%;
+    text-align: start;
+}
+
+.right .category {
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.right .name {
+    font-weight: 500;
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.right .ratingReview {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    margin-bottom: 10px;
+   
+}
+ .ratingStars{
+    display: flex;
+    flex-direction: row; 
+   
+}
+.right .ratingReview a {
+    text-decoration: none;
+    color: #666666;
+}
+
+.right .price {
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.right .colors{
+    padding-top: 0;
+}
+.right .color{
+    margin: 0;
+}
+.right .color span{
+    color: #666666;
+}
+.right .colorContainer {
+    display: flex;
+    gap: 10px;
+    height: 40px;
+    align-items: center;
+}
+
+.right .colorContainer .colorOuter {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right .colorContainer .colorOuter:hover {
+    border: 1px solid gray;
+}
+
+.colorInner {
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.right .size {
+   margin-top: 10px;
+}
+
+.right .size .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+.right .size p{
+    margin: 0px;
+}
+
+
+.right .size a,.right .size span {
+    color: #666666;
+    text-decoration: none;
+}
+
+.right .sizes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0 30px 0;
+}
+
+.right .sizeAvailable {
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    width: 75px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.right .sizeAvailable:hover {
+    border: 1px solid rgba(128, 128, 128, 1);
+    cursor: pointer;
+}
+
+.right .quantity{
+    display: flex;
+    gap: 15px;
+    margin: 40px 0 20px 0;
+}
+.right .quantity  span{
+    color: #666666;
+}
+.right .quantity select{
+    width: 40px;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+.right .btn{
+    display: flex;
+   flex-direction: column;
+   gap: 5px;
+   margin: 10px 0 20px 0;
+}
+.right .btn i{
+    color: black;
+}
+.right .btn>div{
+    display: flex;
+    height: 40px;
+    gap: 10px;
+}
+.right .btn .atb{
+  flex: 1;
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  outline: none;
+border: 1px solid black;
+border-radius: 1px;
+}
+.right .btn .atb:hover{
+    cursor: pointer;
+}
+.right .btn .atc{
+width: 40px;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: white;
+outline: none;
+border: 1px solid gray;
+border-radius: 1px;
+color: gray;
+transition: .2s;
+}
+.right .btn .atc:hover{
+    color: black;
+    cursor: pointer;
+}
+.right .description h4, .right .description p{
+   margin-left: 20px; 
+}
+
+.right .more{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 40px 0;
+}
+.right .more a{
+ color: black;
+}
+
+.right .social {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+    margin: 40px 0;
+}
+
+.similarProducts{
+    display: flex;
+    gap: 15px;
+    margin: 20px auto 40px auto;
+    
+}
+
+
+
+
+@media all and (max-width: 768px){
+.container{
+    flex-direction: column;
+}
+.left{
+    display: none;
+}
+.mid{
+    width: 100%;
+}
+.right{
+    width: 100%;
+    text-align: left;
+}
+.similarProducts{
+flex-wrap: wrap;
+}
+}

@@ -45,8 +45,8 @@ console.log(bill)
 
 const thanksNote = ()=>{
   let newArr = cartData.map((el,i)=> el.id)
-  newArr.forEach((el,i)=> dispatch(deleteCdata(`http://localhost:8080/cart/${el}`)))
-  dispatch(getCdata(`http://localhost:8080/cart`))
+  newArr.forEach((el,i)=> dispatch(deleteCdata(`https://nice-tan-elk-tutu.cyclic.app/cart/${el}`)))
+  dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
 }
 
 

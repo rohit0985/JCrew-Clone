@@ -1,8 +1,7 @@
 import "./App.css";
-
-import Navbar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 import MainRoutes from "./Routes/MainRoutes";
+import Navbar from "./Components/NavBar";
 import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {

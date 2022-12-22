@@ -29,12 +29,11 @@ export const addCdata=(url,payload)=> (dispatch) => {
   };
 
 export const updateCdata=(url,payload)=>(dispatch)=>{
-  console.log('hello')
-    dispatch({ type: types.PATCH_CART_REQUEST});
+  console.log(payload)
+    // dispatch({ type: types.PATCH_CART_REQUEST});
     return axios
       .patch(url,payload)
       .then((res) => {
-       
         return dispatch({ type: types.PATCH_CART_SUCCESS});
       })
       .catch((err) => {

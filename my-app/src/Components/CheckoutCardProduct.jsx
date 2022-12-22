@@ -15,12 +15,12 @@ let sum = cartData && cartData.reduce((acc, el)=> (acc + Number(el.price) * Numb
 let delivery = (Number(delExt) * Number(sum)).toFixed(2)
 
 useEffect(()=>{
-  dispatch(getCdata(`http://localhost:8080/cart`))
+  dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
 },[])
 
   return (
     <div className="CheckoutCardProduct-container">
-      <button className="back-cart">BACK TO CART</button>
+      <button className="back-cart" onClick={()=>navigate(`/cart`)}>BACK TO CART</button>
 
 {
   cartData && cartData.map((el, i)=>

@@ -15,7 +15,7 @@ const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
 let sum = cartData?.reduce((acc, el)=> (acc + Number(el.price) * Number(el.cartQuantity)),0).toFixed(2);
 
 const handleRemove = (id)=>{
-  dispatch(deleteCdata(`http://localhost:8080/cart/${id}`))
+  dispatch(deleteCdata(`https://nice-tan-elk-tutu.cyclic.app/cart/${id}`))
 }
 
 const checkout =()=>{
@@ -24,7 +24,7 @@ cancleShow()
 }
 
 useEffect(()=>{
-  dispatch(getCdata(`http://localhost:8080/cart`))
+  dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
 },[])
 
   return (

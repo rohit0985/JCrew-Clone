@@ -17,8 +17,18 @@ export default function Navbar() {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
 
-  const dispatch = useDispatch();
-  const cartData = useSelector((reduxStore) => reduxStore.CartReducer.products);
+    const [show, setShow] = useState(false)
+    const navigate = useNavigate()
+
+    const dispatch = useDispatch()
+    const cartData = useSelector((reduxStore) => reduxStore.CartReducer.products)
+    
+
+
+    useEffect(() => {
+        dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
+    }, [])
+
 
   const handleShow = () => {
     setShow(!show);
@@ -27,9 +37,7 @@ export default function Navbar() {
     setShow(false);
   };
 
-  useEffect(() => {
-    dispatch(getCdata(`http://localhost:8080/cart`));
-  }, []);
+ 
 
   return (
     <div className={styles.nav_parent}>

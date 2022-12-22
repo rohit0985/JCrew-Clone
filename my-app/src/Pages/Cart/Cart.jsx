@@ -19,6 +19,8 @@ const dispatch = useDispatch()
 const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
 const shopLaterData = useSelector((reduxStore)=> reduxStore.ShopLaterReducer.products)
 
+console.log(cartData)
+
 let actPromo = "masai10"
 let sum = cartData?.reduce((acc, el)=> (acc + Number(el.price) * Number(el.cartQuantity)),0)
 
@@ -31,11 +33,11 @@ const applyPromo = ()=>{
  }
 }
 
-console.log(cartData)
+
 
 useEffect(()=>{
-  dispatch(getCdata(`http://localhost:8080/cart`))
-  dispatch(getLSdata(`http://localhost:8080/shopLater`))
+  dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
+  dispatch(getLSdata(`https://nice-tan-elk-tutu.cyclic.app/shopLater`))
 },[])
 
 
