@@ -134,7 +134,7 @@ input{
         flex-direction: column;
         /* border: 1px solid black; */
         width: 350px;
-        height: 100vh;
+        height: 110vh;
         top: 60px;
         left: 0px;
         background-color: rgb(255, 255, 255);
@@ -163,7 +163,7 @@ input{
         flex-direction: column;
         /* border: 1px solid black; */
         width: 350px;
-        height: 100vh;
+        height: 110vh;
         top: 60px;
         left: -350px;
         background-color: rgb(255, 255, 255);
