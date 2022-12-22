@@ -31,6 +31,7 @@ const Signup = () => {
   const [passwordUp, setPasswordUp] = useState("");
   const [country, setCountry] = useState("");
   const dispatc = useDispatch();
+  
   const handleSubmitUp = (e) => {
     if (emailUp && passwordUp && country) {
       dispatc(signUp({ emailUp, passwordUp, country }))

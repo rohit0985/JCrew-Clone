@@ -5,17 +5,14 @@ import Footer from "./Components/Footer";
 import MainRoutes from "./Routes/MainRoutes";
 import { ChakraProvider } from "@chakra-ui/react";
 
-
-
 function App() {
   return (
     <div className="App">
-
-      <ChakraProvider><Navbar /></ChakraProvider>
-
+      <ChakraProvider>
+        <Navbar />
+      </ChakraProvider>
       <MainRoutes />
       <Footer />
-
     </div>
   );
 }
