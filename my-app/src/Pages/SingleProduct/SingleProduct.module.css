@@ -1,18 +1,16 @@
 .container{
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
-    border: 2px solid red;
-    /* height: 500px; */
     display: flex;
+    gap: 3%;
 }
+
 .left{
-    border: 1px solid green;
-    width: 65%;  
+    width: 60%;  
     display: flex;
     gap: 15px;
 }
 .small{
-border: 1px solid magenta;
 width: 15%;
 display: flex;
 flex-direction: column;
@@ -29,7 +27,6 @@ gap: 5px;
 
 .big{
     width: 85%;
-    padding: 0px 30px;
 }
 
 .big img{
@@ -37,10 +34,10 @@ gap: 5px;
 }
 .right{
     width: 35%;
-    border: 1px solid purple;  
     display: flex;
     flex-direction: column;
     gap: 10px;
+    text-align: left;
 }
 .right .name{
 font-size: 20px;
@@ -55,6 +52,10 @@ font-size: 20px;
 .rating{
     display: flex;
     gap: 2px;
+}
+.right p{
+    font-size: 18px;
+    text-align: left;
 }
 .right .reviewCount{
     font-size: 13px;
@@ -129,3 +130,167 @@ margin-right: 10px;
 .right .chooseSize:active{
     font-size: 10px;
 }
+
+.right .quantity{
+    display: flex;
+    gap: 15px;
+    margin: 20px 0 20px 0;
+}
+
+.right .quantity select{
+    width: 80px;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+
+.right .btn{
+    display: flex;
+   flex-direction: column;
+   gap: 5px;
+   margin: 10px 0 20px 0;
+}
+.right .btn i{
+    color: black;
+}
+.right .btn>div{
+    display: flex;
+    height: 40px;
+    gap: 10px;
+}
+.right .btn .atb{
+  flex: 1;
+  color: white;
+  background-color: black;
+  font-weight: bold;
+  outline: none;
+border: 1px solid black;
+border-radius: 1px;
+}
+.right .btn .atb:hover{
+    cursor: pointer;
+}
+.right .btn .atc{
+width: 40px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: white;
+outline: none;
+border: 1px solid gray;
+border-radius: 1px;
+color: gray;
+transition: .3s;
+}
+.right .btn .atc:hover{
+    color: black;
+    cursor: pointer;
+}
+.right .btn .atb:active {
+    font-size: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.right .btn .atc:active{
+background-color: pink;
+}
+
+.right .description h4{
+    font-weight: 500;
+    margin-bottom: 5px 0 10px 0;
+}
+.right .description ul{
+    padding-left: 50px;
+}
+.right .description h4, .right .description p{
+    margin-left: 20px; 
+ }
+
+ 
+.right .more{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+   margin: 10px 0 10px 0;
+}
+.right .more a{
+ color: black;
+ text-decoration: underline;
+ margin: 10px 0 ;
+}
+
+.right .social {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+   margin: 10px 0;
+}
+.right .social .span{
+    color: black;
+}
+
+
+
+@media all and (max-width: 1024px){
+    .container{
+        flex-direction: column;
+       
+    }
+    .left{
+        width: 100%;
+    }
+    .right{
+        width: 100%;
+        text-align: left;
+    }
+  
+    }
+
+@media all and (max-width: 768px){
+    .container{
+        text-align: left;
+    }
+    
+    .left{
+        width: 100%;
+        flex-direction: column-reverse;  
+    }
+    .left .small{
+       display: none;
+       visibility: 0;
+    }
+    .left .big{
+        width: 100%;
+    }
+
+
+    .right{
+        width: 100%;
+       
+    }
+  
+    }
+
+@media all and (max-width: 480px){
+    .container{
+        flex-direction: column;
+    }
+    .left{
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .left .big{
+        width: 100%;
+    }
+    .left .small{
+       display: none;
+       visibility: 0;
+    }
+    .right{
+        width: 100%;
+        text-align: left;
+        font-size: 15px;
+    }
+  
+    }
