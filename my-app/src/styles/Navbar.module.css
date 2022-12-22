@@ -24,13 +24,16 @@ h4 {
     max-width: 114.6px;
     margin-left: 20px;
 }
-.nav_linkWrap {
+.nav_linkWrap_big {
     height: 60px;
     display: flex;
     align-items: center;
     gap: 20px;
 }
-.nav_linkWrap a {
+.nav_linkWrap, .navlink_active{
+    display: none;
+}
+.nav_linkWrap_big a {
     height: 100%;
     text-decoration: none;
     color: black;
@@ -41,7 +44,7 @@ h4 {
     align-items: center;
     border-bottom: 3px solid transparent;
 }
-.nav_linkWrap a:hover {
+.nav_linkWrap_big a:hover {
     border-color: black;
 }
 .nav_end {
@@ -113,6 +116,9 @@ input{
     width: 180px;
 }
 @media screen and (max-width:850px) {
+    .nav_linkWrap_big{
+        display: none;
+    }
     .ham{
         display: block;
     }
@@ -132,7 +138,7 @@ input{
         position: absolute;
         display: flex;
         flex-direction: column;
-        /* border: 1px solid black; */
+        border: 1px solid black;
         width: 350px;
         height: 110vh;
         top: 60px;
@@ -151,6 +157,7 @@ input{
         cursor: pointer;
         font-weight: 400;
         display: flex;
+        justify-content: center;
         align-items: center;
         border-bottom: 1px solid transparent;
         transition: 0.3s ease-in-out;
@@ -169,6 +176,13 @@ input{
         background-color: rgb(255, 255, 255);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         z-index: 1;
+    }
+    .auth_mobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2px;
     }
 }
 @media screen and (max-width:500px) {
