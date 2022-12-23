@@ -1,23 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useParams, useSearchParams } from "react-router-dom";
-import DropdownFilterButton from "../../Components/DropDownfilter/DropdownFilterButton";
-import FilterButton from "../../Components/FilterButton";
-import SingleProductCard from "../../Components/SingleProductCard";
-import { getData } from "../../Redux/AppReducer/action";
-import styles from "./Mens.module.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
+import DropdownFilterButton from "../Components/DropDownfilter/DropdownFilterButton";
+import SingleProductCard from "../Components/SingleProductCard";
+import styles from "./Men/Mens.module.css";
+import { getData } from "../Redux/AppReducer/action";
 
-const Men = () => {
+const New = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const [sortBy, setSortBy] = useState("");
 
   const data = useSelector((reduxStore) => reduxStore.AppReducer.products);
-
-  let men = data && data.filter((el) => el.belongsTo === "men");
 
   useEffect(() => {
     const category = searchParams.getAll("category");
@@ -65,12 +60,10 @@ const Men = () => {
           Collection
         </span>
       </div>
+
       <div className={styles.dropdownbuttons}>
-        <div
-          style={{ zIndex: 10 }}
-          className={`${styles.filter_button} ${styles.filter_button2}`}
-        >
-          {/* <FilterButton /> */}
+        <div className={`${styles.filter_button} ${styles.filter_button2}`}>
+          {/* <FilterButton/> */}
           <label htmlFor="">Sort</label>
           <select
             name="Sort"
@@ -78,15 +71,16 @@ const Men = () => {
             style={{ outline: "0px" }}
             onChange={(e) => setSortBy(e.target.value)}
           >
-            <option defaultValue=""></option>
+            <option value=""></option>
             <option value="asc">High-To-Low</option>
             <option value="desc">low-To-High</option>
           </select>
         </div>
       </div>
+
       <div className={styles.products_container}>
         <div className={styles.filtering_div}>
-          <DropdownFilterButton name={"category"} categoryArr={category} />
+          <DropdownFilterButton name={"Category"} categoryArr={category} />
           <hr />
           {/* <DropdownFilterButton name={"Size"} categoryArr={size} />
           <hr />
@@ -98,13 +92,9 @@ const Men = () => {
           <hr /> */}
         </div>
         <div className={styles.allproducts_div}>
-          {men &&
-            men.map((data) => (
-              <SingleProductCard
-                key={data.id}
-                data={data}
-                onClick={() => navigate(`/single/${data.id}`)}
-              />
+          {data &&
+            data?.map((data) => (
+              <SingleProductCard key={data.id} data={data} />
             ))}
         </div>
       </div>
@@ -112,4 +102,4 @@ const Men = () => {
   );
 };
 
-export default Men;
+export default New;

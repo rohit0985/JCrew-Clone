@@ -5,7 +5,7 @@ import styles from "./FilterButton.module.css"
 const FilterButton = () => {
     const [isOpen,setIsOpen] = useState(true)
   return (
-    <div style={{ width: "120px", height: "40px", border: "1px solid black" }}>
+    <div style={{ width: "120px", height: "40px", border: "1px solid black",zIndex:10 }}>
       <div onClick={()=>setIsOpen(!isOpen)}
         style={{
           width: "120px",
@@ -13,6 +13,7 @@ const FilterButton = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-around",
+          zIndex:10
         }}
       >
         Features {isOpen ? <TriangleDownIcon /> : <TriangleUpIcon />}
@@ -25,6 +26,7 @@ const FilterButton = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "start",
+          zIndex:10
         }}
       >
         <h5 style={{ marginLeft: "8px" }}>Price : low - high</h5>
@@ -36,6 +38,7 @@ const FilterButton = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "start",
+          zIndex:10
         }}
       >
         <h5 style={{ marginLeft: "8px" }}>Price : high - low</h5>

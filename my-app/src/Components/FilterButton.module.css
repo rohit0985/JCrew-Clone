@@ -6,4 +6,5 @@
     border: 1px solid gray;
     background-color: lightgrey;
     width: 160px;
+    z-index: 10;
 }
