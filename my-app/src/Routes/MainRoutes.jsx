@@ -16,11 +16,13 @@ import MenLanding from "../Pages/Men/MenLanding"
 import { ChakraProvider } from "@chakra-ui/react";
 import PrivateRoute from "../Components/PrivateRoute";
 import Checkout from "../Components/Checkout"
+import New from "../Pages/New"
 
 const MainRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />}>Home Page</Route>
+      <Route path="/new" element={<New />}>Home Page</Route>
       <Route path="/signup" element={ <ChakraProvider><Signup /></ChakraProvider>}></Route>
       <Route path="/checkout" element={<Checkout/>}></Route>
       <Route path="/signin" element={<ChakraProvider><Signin /></ChakraProvider>}></Route>

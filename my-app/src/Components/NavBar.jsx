@@ -36,7 +36,7 @@ export default function Navbar() {
         {open ?<GiHamburgerMenu className={styles.ham} onClick={()=>setOpen(!open)}/> : <AiOutlineClose className={styles.ham} onClick={()=>setOpen(!open)}/>}
         <MainLogo />
         <div className={styles.nav_linkWrap_big}>
-          <Link to="/">
+          <Link to="/new">
             <h4 onClick={()=>setOpen(!open)}>New</h4>
           </Link>
           <Link to="/women">
