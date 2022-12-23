@@ -1,7 +1,6 @@
-import { ChevronDownIcon, TriangleDownIcon, TriangleUpIcon } from "@chakra-ui/icons";
-import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation, useSearchParams } from "react-router-dom";
 import DropdownFilterButton from "../../Components/DropDownfilter/DropdownFilterButton";
 import FilterButton from "../../Components/FilterButton";
 import SingleProductCard from "../../Components/SingleProductCard";
@@ -9,26 +8,33 @@ import { getData } from "../../Redux/AppReducer/action";
 import styles from "../Men/Mens.module.css";
 
 const Women = () => {
-  const [filterOpen, setFilterOpen] = useState(false);
   const dispatch = useDispatch();
-  const data = useSelector((reduxStore) => reduxStore.AppReducer.products);
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const [sortBy, setSortBy] = useState("");
 
-  // data && data.map((el) => console.log(el));
+  const data = useSelector((reduxStore) => reduxStore.AppReducer.products);
 
   let women = data && data.filter((el) => el.belongsTo === "Women");
 
   useEffect(() => {
-    dispatch(getData("https://nice-tan-elk-tutu.cyclic.app/products"));
-  }, []);
+    const category = searchParams.getAll("category");
+    const queryParam = {
+      params: {
+        category: category,
+      },
+    };
+    dispatch(getData(sortBy, queryParam));
+  }, [location.search, sortBy]);
 
   const category = [
-    "Sweaters",
-    "Coats & Jackets",
+    "Sweater",
     "Pants",
-    "Denims",
     "Shirts",
-    "Dress Shirts",
     "Suiting",
+    "Polos",
+    "T-Shirt",
+    "Shoes",
   ];
   const size = ["x-small", "small", "medium", "large", "x-large"];
   const color = ["black", "blue", "brown", "denim", "green"];
@@ -57,18 +63,21 @@ const Women = () => {
           Collection
         </span>
       </div>
-      
 
       <div className={styles.dropdownbuttons}>
-        <div
-          onClick={() => setFilterOpen(!filterOpen)}
-          className={`${styles.filter_button} ${styles.filter_button1}`}
-        >
-          <h5>Show Filters</h5>
-          {filterOpen ? <TriangleDownIcon /> : <TriangleUpIcon />}
-        </div>
         <div className={`${styles.filter_button} ${styles.filter_button2}`}>
-          <FilterButton/>
+          {/* <FilterButton/> */}
+          <label htmlFor="">Sort</label>
+          <select
+            name="Sort"
+            id="Sort"
+            style={{ outline: "0px" }}
+            onChange={(e) => setSortBy(e.target.value)}
+          >
+            <option value=""></option>
+            <option value="asc">High-To-Low</option>
+            <option value="desc">low-To-High</option>
+          </select>
         </div>
       </div>
 
@@ -76,14 +85,14 @@ const Women = () => {
         <div className={styles.filtering_div}>
           <DropdownFilterButton name={"Category"} categoryArr={category} />
           <hr />
-          <DropdownFilterButton name={"Size"} categoryArr={size} />
+          {/* <DropdownFilterButton name={"Size"} categoryArr={size} />
           <hr />
           <DropdownFilterButton name={"Color"} categoryArr={color} />
           <hr />
           <DropdownFilterButton name={"Pattern"} categoryArr={pattern} />
           <hr />
           <DropdownFilterButton name={"Discount"} categoryArr={discount} />
-          <hr />
+          <hr /> */}
         </div>
         <div className={styles.allproducts_div}>
           {women &&

@@ -7,7 +7,6 @@
 }
 .filterCategory_name {
   width: 98%;
-  /* border: 1px solid gray; */
   height: 50px;
   display: flex;
   justify-content: space-between;
@@ -27,25 +26,34 @@
 
 .toshow_Content {
   width: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: auto;
   display: block;
 }
 .tohide_Content {
+  /* border: 1px solid gray; */
   width: 98%;
   height: 25px;
   display: none;
 }
 .filterCategories {
   width: 95%;
-  height: 100%;
-  /* border: 1px solid blue; */
+  height: auto;
   display: flex;
-  align-items: center;
   margin: auto;
 }
 .filterCategories_label {
+  width: 300px;
   font-size: 12px;
   font-weight: 500;
   margin-left: 10px;
   line-height: 3rem;
+  display: flex;
+  justify-content: center;
+}
+.inp{
+  height: 20px;
+  width: 140px;
 }

@@ -1,12 +1,6 @@
-import {
-  ChevronDownIcon,
-  TriangleDownIcon,
-  TriangleUpIcon,
-} from "@chakra-ui/icons";
-import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useLocation, useParams, useSearchParams } from "react-router-dom";
 import DropdownFilterButton from "../../Components/DropDownfilter/DropdownFilterButton";
 import FilterButton from "../../Components/FilterButton";
 import SingleProductCard from "../../Components/SingleProductCard";
@@ -14,31 +8,35 @@ import { getData } from "../../Redux/AppReducer/action";
 import styles from "./Mens.module.css";
 import { useNavigate } from "react-router-dom";
 
-
 const Men = () => {
-
- const navigate = useNavigate()
-  const [filterOpen, setFilterOpen] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const [sortBy, setSortBy] = useState("");
+
   const data = useSelector((reduxStore) => reduxStore.AppReducer.products);
-
-  // data && data.map((el) => console.log(el));
-
 
   let men = data && data.filter((el) => el.belongsTo === "men");
 
   useEffect(() => {
-    dispatch(getData("https://nice-tan-elk-tutu.cyclic.app/products"));
-  }, []);
+    const category = searchParams.getAll("category");
+    const queryParam = {
+      params: {
+        category: category,
+      },
+    };
+    dispatch(getData(sortBy, queryParam));
+  }, [location.search, sortBy]);
 
   const category = [
-    "Sweaters",
-    "Coats & Jackets",
+    "Sweater",
     "Pants",
-    "Denims",
     "Shirts",
-    "Dress Shirts",
     "Suiting",
+    "Polos",
+    "T-Shirt",
+    "Shoes",
   ];
   const size = ["x-small", "small", "medium", "large", "x-large"];
   const color = ["black", "blue", "brown", "denim", "green"];
@@ -67,37 +65,46 @@ const Men = () => {
           Collection
         </span>
       </div>
-
       <div className={styles.dropdownbuttons}>
         <div
-          onClick={() => setFilterOpen(!filterOpen)}
-          className={`${styles.filter_button} ${styles.filter_button1}`}
+          style={{ zIndex: 10 }}
+          className={`${styles.filter_button} ${styles.filter_button2}`}
         >
-          <h5>Show Filters</h5>
-          {filterOpen ? <TriangleDownIcon /> : <TriangleUpIcon />}
-        </div>
-        <div className={`${styles.filter_button} ${styles.filter_button2}`}>
-          <FilterButton />
+          {/* <FilterButton /> */}
+          <label htmlFor="">Sort</label>
+          <select
+            name="Sort"
+            id="Sort"
+            style={{ outline: "0px" }}
+            onChange={(e) => setSortBy(e.target.value)}
+          >
+            <option defaultValue=""></option>
+            <option value="asc">High-To-Low</option>
+            <option value="desc">low-To-High</option>
+          </select>
         </div>
       </div>
-
       <div className={styles.products_container}>
         <div className={styles.filtering_div}>
-          <DropdownFilterButton name={"Category"} categoryArr={category} />
+          <DropdownFilterButton name={"category"} categoryArr={category} />
           <hr />
-          <DropdownFilterButton name={"Size"} categoryArr={size} />
+          {/* <DropdownFilterButton name={"Size"} categoryArr={size} />
           <hr />
           <DropdownFilterButton name={"Color"} categoryArr={color} />
           <hr />
           <DropdownFilterButton name={"Pattern"} categoryArr={pattern} />
           <hr />
           <DropdownFilterButton name={"Discount"} categoryArr={discount} />
-          <hr />
+          <hr /> */}
         </div>
         <div className={styles.allproducts_div}>
           {men &&
             men.map((data) => (
-              <SingleProductCard key={data.id} data={data} onClick={()=>navigate(`/single/${data.id}`)} />
+              <SingleProductCard
+                key={data.id}
+                data={data}
+                onClick={() => navigate(`/single/${data.id}`)}
+              />
             ))}
         </div>
       </div>
