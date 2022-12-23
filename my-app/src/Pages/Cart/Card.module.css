@@ -1,5 +1,6 @@
 .cardWrapper{
     display: flex;
+    border-bottom: 1px solid rgba(128, 128, 128,.3);
 }
 .cardWrapper .leftContainer{
     display: flex;
@@ -14,7 +15,7 @@
     width: 100px;
     height: 30px;
     display: flex;
-    gap: 10px;
+    gap: 15px;
     align-items: center;
     justify-content: center;
     padding: 3px;
@@ -39,7 +40,7 @@ border: 1px solid rgba(128, 128, 128,.3);
 }
 .card{
     display: flex;
-  border-bottom: 1px solid rgba(128, 128, 128,.3);
+ 
   padding: 10px;
   gap: 10px;
 width: 100%;
@@ -82,3 +83,18 @@ width: 100%;
     color: black;
     text-decoration: underline;
 }
+
+
+
+@media all and (max-width: 768px){
+    .cardWrapper {
+        flex-direction: column;
+    }
+
+    .cardWrapper  .leftContainer{
+       flex-direction: column;
+    }
+    .right .btns{
+        flex-direction: column;
+    }  
+     }

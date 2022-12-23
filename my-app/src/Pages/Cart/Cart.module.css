@@ -3,6 +3,11 @@
     gap: 15px;
     width: 80%;
     margin: auto;
+    text-align: left;
+}
+.wrapper p{
+    font-size: 18px;
+    text-align: left;
 }
 .wrapper a:hover{
     color: rgb(57, 57, 235);
@@ -127,3 +132,28 @@ font-weight: bold;
     outline: none;
     border: 0;
 }
+
+
+
+@media all and (max-width: 1024px){
+   .wrapper{
+    flex-direction: column;
+    width: 90%;
+   }
+   .rightWrapper{
+    width: 100%;
+   }
+    }
+    
+
+@media all and (max-width: 768px){
+    .wrapper{
+        
+        width: 95%;
+       }
+    .header .price, .header .qty{
+        visibility: hidden;
+        display: none;
+        opacity: 0;
+    }
+    }

@@ -2,12 +2,11 @@
 import * as types from "./actionTypes"
 import axios from 'axios'
 
-export const getCdata=(url) => (dispatch) => {
+export const getCdata=() => (dispatch) => {
     dispatch({ type: types.GET_CART_REQUEST});
     return axios
-      .get(url)
+      .get(`https://nice-tan-elk-tutu.cyclic.app/cart`)
       .then((res) => {
-       
         return dispatch({ type: types.GET_CART_SUCCESS, payload: res.data});
       })
       .catch((err) => {
@@ -17,54 +16,54 @@ export const getCdata=(url) => (dispatch) => {
 
 
 
-export const addCdata=(url,payload)=> (dispatch) => {
+export const addCdata=(payload)=> (dispatch) => {
+  dispatch({type: types.POST_CART_REQUEST})
     return axios
-      .post(url,payload)
+      .post(`https://nice-tan-elk-tutu.cyclic.app/cart`,payload)
       .then((res) => {
         console.log(res)
+        return   dispatch({type: types.POST_CART_SUCCESS})
       })
+      .then(()=> dispatch(getCdata()))
       .catch((err) => {
         console.log(err)
       });
   };
 
-export const updateCdata=(url,payload)=>(dispatch)=>{
-  console.log(payload)
-    // dispatch({ type: types.PATCH_CART_REQUEST});
+export const updateCdata=(id,payload)=>(dispatch)=>{
+    dispatch({ type: types.PATCH_CART_REQUEST});
     return axios
-      .patch(url,payload)
+      .patch(`https://nice-tan-elk-tutu.cyclic.app/cart/${id}`,payload)
       .then((res) => {
         return dispatch({ type: types.PATCH_CART_SUCCESS});
       })
+      .then(()=> dispatch(getCdata()))
       .catch((err) => {
         return dispatch({ type: types.PATCH_CART_FAILURE});
       });
   };
 
-export const deleteCdata=(url) => (dispatch) => {
-   console.log('deleted')
+export const deleteCdata=(id) => (dispatch) => {
     dispatch({ type: types.DELETE_CART_REQUEST});
     return axios
-      .delete(url)
+      .delete(`https://nice-tan-elk-tutu.cyclic.app/cart/${id}`)
       .then((res) => {
-       
         return dispatch({ type: types.DELETE_CART_SUCCESS});
       })
-      
+      .then(()=> dispatch(getCdata()))
       .catch((err) => {
         return dispatch({ type: types.DELETE_CART_FAILURE});
       });
   };
 
 export const deleteAllCdata=(url,payload)=>(dispatch)=>{
-    
       dispatch({ type: types.PUT_CART_REQUEST});
       return axios
-        .put(url,payload)
+        .put(`https://nice-tan-elk-tutu.cyclic.app/cart`)
         .then((res) => {
-         
           return dispatch({ type: types.PUT_CART_SUCCESS});
         })
+        .then(()=> dispatch(getCdata()))
         .catch((err) => {
           return dispatch({ type: types.PUT_CART_FAILURE});
         });
