@@ -12,7 +12,7 @@ import {AiOutlineClose} from "react-icons/ai"
 import {GiHamburgerMenu} from "react-icons/gi"
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
 
