@@ -5,8 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateCdata, deleteCdata, getCdata, addCdata } from "../../Redux/CartReducer/action"
 import { addLSdata, getLSdata,deleteLSdata} from "../../Redux/ShopLaterReducer/action"
 import { useEffect } from 'react';
-
-
+import {Link} from "react-router-dom"
 
 
 const WishCard = ({prod}) => {
@@ -17,29 +16,25 @@ const location = useLocation()
   const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
   
   const deleteFromShopLater = (id) =>{
-    dispatch(deleteLSdata(`https://nice-tan-elk-tutu.cyclic.app/shopLater/${id}`))
-    dispatch(getLSdata(`https://nice-tan-elk-tutu.cyclic.app/shopLater`))
+  dispatch(deleteLSdata(id))
   }
 
   const deleteAndSave = (prod, id) =>{
-    dispatch(deleteLSdata(`https://nice-tan-elk-tutu.cyclic.app/shopLater/${id}`))
-    dispatch(addCdata(`https://nice-tan-elk-tutu.cyclic.app/shopLater`, prod))
-    dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
-    dispatch(getLSdata(`https://nice-tan-elk-tutu.cyclic.app/shopLater`))
+    dispatch(addCdata(prod))
+    dispatch(deleteLSdata(id))
   }
 
   useEffect(()=>{
-    dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
-    dispatch(getLSdata(`https://nice-tan-elk-tutu.cyclic.app/shopLater`))
-  },[location])
+   dispatch(getLSdata())
+  },[])
 
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.leftContainer}>
       <div className={styles.card}>
             <div className={styles.left}>
-              <img
-                src={prod.colors[0].images[0]}
+            <img
+                src={prod.image}
                 alt="#"
               />
             </div>
@@ -51,13 +46,13 @@ const location = useLocation()
                 <p>Item 64</p>
               </div>
               <div className={styles.measures}>
-                <p>Color: {prod.colors[0].colorName}</p>
-                <p>Size: {prod.colors[0].availableSize[0]}</p>
+              <p>Color: {prod.colors}</p>
+                <p>Size: {prod.size}</p>
               </div>
               <div className={styles.btns}>
-                <p onClick={()=>deleteFromShopLater(prod.id)}>Remove</p>
-                <p >Edit</p>
-                <button onClick={()=>deleteAndSave(prod,prod.id)} className={styles.tobag}>ADD TO BAG</button>
+                <p className={styles.remove} onClick={()=>deleteFromShopLater(prod.id)}>Remove</p>
+                <Link to={`/single/${prod.id}`}><p >Edit</p></Link>
+                <button  onClick={()=>deleteAndSave(prod,prod.id)} className={styles.tobag}>ADD TO BAG</button>
               </div>
             </div>
           </div>

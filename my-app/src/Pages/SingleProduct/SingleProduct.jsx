@@ -1,34 +1,81 @@
-import React, { Children, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./SingleProduct.module.css";
 import { BsSuitHeart, BsPinterest, BsTwitter, BsTypeH1 } from "react-icons/bs";
 import { AiFillFacebook } from "react-icons/ai";
 import { SlSocialTumblr } from "react-icons/sl";
 import { AiFillStar } from "react-icons/ai";
-import { getSingleProduct } from "../../Redux/SingleProduct/action";
-
-import {
-  addCdata,
-  getCdata,
-  updateCdata,
-} from "../../Redux/CartReducer/action";
-
+import { getSingleProduct, deleteSingleProduct } from "../../Redux/SingleProduct/action";
+import { addCdata } from "../../Redux/CartReducer/action";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
+import calPrice from "../../utils/calPrice";
+import { addLSdata } from "../../Redux/ShopLaterReducer/action";
+
+
+
+
 
 const SingleProduct = () => {
   const { id } = useParams();
-  const dispatch = useDispatch();
   const [image, setImage] = useState("");
   const [size, setSize] = useState("");
+  const [quantity, setQuantity] = useState(1)
+  const dispatch = useDispatch();
 
-  const product = useSelector(
-    (reduxStore) => reduxStore.SingleProductReducer.product
-  );
-  console.log(product);
+  const product = useSelector((reduxStore) => reduxStore.SingleProductReducer.product);
+  
+
+const handleAddToCart = ()=>{
+let obj =  {
+  "id": product.id,
+  "name": product.name,
+  "price": calPrice(product.price),
+  "brand": product.brand,
+  "category": product.category,
+  "belongsTo": product.belongsTo,
+  "cartQuantity": Number(quantity),
+  "colors": product.Product_colors[0].colorName,
+  "image": product.Product_colors[0].images[0],
+  "size": size
+}
+if(size){
+  dispatch(addCdata(obj))
+  alert ("Product Added to the Cart")
+}else{
+  alert ("Please Select a size")
+}
+}
+
+
+const handleAddToWish = ()=>{
+let obj =  {
+  "id": product.id,
+  "name": product.name,
+  "price": calPrice(product.price),
+  "brand": product.brand,
+  "category": product.category,
+  "belongsTo": product.belongsTo,
+  "cartQuantity": Number(quantity),
+  "colors": product.Product_colors[0].colorName,
+  "image": product.Product_colors[0].images[0],
+  "size": size
+}
+if(size){
+  dispatch(addLSdata(obj))
+  alert ("Product Added to the ShopLater list")
+}else{
+  alert ("Please Select a size")
+}
+}
+
 
   useEffect(() => {
     dispatch(getSingleProduct(id));
-  }, []);
+   return ()=>{
+    dispatch(deleteSingleProduct(id))
+   }
+  }, [id]);
+
 
   return (
     <div className={styles.mainContainer}>
@@ -107,26 +154,26 @@ const SingleProduct = () => {
 
             <div className={styles.quantity}>
               <span>Quantity</span>
-              <select name="" id="">
-                <option value="">1</option>
-                <option value="">2</option>
-                <option value="">3</option>
-                <option value="">4</option>
-                <option value="">5</option>
-                <option value="">6</option>
-                <option value="">7</option>
-                <option value="">8</option>
-                <option value="">9</option>
+              <select onChange={(e)=>setQuantity(e.target.value)}>
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
+                <option value={5}>5</option>
+                <option value={6}>6</option>
+                <option value={7}>7</option>
+                <option value={8}>8</option>
+                <option value={9}>9</option>
               </select>
             </div>
 
             <div className={styles.btn}>
             <i>Prices include duties and taxes.</i>
             <div>
-              <button  className={styles.atb}>
+              <button onClick={handleAddToCart}  className={styles.atb}>
                 ADD TO BAG
               </button>
-              <button className={styles.atc}>
+              <button onClick={handleAddToWish} className={styles.atc}>
                 <BsSuitHeart size={20} />
               </button>
             </div>

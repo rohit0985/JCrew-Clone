@@ -1,5 +1,6 @@
 .cardWrapper{
     display: flex;
+    border-bottom: 1px solid rgba(128, 128, 128,.3);
 }
 
 .cardWrapper .leftContainer{
@@ -17,7 +18,7 @@
 }
 .card{
     display: flex;
-  border-bottom: 1px solid rgba(128, 128, 128,.3);
+ 
   padding: 10px;
   gap: 10px;
 width: 100%;
@@ -57,8 +58,19 @@ width: 100%;
    gap: 10px;
    align-items: center;
 }
+.btns .remove{
+    text-decoration: underline;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.btns .remove:active{
+   font-size: 10px;
+}
+
+
 .tobag{
-   
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,7 +78,12 @@ width: 100%;
     background-color: rgb(207, 205, 205);
     outline: none;
     border: 0px;
+   transition: .3s;
 }
+.tobag:active{
+    font-size: 10px;
+}
+
 .right .btns a{
     color: black;
     text-decoration: underline;
@@ -74,3 +91,18 @@ width: 100%;
 .right .btns a:hover{
     color: rgb(59, 59, 206);
     }
+
+
+    @media all and (max-width: 768px){
+        .cardWrapper {
+            flex-direction: column;
+        }
+    
+        .cardWrapper  .leftContainer{
+           flex-direction: column;
+        }
+        .right .btns{
+        flex-direction: column;
+        align-items: flex-start;
+        } 
+         }

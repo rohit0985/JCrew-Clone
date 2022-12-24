@@ -29,6 +29,20 @@ const reducer = (state = init, action)=>{
             product : "",
             isError : true
         }
+        case types.DELETE_SINGLE_PRODUCTS_REQUEST : 
+        return {
+            ...state,
+            isLoading : true,
+            product : "",
+            isError : false
+        }
+        case types.DELETE_SINGLE_PRODUCTS_SUCCESS : 
+        return {
+            ...state,
+            isLoading : false,
+            product : "",
+            isError : false
+        }
 
          default : return {
             ...state
