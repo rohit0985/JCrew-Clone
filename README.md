@@ -1,103 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>J.Crew</h1>
-    <p>J.Crew Group, Inc., is an American multi-brand, multi-channel, specialty retailer. The company offers an assortment of women's, men's, and children's apparel and accessories, including swimwear, outerwear, lounge-wear, bags, sweaters, denim, dresses, suiting, jewelry, and shoes.</p>
-    <hr>
-    <h2>Tech Stack used :</h2>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Java Script</li>
-        <li>ReactJs</li>
-        <li>Redux</li>
-        <li>React-Redux</li>
-        <li>Chakra UI</li>
-    </ul>
-    <hr>
-    <h3>Key features :</h3>
-    <ul>
-        <li>Filter</li>
-        <li>Sorting</li>
-        <li>Form Validation</li>
-        <li>Login / SignUp</li>
-        <li>Cart and ShopLater list</li>
-        <li>Responsiveness</li>
-    </ul>
-    <hr>
+# PharmEasy - Clone
+### https://roaring-creponne-d99230.netlify.app
+
+We have tried cloning the PharmEasy app as a construct week project in the second week of our Masai Journey. We, a team of 5 people have completed this project in a span of 5 days using our knowledge of HTML, CSS and JavaScript.
+
+## About the website
+
+PharmEasy is a consumer healthcare “super app” that provides consumers with on-demand, home delivered access to a wide range of prescription, OTC pharmaceutical, other consumer healthcare products, comprehensive diagnostic test services, and teleconsultations thereby serving their healthcare needs.
+
+## Technology
+**Client** - HTML, CSS, JavaScript
+
+**Server** - LocalStorage, Netlify
 
 
-    <h3>Landing Page :</h3>
+## Features
+- Signup and Login
+- Carousel Implementation in CSS
+- Payment Gateway Page
+- Sorting Funtionalties on Product
 
-    <ul>
-        <li>Landing page of the J.Crew website has a Navbar at the top</li>
-        <li>It displays various products, offers and ads of their own.</li>
-        <li>At the bottom section there is a footer, both header and footer are same across all the pages.</li>
-    </ul>
-    <img width="100%" height="500px" src="https://i.imgur.com/4e2gj38.png">
-    
-    
-    <hr>
+## More into the Project (PharmEasy - Clone)
 
+![Pharmeasy_LandingPage](https://user-images.githubusercontent.com/103635205/192556144-2828cb4c-4b65-45a8-b63e-c4680dc05fdb.png)
 
-    <h3>Login page / SignUp page :</h3>
-    <ul>
-        <li>Navbar has two buttons to navigate the user to the LogIn and SignUp page</li>
-        <li>By clicking a modal will open and the by using the correct user information, user will be able to SignUp / LogIn.</li>
-    </ul>
-    <img width="100%" height="500px" src="https://media.blogto.com/articles/20210205-j-crew-toronto.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70">
-    <hr>
+This is the Landing Page of our project. 
 
+It contains the **Navabar** which houses the pharmeasy logo a search menu bar, quick link buttons that are linked to their respective pages along with signup and login functionality. Mainly created using html, css flex, buttons has animations using the hover effect. and sticky effect given as to keep the navbar in place even on scroll.
 
-    <h3>Products page :</h3>
-    Designed three troduct pages.
-    <ul>
-<li>New - That contains all the products</li>
-<li> Men - That contains clothes for the Men</li>
-<li>Women - That contains clothes for the Women</li>
-    </ul>
-    
-    <img width="100%" height="500px" src="https://media.blogto.com/articles/20210205-j-crew-toronto.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70">
-    <hr>
+The home page has several information about the medicienes and products along with offers. Carousel effect has been used at many places with both timed navigation and manual Navigation.
+***********************************************************************************************************************************************************************
 
-<h3>Product Details page :</h3>
-<ul>
-    <li>It Contains the more details related to the specific / selected products</li>
-    <li>It has two buttons to add the product to the cart or to the wish list</li>
-</ul>
-<img width="100%" height="500px" src="https://media.blogto.com/articles/20210205-j-crew-toronto.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70">
-<hr>
+![PharEasy_Login_Signup](https://user-images.githubusercontent.com/103635205/192559399-c247820b-11c3-4243-82e4-90c5d020ada0.png)
 
-<h3>Checkout page :</h3>
-<ul>
-    <li>It has a form to take the delivery add from the user</li>
-    <li>In the right side it will be showing all the product that are in the cart</li>
-</ul>
-<img width="100%" height="500px" src="https://media.blogto.com/articles/20210205-j-crew-toronto.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70">
-<hr>
-<h3>Payment page :</h3>
-<ul>
-    <li>It has a form to take the atm details</li>
-    <li>In the right side it will be showing all the product that are in the cart</li>
-</ul>
-<img width="100%" height="500px" src="https://media.blogto.com/articles/20210205-j-crew-toronto.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70">
-<hr>
+One Clicking on the login and signup button you will be redirected to the login and signup prompt which is same as the original website. You need to enter your mobile number then a dummy OTP (Precoded) and upon validation you will be logged in into the website.
 
+**The other quick links will not be functional until you login**
+***********************************************************************************************************************************************************************
+![heathcare_products](https://user-images.githubusercontent.com/103635205/192605926-a5e5f39e-e2a4-40d1-964d-977f079fa182.png)
 
-<h3>Learnings :</h3>
-<ul>
-    <li>Effective use of Redux store at globle state</li>
-    <li>Sorting and filters withe the useParams</li>
-    <li>Real life implementation of HTML, CSS, React and Redux</li>
-    <li>Learned to manage time, and to work in the pressure</li>
-</ul>
+Healthcare products page contains all the products bifercated into different healthcare genres. On selecting one you will be shown all the products of the particular type. This Page in particular houses the **Sorting** functionality. Thus you can sort the products in the ascending order of their price. Clicking add to cart the item will be stored in the local Storage that will used to update cart and finializing the total amount to be paid. Also will get a pop up saying so. 
+***********************************************************************************************************************************************************************
+![cartPage](https://user-images.githubusercontent.com/103635205/192608477-8ac1fc57-c155-49dc-baef-e95378e5c524.png)
 
+Cart Page will show the number the products in the cart, Your Individual products as well as along with the total amount. Discounted value is also calculated if applicable and in the proced to buy button you will be taken to multiple payment options.
+***********************************************************************************************************************************************************************
+![cartPage](https://user-images.githubusercontent.com/103635205/192620572-1a82d2d4-7af2-4a68-a838-86dc1dacf767.png)
 
-</body>
-</html>
+Payments Gateway page will taken in card details. Will be redirected to the OTP Authentication Page. Authentication will be checked on entering the correct OTP(1234)
+you will be redirected to the Payment ackowledgment.
+*******************************************************************
+
+![paymentSuccess](https://user-images.githubusercontent.com/103635205/192624804-4f6e2c47-d461-417a-a248-e3229b2ff7ab.png)
+
+Many new things was learned in this project our understand. Being my first project, It was fun and interesting to encounter bugs, solving them and reading up on new features and implementing them in the project. I grateful and thankful for the help of my team mates and Masai School.
+
+## Live Link:
+## https://roaring-creponne-d99230.netlify.app
