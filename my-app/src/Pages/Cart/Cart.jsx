@@ -39,11 +39,12 @@ const Cart = () => {
 
   useEffect(() => {
     dispatch(getCdata());
-  }, []);
-
-  useEffect(() => {
     dispatch(getLSdata());
   }, []);
+
+  // useEffect(() => {
+  //   dispatch(getLSdata());
+  // }, []);
 
   return (
     <div className={styles.wrapper}>

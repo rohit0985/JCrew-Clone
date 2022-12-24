@@ -13,7 +13,7 @@ const WishCard = ({prod}) => {
 const location = useLocation()
 
   const dispatch = useDispatch()
-  const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
+  // const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
   
   const deleteFromShopLater = (id) =>{
   dispatch(deleteLSdata(id))
@@ -24,9 +24,9 @@ const location = useLocation()
     dispatch(deleteLSdata(id))
   }
 
-  useEffect(()=>{
-   dispatch(getLSdata())
-  },[])
+  // useEffect(()=>{
+  //  dispatch(getLSdata())
+  // },[])
 
   return (
     <div className={styles.cardWrapper}>

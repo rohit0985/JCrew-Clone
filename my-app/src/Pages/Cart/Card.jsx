@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Card = ({ prod }) => {
 
   const dispatch = useDispatch();
-  const cartData = useSelector((reduxStore) => reduxStore.CartReducer.products);
+  // const cartData = useSelector((reduxStore) => reduxStore.CartReducer.products);
 
   const deleteFromCart = (id) => {
     dispatch(deleteCdata(id));
@@ -30,9 +30,9 @@ const Card = ({ prod }) => {
     dispatch(updateCdata(prod.id, payload));
   };
 
-  useEffect(()=>{
-    dispatch(getCdata())
-  },[])
+  // useEffect(()=>{
+  //   dispatch(getCdata())
+  // },[])
 
   return (
     <div className={styles.cardWrapper}>
