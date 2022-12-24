@@ -1,58 +1,114 @@
-# PharmEasy - Clone
+# J.Crew - Clone
 ### https://roaring-creponne-d99230.netlify.app
 
-We have tried cloning the PharmEasy app as a construct week project in the second week of our Masai Journey. We, a team of 5 people have completed this project in a span of 5 days using our knowledge of HTML, CSS and JavaScript.
+We have tried cloning the J.Crew webapplication as a construct week project. We, a team of 5 people have completed this project in a span of 5 days using our knowledge of HTML, CSS and JavaScript, React, Redux, Chakra UI.
 
 ## About the website
 
-PharmEasy is a consumer healthcare “super app” that provides consumers with on-demand, home delivered access to a wide range of prescription, OTC pharmaceutical, other consumer healthcare products, comprehensive diagnostic test services, and teleconsultations thereby serving their healthcare needs.
+J.Crew Group, Inc., is an American multi-brand, multi-channel, specialty retailer. The company offers an assortment of women's, men's, and children's apparel and accessories, including swimwear, outerwear, lounge-wear, bags, sweaters, denim, dresses, suiting, jewelry, and shoes.
 
 ## Technology
-**Client** - HTML, CSS, JavaScript
+**Client side** - HTML, CSS, JavaScript, React, Redux
 
-**Server** - LocalStorage, Netlify
+**Server Side** - JSON server, Cyclic, Netlify
 
 
 ## Features
-- Signup and Login
-- Carousel Implementation in CSS
-- Payment Gateway Page
-- Sorting Funtionalties on Product
+  <ul>
+        <li>Filter</li>
+        <li>Sorting</li>
+        <li>Form Validation</li>
+        <li>Login / SignUp</li>
+        <li>Cart and ShopLater list</li>
+        <li>Responsiveness</li>
+    </ul>
 
-## More into the Project (PharmEasy - Clone)
+## More into the Project (J.Crew - Clone)
+***********************************************************************************************************************************************************************
+### Landing Page :
+<img width="945" alt="jcHomepage" src="https://user-images.githubusercontent.com/107898713/209430978-d90bed08-270a-4642-b78e-df55fcaa961d.png">
 
-![Pharmeasy_LandingPage](https://user-images.githubusercontent.com/103635205/192556144-2828cb4c-4b65-45a8-b63e-c4680dc05fdb.png)
 
-This is the Landing Page of our project. 
+  <ul>
+        <li>Landing page of the J.Crew website has a Navbar at the top</li>
+        <li>It displays various products, offers and ads of their own.</li>
+        <li>At the bottom section there is a footer, both header and footer are same across all the pages.</li>
+    </ul>
 
-It contains the **Navabar** which houses the pharmeasy logo a search menu bar, quick link buttons that are linked to their respective pages along with signup and login functionality. Mainly created using html, css flex, buttons has animations using the hover effect. and sticky effect given as to keep the navbar in place even on scroll.
-
-The home page has several information about the medicienes and products along with offers. Carousel effect has been used at many places with both timed navigation and manual Navigation.
 ***********************************************************************************************************************************************************************
 
-![PharEasy_Login_Signup](https://user-images.githubusercontent.com/103635205/192559399-c247820b-11c3-4243-82e4-90c5d020ada0.png)
+### Login page / SignUp page :
+<img width="944" alt="jcSignin" src="https://user-images.githubusercontent.com/107898713/209431384-00a22bfc-359b-455c-bddc-84c90af4d37b.png">
 
-One Clicking on the login and signup button you will be redirected to the login and signup prompt which is same as the original website. You need to enter your mobile number then a dummy OTP (Precoded) and upon validation you will be logged in into the website.
+  <ul>
+        <li>Navbar has two buttons to navigate the user to the LogIn and SignUp page</li>
+        <li>By clicking a modal will open and the by using the correct user information, user will be able to SignUp / LogIn.</li>
+    </ul>
 
-**The other quick links will not be functional until you login**
 ***********************************************************************************************************************************************************************
-![heathcare_products](https://user-images.githubusercontent.com/103635205/192605926-a5e5f39e-e2a4-40d1-964d-977f079fa182.png)
 
-Healthcare products page contains all the products bifercated into different healthcare genres. On selecting one you will be shown all the products of the particular type. This Page in particular houses the **Sorting** functionality. Thus you can sort the products in the ascending order of their price. Clicking add to cart the item will be stored in the local Storage that will used to update cart and finializing the total amount to be paid. Also will get a pop up saying so. 
+### Product page :
+<img width="947" alt="jcProductpage" src="https://user-images.githubusercontent.com/107898713/209431394-638f013a-238e-415f-9882-fb85e8414e06.png">
+Designed three troduct pages.
+    <ul>
+<li>New - That contains all the products</li>
+<li> Men - That contains clothes for the Men</li>
+<li>Women - That contains clothes for the Women</li>
+    </ul> 
+    
 ***********************************************************************************************************************************************************************
-![cartPage](https://user-images.githubusercontent.com/103635205/192608477-8ac1fc57-c155-49dc-baef-e95378e5c524.png)
 
-Cart Page will show the number the products in the cart, Your Individual products as well as along with the total amount. Discounted value is also calculated if applicable and in the proced to buy button you will be taken to multiple payment options.
+### Product Details page :
+<img width="946" alt="jcProductdetailspage" src="https://user-images.githubusercontent.com/107898713/209431542-e2efdbd1-40b2-4319-989c-3c05f74ce4b5.png">
+
+
+<ul>
+    <li>It Contains the more details related to the specific / selected products</li>
+    <li>It has two buttons to add the product to the cart or to the wish list</li>
+</ul>
+
 ***********************************************************************************************************************************************************************
-![cartPage](https://user-images.githubusercontent.com/103635205/192620572-1a82d2d4-7af2-4a68-a838-86dc1dacf767.png)
 
-Payments Gateway page will taken in card details. Will be redirected to the OTP Authentication Page. Authentication will be checked on entering the correct OTP(1234)
-you will be redirected to the Payment ackowledgment.
-*******************************************************************
+### Checkout page :
 
-![paymentSuccess](https://user-images.githubusercontent.com/103635205/192624804-4f6e2c47-d461-417a-a248-e3229b2ff7ab.png)
+<img width="946" alt="jcCheckout" src="https://user-images.githubusercontent.com/107898713/209431528-ffea6505-d20b-4399-aee8-53263ccf9f1d.png">
 
-Many new things was learned in this project our understand. Being my first project, It was fun and interesting to encounter bugs, solving them and reading up on new features and implementing them in the project. I grateful and thankful for the help of my team mates and Masai School.
+
+<ul>
+    <li>It has a form to take the delivery add from the user</li>
+    <li>In the right side it will be showing all the product that are in the cart</li>
+</ul>
+
+***********************************************************************************************************************************************************************
+
+### Payment page :
+<img width="944" alt="jcPayment" src="https://user-images.githubusercontent.com/107898713/209431515-00d07943-373d-4607-b123-9605dbb5e627.png">
+
+
+<ul>
+    <li>It has a form to take the atm details</li>
+    <li>In the right side it will be showing all the product that are in the cart</li>
+</ul>
+
+
+***********************************************************************************************************************************************************************
+
+
+#### Learnings :
+<ul>
+    <li>Effective use of Redux store at globle state</li>
+    <li>Sorting and filters withe the useParams</li>
+    <li>Real life implementation of HTML, CSS, React and Redux</li>
+    <li>Learned to manage time, and to work in the pressure</li>
+</ul>
+
+
+#### Contributors :
+- Rohit Kumar
+- Nilesh More
+- Biman 
+- Deepak Chavan
+- Abdul Quadir
 
 ## Live Link:
 ## https://roaring-creponne-d99230.netlify.app
