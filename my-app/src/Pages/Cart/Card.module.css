@@ -20,6 +20,13 @@
     justify-content: center;
     padding: 3px;
 }
+.btns .remove, .btns .sfl{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.btns .remove:active, .btns .sfl:active{
+   color: blue;
+}
 .quantity .btn>div{
     display: flex;
     justify-content: center;

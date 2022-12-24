@@ -1,11 +1,12 @@
 
 import * as types from "./actionTypes"
 import axios from 'axios'
+import { url } from "../../url";
 
 export const getCdata=() => (dispatch) => {
     dispatch({ type: types.GET_CART_REQUEST});
     return axios
-      .get(`https://nice-tan-elk-tutu.cyclic.app/cart`)
+      .get(`${url}cart`)
       .then((res) => {
         return dispatch({ type: types.GET_CART_SUCCESS, payload: res.data});
       })
@@ -19,7 +20,7 @@ export const getCdata=() => (dispatch) => {
 export const addCdata=(payload)=> (dispatch) => {
   dispatch({type: types.POST_CART_REQUEST})
     return axios
-      .post(`https://nice-tan-elk-tutu.cyclic.app/cart`,payload)
+      .post(`${url}cart`,payload)
       .then((res) => {
         console.log(res)
         return   dispatch({type: types.POST_CART_SUCCESS})
@@ -33,7 +34,7 @@ export const addCdata=(payload)=> (dispatch) => {
 export const updateCdata=(id,payload)=>(dispatch)=>{
     dispatch({ type: types.PATCH_CART_REQUEST});
     return axios
-      .patch(`https://nice-tan-elk-tutu.cyclic.app/cart/${id}`,payload)
+      .patch(`${url}cart/${id}`,payload)
       .then((res) => {
         return dispatch({ type: types.PATCH_CART_SUCCESS});
       })
@@ -46,7 +47,7 @@ export const updateCdata=(id,payload)=>(dispatch)=>{
 export const deleteCdata=(id) => (dispatch) => {
     dispatch({ type: types.DELETE_CART_REQUEST});
     return axios
-      .delete(`https://nice-tan-elk-tutu.cyclic.app/cart/${id}`)
+      .delete(`${url}cart/${id}`)
       .then((res) => {
         return dispatch({ type: types.DELETE_CART_SUCCESS});
       })
@@ -59,7 +60,7 @@ export const deleteCdata=(id) => (dispatch) => {
 export const deleteAllCdata=(url,payload)=>(dispatch)=>{
       dispatch({ type: types.PUT_CART_REQUEST});
       return axios
-        .put(`https://nice-tan-elk-tutu.cyclic.app/cart`)
+        .put(`${url}cart`)
         .then((res) => {
           return dispatch({ type: types.PUT_CART_SUCCESS});
         })

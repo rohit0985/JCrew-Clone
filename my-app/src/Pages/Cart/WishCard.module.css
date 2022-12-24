@@ -65,7 +65,7 @@ width: 100%;
 }
 
 .btns .remove:active{
-   font-size: 10px;
+  color: blue;
 }
 
 

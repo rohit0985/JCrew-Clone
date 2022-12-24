@@ -5,6 +5,10 @@
   padding: 10px;
   gap: 10px;
 }
+.card p{
+    font-size: 18px;
+    text-align: left;
+}
 .card .left{
     min-width: 30%;
     max-width: 30%;

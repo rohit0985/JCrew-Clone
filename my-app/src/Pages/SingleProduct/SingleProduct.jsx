@@ -23,58 +23,85 @@ const SingleProduct = () => {
   const dispatch = useDispatch();
 
   const product = useSelector((reduxStore) => reduxStore.SingleProductReducer.product);
+  const cartData = useSelector((reduxStore) => reduxStore.CartReducer.products);
+  const shopLaterData = useSelector((reduxStore) => reduxStore.ShopLaterReducer.products);
   
 
 const handleAddToCart = ()=>{
-let obj =  {
-  "id": product.id,
-  "name": product.name,
-  "price": calPrice(product.price),
-  "brand": product.brand,
-  "category": product.category,
-  "belongsTo": product.belongsTo,
-  "cartQuantity": Number(quantity),
-  "colors": product.Product_colors[0].colorName,
-  "image": product.Product_colors[0].images[0],
-  "size": size
-}
-if(size){
-  dispatch(addCdata(obj))
-  alert ("Product Added to the Cart")
-}else{
-  alert ("Please Select a size")
-}
+let isPresent = false;
+  for(let i=0; i<cartData.length; i++){
+    if(cartData[i].id === product.id){
+      isPresent = true;
+     break;
+    }
+  }
+
+    if(!isPresent){
+      let obj =  {
+        "id": product.id,
+        "name": product.name,
+        "price": calPrice(product.price),
+        "brand": product.brand,
+        "category": product.category,
+        "belongsTo": product.belongsTo,
+        "cartQuantity": Number(quantity),
+        "colors": product.Product_colors[0].colorName,
+        "image": product.Product_colors[0].images[0],
+        "size": size
+      }
+      if(size){
+        dispatch(addCdata(obj))
+        alert ("Product Added to the Cart")
+      }else{
+        alert ("Please Select a size")
+      }
+    }else{
+      alert ("Product already present in the Cart")
+    }
+   
+   
 }
 
 
 const handleAddToWish = ()=>{
-let obj =  {
-  "id": product.id,
-  "name": product.name,
-  "price": calPrice(product.price),
-  "brand": product.brand,
-  "category": product.category,
-  "belongsTo": product.belongsTo,
-  "cartQuantity": Number(quantity),
-  "colors": product.Product_colors[0].colorName,
-  "image": product.Product_colors[0].images[0],
-  "size": size
-}
-if(size){
-  dispatch(addLSdata(obj))
-  alert ("Product Added to the ShopLater list")
-}else{
-  alert ("Please Select a size")
-}
+
+  let isPresent = false;
+  for(let i=0; i<shopLaterData.length; i++){
+    if(shopLaterData[i].id === product.id){
+      isPresent = true;
+     break;
+    }
+  }
+
+  if(!isPresent){
+    let obj =  {
+      "id": product.id,
+      "name": product.name,
+      "price": calPrice(product.price),
+      "brand": product.brand,
+      "category": product.category,
+      "belongsTo": product.belongsTo,
+      "cartQuantity": Number(quantity),
+      "colors": product.Product_colors[0].colorName,
+      "image": product.Product_colors[0].images[0],
+      "size": size
+    }
+    if(size){
+      dispatch(addLSdata(obj))
+      alert ("Product Added to the ShopLater list")
+    }else{
+      alert ("Please Select a size")
+    }
+  }else{
+    alert ("Product is alredy present inthe ShopLater list")
+  }
+
 }
 
 
   useEffect(() => {
     dispatch(getSingleProduct(id));
-   return ()=>{
-    dispatch(deleteSingleProduct(id))
-   }
-  }, [id]);
+  }, []);
 
 
   return (
