@@ -13,16 +13,16 @@
   "favorits": [],
   "cart": [
     {
-      "id": 31,
-      "name": "Cashmere classic-fit crewneck sweater",
-      "price": 6760,
+      "id": 4,
+      "name": "Ludlow Classic-fit cocktail jacket in mixed tartan English wool",
+      "price": 73979,
       "brand": "Zara",
-      "category": "Sweater",
-      "belongsTo": "Women",
+      "category": "Suiting",
+      "belongsTo": "men",
       "cartQuantity": 1,
-      "colors": "blue",
-      "image": "https://www.jcrew.com/s7-img-facade/BA400_SR0158_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
-      "size": "Small"
+      "colors": "Tartan Mix",
+      "image": "https://www.jcrew.com/s7-img-facade/BK941_WZ2350_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
+      "size": "XX-Large"
     }
   ],
   "shopLater": [
