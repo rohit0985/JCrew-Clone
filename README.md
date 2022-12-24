@@ -1,5 +1,5 @@
 # J.Crew - Clone
-### https://roaring-creponne-d99230.netlify.app
+### https://lambent-llama-fd811c.netlify.app/
 
 We have tried cloning the J.Crew webapplication as a construct week project. We, a team of 5 people have completed this project in a span of 5 days using our knowledge of HTML, CSS and JavaScript, React, Redux, Chakra UI.
 
@@ -111,4 +111,4 @@ Designed three troduct pages.
 - Abdul Quadir
 
 ## Live Link:
-## https://roaring-creponne-d99230.netlify.app
+## https://lambent-llama-fd811c.netlify.app/
