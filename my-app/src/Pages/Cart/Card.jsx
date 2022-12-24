@@ -8,15 +8,21 @@ import { Link } from "react-router-dom";
 const Card = ({ prod }) => {
 
   const dispatch = useDispatch();
-  // const cartData = useSelector((reduxStore) => reduxStore.CartReducer.products);
+
+  const shopLaterData = useSelector((reduxStore) => reduxStore.ShopLaterReducer.products);
 
   const deleteFromCart = (id) => {
     dispatch(deleteCdata(id));
   };
 
-  const deleteAndSave = (prod, id) => {
-    dispatch(addLSdata(prod));
-    dispatch(deleteCdata(id));
+  const deleteAndSave =(prod, id) => {
+   for(let i=0; i<shopLaterData.length; i++){
+    if(shopLaterData[i].id === id){
+      alert ("Product is already present in the ShopLaterList")
+      return;
+    }
+   }
+  dispatch(addLSdata(prod));
   };
 
   const increaseQuantity = () => {
@@ -30,9 +36,6 @@ const Card = ({ prod }) => {
     dispatch(updateCdata(prod.id, payload));
   };
 
-  // useEffect(()=>{
-  //   dispatch(getCdata())
-  // },[])
 
   return (
     <div className={styles.cardWrapper}>
@@ -51,8 +54,8 @@ const Card = ({ prod }) => {
               <p>Size: {prod.size}</p>
             </div>
             <div className={styles.btns}>
-              <p onClick={() => deleteFromCart(prod.id)}>Remove</p>
-              <p onClick={() => deleteAndSave(prod, prod.id)}>Save for Later</p>
+              <p className={styles.remove} onClick={() => deleteFromCart(prod.id)}>Remove</p>
+              <p className={styles.sfl} onClick={() => deleteAndSave(prod, prod.id)}>Save for Later</p>
               <Link to={`/single/${prod.id}`}>
                 <p>Edit</p>
               </Link>
@@ -63,14 +66,14 @@ const Card = ({ prod }) => {
           <div className={styles.btn}>
             <button
               disabled={prod.cartQuantity == 1}
-              onClick={decreaseQuantity}
+              onClick={()=>decreaseQuantity()}
             >
               -
             </button>
             <button>{prod.cartQuantity}</button>
             <button
               disabled={prod.cartQuantity == 9}
-              onClick={increaseQuantity}
+              onClick={()=>increaseQuantity()}
             >
               +
             </button>

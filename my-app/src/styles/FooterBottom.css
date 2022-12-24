@@ -1,6 +1,6 @@
 .footer_bottom_parent {
     height: auto;
-    max-width: 100vw;
+    width: 100vw;
     background: rgb(240,241,242);
     padding: 52px 48px 0;
 }
@@ -105,7 +105,7 @@
     cursor: pointer;
     padding: 0 8px;
 }
-@media screen and (max-width:800px) {
+@media screen and (max-width:768px) {
     .footer_bottom_main {
         display: flex;
         flex-direction: column-reverse;

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./checkout.css";
 import CheckoutCardProduct from "./CheckoutCardProduct";
-import { useLocation } from "react-router-dom";
 import CheckOut from "../Pages/CheckOut/CheckOut";
 import {useDispatch, useSelector} from 'react-redux'
 import { deleteAllCdata, deleteCdata, getCdata } from "../Redux/CartReducer/action";
+import { useNavigate } from "react-router-dom"
 
 const Checkout = () => {
+  const navigate = useNavigate()
 const [pay, setPay] = useState(false)
 const [delExt, setDelExt] = useState(.02)
 const [adds, setAdds] = useState(
@@ -21,7 +22,7 @@ const [adds, setAdds] = useState(
 }
 )
 
-console.log(adds)
+
 
 const dispatch = useDispatch()
 const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
@@ -30,7 +31,7 @@ const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
 
 const handleChange = (e)=>{
 const {value, name} = e.target
-console.log(e)
+
 setAdds((prev)=> {
   return {...prev, [name] : value}
 })
@@ -40,22 +41,30 @@ setAdds((prev)=> {
 let sum = cartData && cartData.reduce((acc, el)=> (acc + Number(el.price) * Number(el.cartQuantity)),0).toFixed(2)
 let delivery = (Number(delExt) * Number(sum)).toFixed(2)
 let bill = Number(sum) + Number(delivery)
-console.log(bill)
+
 
 
 const thanksNote = ()=>{
   let newArr = cartData.map((el,i)=> el.id)
-  newArr.forEach((el,i)=> dispatch(deleteCdata(`https://nice-tan-elk-tutu.cyclic.app/cart/${el}`)))
-  dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
+  newArr.forEach((el,i)=> dispatch(deleteCdata(el)))
+  navigate("/")
 }
 
 
 const gotoPay = () =>{
+if(!adds.firstname || !adds.addln1 || !adds.post || !adds.city || !adds.phone || !adds.email){
+alert ("Please fill the valid information in the * marked areas")
+} else if(adds.phone.length !== 10){
+  alert ("Please fill the valid Phone number")
+} else if(!adds.email.includes("@") || !adds.email.includes(".com")){
+  alert ("Please fill the valid Email address")
+}else{
   setPay(true)
+}
 }
 
 useEffect(()=>{
-  dispatch(getCdata(`http://localhost:8080/cart`))
+  dispatch(getCdata())
 },[])
 
   return (
@@ -65,7 +74,8 @@ useEffect(()=>{
           <div className="deliverymethod">
             <h2 style={{fontWeight:"500"}}>{pay ? "Delivery Address" : "Delivery Method"}</h2>
            {
-            pay ? <>
+            pay ? 
+            <>
             <p style={{fontWeight:"400"}}>{adds.firstname} {adds.lastname}</p>
             <p>{adds.phone}</p>
             <i>{adds.email}</i>
@@ -73,7 +83,8 @@ useEffect(()=>{
             {/* <p>{adds.post}</p>
             <p>{adds.addln1}</p>
             <p>{adds.addln2}</p> */}
-            </> : <> 
+            </> : 
+            <> 
             <div className="flex1">
               <input type="radio" defaultChecked={delExt == .02} onChange={()=>setDelExt(.02)}  name="delMode" />
               <div className="flex">
@@ -109,7 +120,7 @@ useEffect(()=>{
                 </div>
                 <div className="inputwrap">
                   <input type="text" required onChange={handleChange} value={adds.lastname} name={"lastname"}/>
-                  <label>*Last Name</label>
+                  <label>Last Name</label>
                 </div>
               </div>
               <div className="inputwrap">
@@ -118,7 +129,7 @@ useEffect(()=>{
               </div>
               <div className="inputwrap">
                 <input type="text" required onChange={handleChange} value={adds.addln2} name={"addln2"} />
-                <label>*AddressLine 2</label>
+                <label>AddressLine 2</label>
               </div>
               <div className="inputflex">
                 <div className="inputwrap">

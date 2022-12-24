@@ -7,9 +7,10 @@ import Signin from "../Pages/Signin";
 import Signup from "../Pages/Signup";
 import { useNavigate } from "react-router-dom";
 import Cartdropdown from "./Cartdropdown/Cartdropdown";
-import { getCdata } from "../Redux/CartReducer/action";
 import {AiOutlineClose} from "react-icons/ai"
 import {GiHamburgerMenu} from "react-icons/gi"
+import { getLSdata } from "../Redux/ShopLaterReducer/action";
+import { getCdata } from "../Redux/CartReducer/action";
 
 export default function Navbar() {
   const [open, setOpen] = useState(true)
@@ -18,6 +19,8 @@ export default function Navbar() {
 
   const dispatch = useDispatch();
   const cartData = useSelector((reduxStore) => reduxStore.CartReducer.products);
+  const shopLaterData = useSelector((reduxStore) => reduxStore.ShopLaterReducer.products);
+
 
   const handleShow = () => {
     setShow(!show);
@@ -26,9 +29,10 @@ export default function Navbar() {
     setShow(false);
   };
 
-  useEffect(() => {
-    dispatch(getCdata(`http://localhost:8080/cart`));
-  }, []);
+ useEffect(()=>{
+  dispatch(getLSdata())
+  dispatch(getCdata())
+ },[]) 
 
   return (
     <div style={{ position: "relative" }} className={styles.nav_parent}>
@@ -98,8 +102,10 @@ export default function Navbar() {
         <div className={styles.nav_logIN}>
           <Signup />
         </div>
-        <div className={`${styles.nav_icons} ${styles.nav_icons_heart}`}>
-          <HeartIcon />
+        <div  onClick={() => {
+            navigate("/cart");
+          }} className={`${styles.nav_icons} ${styles.nav_icons_heart}`}>
+          <HeartIcon /><span>{shopLaterData && shopLaterData.length}</span>
         </div>
         <div
           className={styles.nav_icons}

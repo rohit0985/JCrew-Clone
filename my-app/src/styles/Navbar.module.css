@@ -2,9 +2,9 @@ h4 {
     font-weight: 600;
 }
 .nav_parent {
-    position: sticky;
+    position: fixed;
     top: 0;
-    max-width: 100vw;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;

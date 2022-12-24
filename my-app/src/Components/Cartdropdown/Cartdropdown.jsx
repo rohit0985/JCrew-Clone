@@ -6,6 +6,7 @@ import { getCdata, deleteCdata } from "../../Redux/CartReducer/action";
 import {useDispatch, useSelector} from 'react-redux'
 import { useNavigate } from "react-router-dom";
 import Checkout from "../Checkout";
+import { url } from "../../url";
 
 const Cartdropdown = ({cancleShow}) => {
 const navigate = useNavigate()
@@ -14,9 +15,6 @@ const cartData = useSelector((reduxStore)=> reduxStore.CartReducer.products)
 
 let sum = cartData?.reduce((acc, el)=> (acc + Number(el.price) * Number(el.cartQuantity)),0).toFixed(2);
 
-const handleRemove = (id)=>{
-  dispatch(deleteCdata(`https://nice-tan-elk-tutu.cyclic.app/cart/${id}`))
-}
 
 const checkout =()=>{
 cancleShow()
@@ -24,7 +22,7 @@ cancleShow()
 }
 
 useEffect(()=>{
-  dispatch(getCdata(`https://nice-tan-elk-tutu.cyclic.app/cart`))
+  dispatch(getCdata(`${url}cart`))
 },[])
 
   return (
@@ -35,7 +33,7 @@ useEffect(()=>{
       </div>
 <div className={styles.cardContainer}>
 {
-  cartData && cartData.map((el,i)=>  <Card prod={el} cancleShow={cancleShow} handleRemove={handleRemove}/>)
+  cartData && cartData.map((el,i)=>  <Card prod={el} cancleShow={cancleShow}/>)
 }
 </div>
 
