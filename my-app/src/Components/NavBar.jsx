@@ -36,9 +36,9 @@ export default function Navbar() {
 
   return (
     <div style={{ position: "relative" }} className={styles.nav_parent}>
-      <div className={styles.nav_logo}>
+      <div  className={styles.nav_logo}>
         {open ?<GiHamburgerMenu className={styles.ham} onClick={()=>setOpen(!open)}/> : <AiOutlineClose className={styles.ham} onClick={()=>setOpen(!open)}/>}
-        <MainLogo />
+        <Link to="/"> <MainLogo /></Link>
         <div className={styles.nav_linkWrap_big}>
           <Link to="/new">
             <h4 onClick={()=>setOpen(!open)}>New</h4>
