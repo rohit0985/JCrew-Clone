@@ -16,9 +16,7 @@ const Cart = () => {
 
   const dispatch = useDispatch();
   const cartData = useSelector((reduxStore) => reduxStore.CartReducer.products);
-  const shopLaterData = useSelector(
-    (reduxStore) => reduxStore.ShopLaterReducer.products
-  );
+  const shopLaterData = useSelector((reduxStore) => reduxStore.ShopLaterReducer.products);
 
 
   console.log(cartData)

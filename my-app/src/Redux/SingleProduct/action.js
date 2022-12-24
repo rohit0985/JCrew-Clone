@@ -18,4 +18,16 @@ return axios
 })
 }
 
-export {getSingleProduct}
+const deleteSingleProduct =(id) => (dispatch) =>{  
+  dispatch({type: types.DELETE_SINGLE_PRODUCTS_REQUEST})
+return axios
+.delete(`https://nice-tan-elk-tutu.cyclic.app/products/${id}`)
+.then((res)=> {
+  return  dispatch({type: types.DELETE_SINGLE_PRODUCTS_SUCCESS, payload:res.data})
+})
+.catch((err)=>{
+    console.log(err)
+})
+}
+
+export {getSingleProduct, deleteSingleProduct}

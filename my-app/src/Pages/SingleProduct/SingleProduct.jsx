@@ -4,12 +4,13 @@ import { BsSuitHeart, BsPinterest, BsTwitter, BsTypeH1 } from "react-icons/bs";
 import { AiFillFacebook } from "react-icons/ai";
 import { SlSocialTumblr } from "react-icons/sl";
 import { AiFillStar } from "react-icons/ai";
-import { getSingleProduct } from "../../Redux/SingleProduct/action";
+import { getSingleProduct, deleteSingleProduct } from "../../Redux/SingleProduct/action";
 import { addCdata } from "../../Redux/CartReducer/action";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import calPrice from "../../utils/calPrice";
 import { addLSdata } from "../../Redux/ShopLaterReducer/action";
+
 
 
 
@@ -70,7 +71,10 @@ if(size){
 
   useEffect(() => {
     dispatch(getSingleProduct(id));
-  }, []);
+   return ()=>{
+    dispatch(deleteSingleProduct(id))
+   }
+  }, [id]);
 
 
   return (
