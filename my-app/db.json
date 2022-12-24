@@ -8,21 +8,37 @@
       "country": "",
       "token": "",
       "userType": "customer"
-    },
-    {
-      "id": 2,
-      "name": "Rohit kumar",
-      "email": "rohit@gmail.com",
-      "password": "",
-      "country": "",
-      "token": "",
-      "userType": "admin",
-      "myProducts": []
     }
   ],
   "favorits": [],
-  "cart": [],
-  "shopLater": [],
+  "cart": [
+    {
+      "id": 31,
+      "name": "Cashmere classic-fit crewneck sweater",
+      "price": 6760,
+      "brand": "Zara",
+      "category": "Sweater",
+      "belongsTo": "Women",
+      "cartQuantity": 1,
+      "colors": "blue",
+      "image": "https://www.jcrew.com/s7-img-facade/BA400_SR0158_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
+      "size": "Small"
+    }
+  ],
+  "shopLater": [
+    {
+      "id": 32,
+      "name": "Magic Rinse™ relaxed jogger pant",
+      "price": 13230,
+      "brand": "Zara",
+      "category": "Pants",
+      "belongsTo": "Women",
+      "cartQuantity": 1,
+      "colors": "green",
+      "image": "https://www.jcrew.com/s7-img-facade/BK326_GR6460_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
+      "size": "Medium"
+    }
+  ],
   "orderHistory": [],
   "products": [
     {

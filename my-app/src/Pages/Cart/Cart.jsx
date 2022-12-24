@@ -19,8 +19,8 @@ const Cart = () => {
   const shopLaterData = useSelector((reduxStore) => reduxStore.ShopLaterReducer.products);
 
 
-  console.log(cartData)
-  console.log(shopLaterData)
+  // console.log(cartData)
+  // console.log(shopLaterData)
 
   let actPromo = "masai10";
   let sum = cartData?.reduce(
@@ -39,12 +39,12 @@ const Cart = () => {
 
   useEffect(() => {
     dispatch(getCdata());
-    dispatch(getLSdata());
+    // dispatch(getLSdata());
   }, []);
 
-  // useEffect(() => {
-  //   dispatch(getLSdata());
-  // }, []);
+  useEffect(() => {
+    dispatch(getLSdata());
+  }, []);
 
   return (
     <div className={styles.wrapper}>

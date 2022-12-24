@@ -1,10 +1,16 @@
 import React from 'react'
 import styles from "./Card.module.css"
 import { useNavigate } from 'react-router-dom'
+import { deleteCdata } from '../../Redux/CartReducer/action'
+import {useDispatch} from "react-redux"
 
-const Card = ({prod, handleRemove, cancleShow}) => {
+const Card = ({prod, cancleShow}) => {
+  const dispatch = useDispatch()
 const navigate = useNavigate()
 
+const handleRemove=(id)=>{
+dispatch(deleteCdata(id))
+}
 
 function edit(id){
   navigate(`/single/${id}`)

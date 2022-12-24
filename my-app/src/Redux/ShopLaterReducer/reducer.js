@@ -29,6 +29,13 @@ export const reducer = (state = initialState, { type, payload }) => {
         isError: true,
         products: [],
       };
+      case types.DELETE_SHOPLATER_FAILURE:
+        return {
+          ...state,
+          isLoading: false,
+          isError: true,
+          products: [],
+        };
     default:
       return state;
   }
